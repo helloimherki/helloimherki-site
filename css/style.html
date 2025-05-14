@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+}
+
+header {
+  background-color: #000;
+  color: white;
+  padding: 1em;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  padding: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.hero {
+  padding: 4em;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 2em;
+  background-color: #eee;
+  font-size: 0.9em;
+}
+.about {
+  max-width: 800px;
+  margin: 4em auto;
+  padding: 0 2em;
+  line-height: 1.6;
+}
+.portfolio {
+  max-width: 1000px;
+  margin: 4em auto;
+  padding: 0 2em;
+  text-align: center;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5em;
+  margin-top: 2em;
+}
+
+.gallery .item {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+.contact {
+  max-width: 800px;
+  margin: 4em auto;
+  padding: 0 2em;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.contact input,
+.contact textarea {
+  padding: 0.75em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  width: 100%;
+}
+
+.contact button {
+  padding: 0.75em;
+  background-color: #000;
+  color: white;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.contact button:hover {
+  background-color: #333;
+}
+
+.contact .social ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1.5em;
+}
+
+.contact .social a {
+  color: #000;
+  text-decoration: none;
+}
+.contact form {
+  max-width: 600px;
+  margin: 2em auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 2em;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.contact label {
+  font-weight: bold;
+}
+
+.contact input,
+.contact textarea {
+  padding: 0.75em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  width: 100%;
+}
+
+.contact button {
+  padding: 0.75em;
+  background-color: #000;
+  color: white;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+  background-color: #333;
+}
