@@ -1,1 +1,184 @@
 
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <title>Rólam – Hello I'm Herki</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="icon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5em;
+    }
+
+    .corner-logo {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 100px;
+      z-index: 10;
+    }
+
+    .corner-logo img {
+      width: 100%;
+      height: auto;
+      filter: invert(1);
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: auto;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background-color: transparent;
+      z-index: 20;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1em;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    nav a:hover {
+      transform: scale(1.1);
+    }
+
+    main {
+      padding: 140px 40px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .about-image {
+      flex: 1 1 400px;
+      text-align: left;
+    }
+
+    .about-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .about-text {
+      flex: 1 1 500px;
+      text-align: left;
+      margin-left: auto;
+      max-width: 600px;
+    }
+
+    .about-text h1 {
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+
+    .about-text p {
+      margin-bottom: 0.6em;
+      line-height: 1.2em;
+      font-size: 1.2em;
+      color: #ccc;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+      padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 1em;
+      }
+
+      .corner-logo {
+        width: 70px;
+        top: 10px;
+        left: 10px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-end;
+      }
+
+      header {
+        padding: 10px 20px;
+      }
+
+      main {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-text, .about-image {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="corner-logo">
+    <img src="HELLOIMHERKI.png" alt="Hello I'm Herki logó">
+  </div>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Főoldal</a></li>
+        <li><a href="about.html" class="active">Rólam</a></li>
+        <li><a href="portfolio.html">Portfólió</a></li>
+        <li><a href="contact.html">Kapcsolat</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="about-image">
+      <img src="about-image.jpg" alt="Herki portré vagy munka közben">
+    </div>
+    <div class="about-text">
+      <h1>Rólam</h1>
+      <p>Hogy miért engem válassz grafikusként?</p>
+      <p>Minden projektet az egyedi igényeidhez igazítok, hogy a márkád igazán kitűnjön.</p>
+      <p>Nemcsak mutatós, hanem praktikus és könnyen használható terveket készítek.</p>
+      <p>Figyelek a részletekre, tartom a határidőket, így biztos lehetsz benne, hogy a végeredmény tökéletes lesz.</p>
+      <p>Rugalmas és nyitott vagyok a kommunikációra, hogy közösen elérjük a legjobb eredményt.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Hello I'm Herki</p>
+  </footer>
+
+</body>
+</html>

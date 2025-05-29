@@ -1,7 +1,155 @@
 
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello im Herki</title>
+  <link rel="icon" href="icon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5em;
+    }
 
+    .corner-logo {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 100px;
+      z-index: 10;
+    }
 
+    .corner-logo img {
+      width: 100%;
+      height: auto;
+      filter: invert(1);
+    }
 
+    header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: auto;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background-color: transparent;
+      z-index: 20;
+    }
 
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
 
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1em;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    nav a:hover {
+      transform: scale(1.1);
+    }
+
+    main {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    main h1 {
+      font-size: 1.8em;
+      margin: 0;
+    }
+
+    main p {
+      font-size: 1.2em;
+      color: #aaa;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+      padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 1em;
+      }
+
+      .corner-logo {
+        width: 70px;
+        top: 10px;
+        left: 10px;
+      }
+
+      main h1 {
+        font-size: 1.2em;
+      }
+
+      main p {
+        font-size: 1em;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-end;
+      }
+
+      header {
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="corner-logo">
+    <img src="HELLOIMHERKI.png" alt="Hello I'm Herki logó">
+  </div>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Főoldal</a></li>
+        <li><a href="about.html">Rólam</a></li>
+        <li><a href="portfolio.html">Portfólió</a></li>
+        <li><a href="contact.html">Kapcsolat</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Hello I'm Herki</h1>
+    <p>#branding #logo #webdesign #illustration</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Hello I'm Herki</p>
+  </footer>
+
+</body>
+</html>
