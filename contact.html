@@ -161,6 +161,49 @@
       .divider {
         display: none;
       }
+      .contact-flex {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.contact-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-image {
+  flex: 1;
+  text-align: center;
+  min-width: 300px;
+}
+.contact-banner {
+  background-image: url('images/contact.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 300px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.6); /* áttetsző fekete háttér */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9em;
+}
     }
   </style>
 </head>
@@ -182,43 +225,49 @@
   </header>
 
   <main>
-    <h1>Kapcsolat</h1>
-    <img alt="Kapcsolat illusztráció" class="contact-img" src="contact-image.jpg"/>
+  <h1>Kapcsolat</h1>
 
-    <div class="contact-boxes">
-      <div class="info-box">
-        <div class="info-data"><a href="mailto:hello@helloimherki.com" style="color:#fff; text-decoration:none;">hello@helloimherki.com</a></div>
-        <div class="info-label">EMAIL</div>
+  <div class="contact-flex">
+    <div class="contact-text">
+      <div class="contact-boxes">
+        <div class="info-box">
+          <div class="info-data">
+            <a href="mailto:hello@helloimherki.com" style="color:#fff; text-decoration:none;">hello@helloimherki.com</a>
+          </div>
+          <div class="info-label">EMAIL</div>
+        </div>
+        <div class="divider"></div>
+        <div class="info-box">
+          <div class="info-data">1131 BUDAPEST, MAGYARORSZÁG</div>
+          <div class="info-label">CÍM</div>
+        </div>
+        <div class="divider"></div>
+        <div class="info-box">
+          <div class="info-data">+36 20 239 5307</div>
+          <div class="info-label">TELEFON</div>
+        </div>
       </div>
-      <div class="divider"></div>
-      <div class="info-box">
-        <div class="info-data">1131 BUDAPEST, MAGYARORSZÁG</div>
-        <div class="info-label">CÍM</div>
-      </div>
-      <div class="divider"></div>
-      <div class="info-box">
-        <div class="info-data">+36 20 239 5307</div>
-        <div class="info-label">TELEFON</div>
-      </div>
-    </div>
 
-    <div class="contact-links">
-      <p><a href="https://instagram.com/helloimherki" target="_blank"><i class="fab fa-instagram"></i>Instagram</a></p>
-      <p><a href="https://behance.net/helloimherki" target="_blank"><i class="fab fa-behance"></i>Behance</a></p>
-      <p><a href="https://www.threads.net/@helloimherki" target="_blank"><i class="fab fa-threads"></i>Threads</a></p>
-      <p><a href="https://www.tiktok.com/@helloimherki" target="_blank"><i class="fab fa-tiktok"></i>TikTok</a></p>
-    </div>
+      <div class="contact-links">
+        <p><a href="https://instagram.com/helloimherki" target="_blank"><i class="fab fa-instagram"></i>Instagram</a></p>
+        <p><a href="https://behance.net/helloimherki" target="_blank"><i class="fab fa-behance"></i>Behance</a></p>
+        <p><a href="https://www.threads.net/@helloimherki" target="_blank"><i class="fab fa-threads"></i>Threads</a></p>
+        <p><a href="https://www.tiktok.com/@helloimherki" target="_blank"><i class="fab fa-tiktok"></i>TikTok</a></p>
+      </div>
 
-    <div>
-      <a href="https://wa.me/36202395307" target="_blank" class="whatsapp-link">
-        <i class="fab fa-whatsapp"></i> ÍRJ WHATSAPPON
-      </a>
+      <div>
+        <a href="https://wa.me/36202395307" target="_blank" class="whatsapp-link">
+          <i class="fab fa-whatsapp"></i> ÍRJ WHATSAPPON
+        </a>
+      </div>
     </div>
   </main>
 
+ <div class="contact-banner">
   <footer>
     <p>© 2025 Hello I'm Herki</p>
   </footer>
+</div>
 
   <script>
     let lastScroll = window.scrollY;
