@@ -254,6 +254,7 @@ footer {
   }
 }
 
+.corner-logo.hide { transform: translateY(-100%); transition: transform 0.4s ease; }
 </style>
 </head>
 <body>
@@ -333,15 +334,22 @@ footer {
     }
 
     const header = document.querySelector("header");
-    let lastScroll = window.scrollY;
+    let 
+lastScroll = window.scrollY;
+const logo = document.querySelector('.corner-logo');
+
 
     window.addEventListener("scroll", () => {
       const currentScroll = window.scrollY;
-      if (currentScroll > lastScroll && currentScroll > 80) {
-        header.classList.add("hide");
-      } else {
-        header.classList.remove("hide");
-      }
+      
+if (currentScroll > lastScroll && currentScroll > 80) {
+  header.classList.add("hide");
+  if (logo) logo.classList.add("hide");
+} else {
+  header.classList.remove("hide");
+  if (logo) logo.classList.remove("hide");
+}
+
       lastScroll = currentScroll;
     });
 
