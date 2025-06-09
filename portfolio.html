@@ -142,25 +142,30 @@
   </div>
 
   <!-- Social Icons -->
-  <div class="social-icons">
-    <a href="https://instagram.com/helloimherki" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://behance.net/helloimherki" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
-    <a href="https://www.threads.net/@helloimherki" target="_blank" title="Threads"><i class="fab fa-threads"></i></a>
-    <a href="https://tiktok.com/@helloimherki" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-  </div>
+ <div class="hamburger" onclick="toggleMenu()">
+  <i class="fas fa-bars"></i>
+</div>
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Főoldal</a></li>
-        <li><a href="about.html">Rólam</a></li>
-        <li><a class="active" href="portfolio.html">Portfólió</a></li>
-        <li><a href="services.html">Szolgáltatások</a></li>
-        <li><a href="prices.html">Árak</a></li>
-        <li><a href="contact.html">Kapcsolat</a></li>
-      </ul>
-    </nav>
-  </header>
+<div class="social-icons">
+  <a href="https://instagram.com/helloimherki" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://behance.net/helloimherki" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
+  <a href="https://www.threads.net/@helloimherki" target="_blank" title="Threads"><i class="fab fa-threads"></i></a>
+  <a href="https://tiktok.com/@helloimherki" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+</div>
+
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Főoldal</a></li>
+      <li><a href="about.html">Rólam</a></li>
+      <li><a class="active" href="portfolio.html">Portfólió</a></li>
+      <li><a href="services.html">Szolgáltatások</a></li>
+      <li><a href="prices.html">Árak</a></li>
+      <li><a href="contact.html">Kapcsolat</a></li>
+    </ul>
+  </nav>
+</header>
+
 
   <main>
     <h1>Portfólió</h1>
@@ -183,20 +188,26 @@
     <p>© 2025 Hello I'm Herki</p>
   </footer>
 
-  <script>
-    let lastScroll = window.scrollY;
-    const header = document.querySelector('header');
+<script>
+  function toggleMenu() {
+    const menu = document.querySelector("nav ul");
+    menu.classList.toggle("open");
+  }
 
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.scrollY;
-      if (currentScroll > lastScroll && currentScroll > 80) {
-        header.classList.add('hide');
-      } else {
-        header.classList.remove('hide');
-      }
-      lastScroll = currentScroll;
-    });
-  </script>
+  let lastScroll = window.scrollY;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+    if (currentScroll > lastScroll && currentScroll > 100) {
+      header.classList.add("hide");
+    } else {
+      header.classList.remove("hide");
+    }
+    lastScroll = currentScroll;
+  });
+</script>
+
 </body>
 </html>
 
