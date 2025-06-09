@@ -218,9 +218,48 @@ footer {
   font-size: 0.9em;
 }
     }
-  </style>
+  
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 20;
+  cursor: pointer;
+}
+.hamburger i {
+  font-size: 1.5em;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  nav ul {
+    display: none;
+    background-color: #000;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #000;
+  }
+  nav ul.open {
+    display: flex;
+  }
+}
+
+</style>
 </head>
 <body>
+
+<div class="hamburger" onclick="toggleMenu()">
+  <i class="fas fa-bars"></i>
+</div>
+
   <div class="corner-logo">
     <img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/>
   </div>
