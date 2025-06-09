@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="hu">
 <head>
-  <meta charset="utf-8"/>
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello I'm Herki</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&display=swap" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hello I'm Herki</title>
+<link href="style.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <style>
   body {
     margin: 0;
@@ -195,111 +196,174 @@
       font-size: 1em;
     }
   }
-</style>
 
-</head>
+@media (max-width: 768px) {
+  .social-toggle {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px 0 0 8px;
+    z-index: 999;
+    cursor: pointer;
+    transform: translateY(-50%);
+  }
+
+  .social-panel {
+    position: fixed;
+    top: 50%;
+    right: -200px;
+    transform: translateY(-50%);
+    background: #000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 998;
+    transition: right 0.3s ease;
+  }
+
+  .social-panel.open {
+    right: 50px;
+  }
+
+  .social-panel a {
+    color: #fff;
+    font-size: 1.4em;
+    text-decoration: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .social-icons {
+    display: none !important;
+  }
+}
+
+
+@media (min-width: 769px) {
+  .social-panel {
+    display: none !important;
+  }
+}
+
+
+    @media (max-width: 768px) {
+      nav ul {
+        background-color: #000;
+        padding: 20px;
+        border: none;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        width: auto;
+        box-shadow: none;
+        z-index: 999;
+      }
+
+      nav ul.open {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav ul:not(.open) {
+        display: none;
+      }
+    }
+    </style>
+</link></head>
 <body>
-  <div class="corner-logo">
-    <img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/>
-  </div>
-
-  <!-- Social Icons -->
-  <div class="hamburger" onclick="toggleMenu()">
-  <i class="fas fa-bars"></i>
+<div class="corner-logo">
+<img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/>
 </div>
-
+<!-- Social Icons -->
+<div class="hamburger" onclick="toggleMenu()">
+<i class="fas fa-bars"></i>
+</div>
 <div class="social-icons">
-  <a href="https://instagram.com/helloimherki" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-  <a href="https://behance.net/helloimherki" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
-  <a href="https://www.threads.net/@helloimherki" target="_blank" title="Threads"><i class="fab fa-threads"></i></a>
-  <a href="https://tiktok.com/@helloimherki" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+<a href="https://instagram.com/helloimherki" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://behance.net/helloimherki" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
+<a href="https://www.threads.net/@helloimherki" target="_blank" title="Threads"><i class="fab fa-threads"></i></a>
+<a href="https://tiktok.com/@helloimherki" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
 </div>
-
 <header>
-  <nav>
-    <ul>
-      <li><a class="active" href="index.html">Főoldal</a></li>
-      <li><a href="about.html">Rólam</a></li>
-      <li><a href="portfolio.html">Portfólió</a></li>
-      <li><a href="services.html">Szolgáltatások</a></li>
-      <li><a href="prices.html">Árak</a></li>
-      <li><a href="contact.html">Kapcsolat</a></li>
-    </ul>
-  </nav>
+<nav>
+<ul>
+<li><a class="active" href="index.html">Főoldal</a></li>
+<li><a href="about.html">Rólam</a></li>
+<li><a href="portfolio.html">Portfólió</a></li>
+<li><a href="services.html">Szolgáltatások</a></li>
+<li><a href="prices.html">Árak</a></li>
+<li><a href="contact.html">Kapcsolat</a></li>
+</ul>
+</nav>
 </header>
 
-  <main>
-    <section class="hero">
-      <h1>
-        <span class="line1">HELLO<span class="exclamation">!</span></span><br>
-        <span class="line2">IM HERKI</span>
-      </h1>
-    </section>
 
-    <section class="preview">
-      <h2>LEGFRISSEBB MUNKÁIM</h2>
+<main>
+<section class="hero">
+<h1>
+<span class="line1">HELLO<span class="exclamation">!</span></span><br/>
+<span class="line2">IM HERKI</span>
+</h1>
+</section>
+<section class="preview">
+<h2>LEGFRISSEBB MUNKÁIM</h2>
 <div class="preview-grid">
-  <img alt="Munka 1" src="munka1.jpg"/>
-  <img alt="Munka 2" src="munka2.jpg"/>
-  <img alt="Munka 3" src="munka3.jpg"/>
-  <img alt="Munka 4" src="munka4.jpg"/>
+<img alt="Munka 1" src="munka1.jpg"/>
+<img alt="Munka 2" src="munka2.jpg"/>
+<img alt="Munka 3" src="munka3.jpg"/>
+<img alt="Munka 4" src="munka4.jpg"/>
 </div>
-
-      <a href="portfolio.html">További munkák →</a>
-    </section>
-
-    <section class="cta">
-      <h2>KÉSZEN ÁLLSZ A KÖZÖS MUNKÁRA?</h2>
-      <p><a href="contact.html">Lépj velem kapcsolatba →</a></p>
-    </section>
-
-    <section class="tools">
-      <h2>AMIKKEL DOLGOZOM</h2>
-      <p>Adobe Illustrator, Photoshop, XD</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Hello I'm Herki</p>
-  </footer>
-
+<a href="portfolio.html">További munkák →</a>
+</section>
+<section class="cta">
+<h2>KÉSZEN ÁLLSZ A KÖZÖS MUNKÁRA?</h2>
+<p><a href="contact.html">Lépj velem kapcsolatba →</a></p>
+</section>
+<section class="tools">
+<h2>AMIKKEL DOLGOZOM</h2>
+<p>Adobe Illustrator, Photoshop, XD</p>
+</section>
+</main>
+<footer>
+<p>© 2025 Hello I'm Herki</p>
+</footer>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    function toggleMenu() {
-      const menu = document.querySelector("nav ul");
-      if (menu) {
-        menu.classList.toggle("open");
+    document.addEventListener("DOMContentLoaded", function () {
+      function toggleMenu() {
+        const menu = document.querySelector("nav ul");
+        if (menu) {
+          menu.classList.toggle("open");
+        }
       }
-    }
 
-    const header = document.querySelector("header");
-    let lastScroll = window.scrollY;
-
-    window.addEventListener("scroll", () => {
-      const currentScroll = window.scrollY;
-      if (currentScroll > lastScroll && currentScroll > 80) {
-        header.classList.add("hide");
-      } else {
-        header.classList.remove("hide");
+      const hamburger = document.querySelector(".hamburger");
+      if (hamburger) {
+        hamburger.addEventListener("click", toggleMenu);
       }
-      lastScroll = currentScroll;
+
+      const header = document.querySelector("header");
+      let lastScroll = window.scrollY;
+
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.scrollY;
+        if (currentScroll > lastScroll && currentScroll > 80) {
+          header.classList.add("hide");
+          const logo = document.querySelector(".corner-logo");
+          if (logo) logo.style.display = "none";
+        } else {
+          header.classList.remove("hide");
+          const logo = document.querySelector(".corner-logo");
+          if (logo) logo.style.display = "block";
+        }
+        lastScroll = currentScroll;
+      });
     });
-
-    // Hamburger gombra eseményfigyelő
-    const hamburger = document.querySelector(".hamburger");
-    if (hamburger) {
-      hamburger.addEventListener("click", toggleMenu);
-    }
-  });
-</script>
-
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="hu">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Árak – Hello I'm Herki</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Árak – Hello I'm Herki</title>
+<link href="style.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
     body {
       margin: 0;
       background-color: #000;
@@ -169,174 +170,227 @@
         left: 10px;
       }
       h1 { font-size: 2em; }
+      .top-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    z-index: 12;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  header {
+    top: 70px; /* header lejjebb tolva a fekete sáv miatt */
+  }
+
+  .corner-logo {
+    position: static;
+    width: 70px;
+  }
+
+  .hamburger {
+    color: #fff;
+    font-size: 1.8em;
+    cursor: pointer;
+  }
+}
+
     }
-  </style>
-</head>
-<body>
-
-  <div class="corner-logo">
-    <img src="HELLOIMHERKI.png" alt="Hello I'm Herki logó"/>
-  </div>
-
-  <!-- Social Icons -->
   
+@media (max-width: 768px) {
+  nav ul {
+    background-color: #000;
+    padding: 20px;
+    border: none;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    width: auto;
+    box-shadow: none;
+    z-index: 999;
+  }
+
+  nav ul.open {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav ul:not(.open) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .social-icons {
+    display: none !important;
+  }
+}
+</style>
+</link></head>
+<body>
+<div class="corner-logo">
+<img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/>
+</div>
+<!-- Social Icons -->
 <div class="hamburger" onclick="toggleMenu()">
-  <i class="fas fa-bars"></i>
+<i class="fas fa-bars"></i>
 </div>
-
 <div class="social-icons">
-  <a href="https://instagram.com/helloimherki" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-  <a href="https://behance.net/helloimherki" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
-  <a href="https://www.threads.net/@helloimherki" target="_blank" title="Threads"><i class="fab fa-threads"></i></a>
-  <a href="https://tiktok.com/@helloimherki" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+<a href="https://instagram.com/helloimherki" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://behance.net/helloimherki" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
+<a href="https://www.threads.net/@helloimherki" target="_blank" title="Threads"><i class="fab fa-threads"></i></a>
+<a href="https://tiktok.com/@helloimherki" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
 </div>
-
+<div class="top-bar">
+<div class="corner-logo">
+<img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/>
+</div>
+<div class="hamburger" onclick="toggleMenu()">
+<i class="fas fa-bars"></i>
+</div>
+</div>
 <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Főoldal</a></li>
-        <li><a href="about.html">Rólam</a></li>
-        <li><a href="portfolio.html">Portfólió</a></li>
-        <li><a href="services.html">Szolgáltatások</a></li>
-        <li><a class="active" href="prices.html">Árak</a></li>
-        <li><a href="contact.html">Kapcsolat</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <h1>Árak</h1>
+<nav>
+<ul>
+<li><a href="index.html">Főoldal</a></li>
+<li><a href="about.html">Rólam</a></li>
+<li><a href="portfolio.html">Portfólió</a></li>
+<li><a href="services.html">Szolgáltatások</a></li>
+<li><a class="active" href="prices.html">Árak</a></li>
+<li><a href="contact.html">Kapcsolat</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<h1>Árak</h1>
 <p style="text-align: center;">
 </p>
-    <div class="pricing-grid">
-      <div class="pricing-item">
-        <h2>Webdesign</h2>
-        <ul>
-          <li>60 perces megbeszélés</li>
-          <li>Kreatív koncepció</li>
-          <li>1 főoldal</li>
-          <li>1-2 aloldal</li>
-          <li>A csomag tartalmaza:</li>
-          <li>Mobilbarát verzió</li>
-        </ul>
-        <div class="price">300.000 Ft-tól</div>
-      </div>
-      <div class="pricing-item">
-        <h2>Logótervezés</h2>
-        <ul>
-          <li>60 perces megbeszélés</li>
-          <li>2 alternatíva + 3 koncepció</li>
-          <li>Módosítás 3 alkalommal</li>
-          <li>Formátum: JPEG, PDF, PNG, SVG</li>
-        </ul>
-        <div class="price">150.000 Ft-tól</div>
-      </div>
-      <div class="pricing-item">
-        <h2>Arculattervezés</h2>
-        <ul>
-          <li>60 perces megbeszélés</li>
-          <li>Brandbook alapjai: logó, színek, tipográfia</li>
-          <li>Két logó alternatíva</li>
-          <li>2 koncepció munka a két alternatívával</li>
-          <li>Formátum: JPEG, PDF, PNG, SVG</li>
-        </ul>
-        <div class="price">200.000 Ft-tól</div>
-      </div>
-    </div>
-
-    <div class="section">
+<div class="pricing-grid">
+<div class="pricing-item">
+<h2>Webdesign</h2>
+<ul>
+<li>60 perces megbeszélés</li>
+<li>Kreatív koncepció</li>
+<li>1 főoldal</li>
+<li>1-2 aloldal</li>
+<li>A csomag tartalmaza:</li>
+<li>Mobilbarát verzió</li>
+</ul>
+<div class="price">300.000 Ft-tól</div>
+</div>
+<div class="pricing-item">
+<h2>Logótervezés</h2>
+<ul>
+<li>60 perces megbeszélés</li>
+<li>2 alternatíva + 3 koncepció</li>
+<li>Módosítás 3 alkalommal</li>
+<li>Formátum: JPEG, PDF, PNG, SVG</li>
+</ul>
+<div class="price">150.000 Ft-tól</div>
+</div>
+<div class="pricing-item">
+<h2>Arculattervezés</h2>
+<ul>
+<li>60 perces megbeszélés</li>
+<li>Brandbook alapjai: logó, színek, tipográfia</li>
+<li>Két logó alternatíva</li>
+<li>2 koncepció munka a két alternatívával</li>
+<li>Formátum: JPEG, PDF, PNG, SVG</li>
+</ul>
+<div class="price">200.000 Ft-tól</div>
+</div>
+</div>
+<div class="section">
 <a href="services.html" style="color: #ff0000; text-decoration: none;">
   Az egyedi árajánlat kalkulációja, a csomagárakhoz választott szolgáltatás határozza meg. Klikk →
 </a>
-
-        <hr style="border: none; border-top: 1px solid #ffffff; width: 90%; margin: 30px auto;">
-    </div>
-
-    <div class="section">
-      <h3>Branding csomagok</h3>
-      <div class="branding-table">
-        <div>
-          <h4>Alap Branding</h4>
-          <ul>
-            <li>Logó</li>
-            <li>Moodboard</li>
-            <li>Arculati elemek</li>
-            <li>Brandbook alapjai</li>
-            <li>Online meeting 2×30 perc</li>
-            <li>2 választható szolgáltatás</li>
-          </ul>
-          <div class="price">250.000 Ft-tól</div>
-        </div>
-        <div>
-          <h4>Normál Branding</h4>
-          <ul>
-            <li>Logó</li>
-            <li>Moodboard</li>
-            <li>Arculati elemek</li>
-            <li>Brandbook normál</li>
-            <li>Online meeting 2×30 perc</li>
-            <li>5 választható szolgáltatás</li>
-          </ul>
-          <div class="price">350.000 Ft-tól</div>
-        </div>
-        <div>
-          <h4>Max Branding</h4>
-          <ul>
-            <li>Logó</li>
-            <li>Moodboard</li>
-            <li>Arculati elemek</li>
-            <li>Brandbook full</li>
-            <li>Online meeting 4×30 perc</li>
-            <li>10 választható szolgáltatás</li>
-          </ul>
-          <div class="price">450.000 Ft-tól</div>
-        </div>
-      </div>
-    </div>
+<hr style="border: none; border-top: 1px solid #ffffff; width: 90%; margin: 30px auto;"/>
+</div>
 <div class="section">
-  <h2>Mi az a Brandbook?</h2>
-  <p><span style="color: #ff0000;">Logó használata:</span> különböző verziói, méretezése, elhelyezése és tiltott felhasználási módjai.</p>
-  <p><span style="color: #ff0000;">Színpaletta:</span> a márka színeinek meghatározása, azok pontos kódjai (RGB, CMYK, HEX stb.), és használati irányelvek.</p>
-  <p><span style="color: #ff0000;">Tipográfia:</span> A márkához tartozó betűtípusok, azok méretei, használati irányelvei.</p>
-  <p><span style="color: #ff0000;">Grafikai elemek:</span> Egyéb grafikai elemek, minták, illusztrációk és azok használata.</p>
-  <p><span style="color: #ff0000;">Hangnem és stílus:</span> A márka verbális kommunikációjának irányelvei, példák a megfelelő hangnemre és stílusra.</p>
-  <p><span style="color: #ff0000;">Arculati kézikönyv:</span> Az egységes megjelenéshez kapcsolódó összes irányelv összefoglalása.</p>
- <p><span style="color: #ff0000;">Célközönség:</span> A márka célcsoportjának meghatározása és a velük való kommunikáció irányelvei.</p>
-
-<hr style="border: none; border-top: 1px solid #ffffff; width: 90%; margin: 30px auto;">
-
+<h3>Branding csomagok</h3>
+<div class="branding-table">
+<div>
+<h4>Alap Branding</h4>
+<ul>
+<li>Logó</li>
+<li>Moodboard</li>
+<li>Arculati elemek</li>
+<li>Brandbook alapjai</li>
+<li>Online meeting 2×30 perc</li>
+<li>2 választható szolgáltatás</li>
+</ul>
+<div class="price">250.000 Ft-tól</div>
+</div>
+<div>
+<h4>Normál Branding</h4>
+<ul>
+<li>Logó</li>
+<li>Moodboard</li>
+<li>Arculati elemek</li>
+<li>Brandbook normál</li>
+<li>Online meeting 2×30 perc</li>
+<li>5 választható szolgáltatás</li>
+</ul>
+<div class="price">350.000 Ft-tól</div>
+</div>
+<div>
+<h4>Max Branding</h4>
+<ul>
+<li>Logó</li>
+<li>Moodboard</li>
+<li>Arculati elemek</li>
+<li>Brandbook full</li>
+<li>Online meeting 4×30 perc</li>
+<li>10 választható szolgáltatás</li>
+</ul>
+<div class="price">450.000 Ft-tól</div>
+</div>
+</div>
+</div>
+<div class="section">
+<h2>Mi az a Brandbook?</h2>
+<p><span style="color: #ff0000;">Logó használata:</span> különböző verziói, méretezése, elhelyezése és tiltott felhasználási módjai.</p>
+<p><span style="color: #ff0000;">Színpaletta:</span> a márka színeinek meghatározása, azok pontos kódjai (RGB, CMYK, HEX stb.), és használati irányelvek.</p>
+<p><span style="color: #ff0000;">Tipográfia:</span> A márkához tartozó betűtípusok, azok méretei, használati irányelvei.</p>
+<p><span style="color: #ff0000;">Grafikai elemek:</span> Egyéb grafikai elemek, minták, illusztrációk és azok használata.</p>
+<p><span style="color: #ff0000;">Hangnem és stílus:</span> A márka verbális kommunikációjának irányelvei, példák a megfelelő hangnemre és stílusra.</p>
+<p><span style="color: #ff0000;">Arculati kézikönyv:</span> Az egységes megjelenéshez kapcsolódó összes irányelv összefoglalása.</p>
+<p><span style="color: #ff0000;">Célközönség:</span> A márka célcsoportjának meghatározása és a velük való kommunikáció irányelvei.</p>
+<hr style="border: none; border-top: 1px solid #ffffff; width: 90%; margin: 30px auto;"/>
 <p><span style="color: #ff0000;">ALAP:</span> logó használata, színpaletta, tipográfia</p>
-
-  <p><span style="color: #ff0000;">NORMÁL:</span> logó használata, színpaletta, tipográfia, grafikai elemek</p>
-  <p><span style="color: #ff0000;">FULL:</span> logó használata, színpaletta, tipográfia, grafikai elemek, hangnem és stílus, arculati kézikönyv, célközönség</p>
+<p><span style="color: #ff0000;">NORMÁL:</span> logó használata, színpaletta, tipográfia, grafikai elemek</p>
+<p><span style="color: #ff0000;">FULL:</span> logó használata, színpaletta, tipográfia, grafikai elemek, hangnem és stílus, arculati kézikönyv, célközönség</p>
 <h3>
-  
- <p style="text-align: center; margin-bottom: 0;">
-  <a href="services.html" style="color: #ffffff; text-decoration: none;">
+<p style="text-align: center; margin-bottom: 0;">
+<a href="services.html" style="color: #ffffff; text-decoration: none;">
     A csomag ajánlatokon felül, szolgáltatásaim külön-külön is elérhetők, melyekre készítek egyedi árajánlatot.
   </a>
 </p>
 <p style="text-align: center; margin-top: 10px;">
-  <a href="services.html" style="color: #ff0000; text-decoration: none;">Klikk →</a>
+<a href="services.html" style="color: #ff0000; text-decoration: none;">Klikk →</a>
 </p>
-
 </h3>
-
-
-      <p>
-      </p>
+<p>
+</p>
 </div>
-
-    <p style="text-align: center; color: #888; font-size: 0.8em;">
-      Az árak tájékoztató jellegűek. Egyedi árajánlatért, lépj velem <a href="contact.html" style="color:#ff0000;">kapcsolatba</a>.<br>
+<p style="text-align: center; color: #888; font-size: 0.8em;">
+      Az árak tájékoztató jellegűek. Egyedi árajánlatért, lépj velem <a href="contact.html" style="color:#ff0000;">kapcsolatba</a>.<br/>
       A feltüntetett árak nettó árak, az ÁFA-t nem tartalmazzák.
     </p>
-  </main>
-
-   <footer>
-    <p>© 2025 Hello I'm Herki</p>
-  </footer>
-
+</main>
+<footer>
+<p>© 2025 Hello I'm Herki</p>
+</footer>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     function toggleMenu() {
@@ -366,9 +420,5 @@
     }
   });
 </script>
-
 </body>
 </html>
-
-
-

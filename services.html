@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="hu">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Szolgáltatások – Hello I'm Herki</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&display=swap" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Szolgáltatások – Hello I'm Herki</title>
+<link href="style.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&amp;display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<style>
     body {
       margin: 0;
       background-color: #000;
@@ -121,70 +122,169 @@
       }
       h1 { font-size: 2em; }
       .social-icons { right: 5px; font-size: 1em; }
+      .top-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    z-index: 12;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  header {
+    top: 70px; /* header lejjebb tolva a fekete sáv miatt */
+  }
+
+  .corner-logo {
+    position: static;
+    width: 70px;
+  }
+
+  .hamburger {
+    color: #fff;
+    font-size: 1.8em;
+    cursor: pointer;
+  }
+}
+
     }
-  </style>
-</head>
-<body>
-  <div class="corner-logo">
-    <img src="HELLOIMHERKI.png" alt="Herki logó"/>
-  </div>
-
-  <!-- Social Icons -->
   
+/* Hamburger csak mobilon */
+.hamburger {
+  display: none;
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 100;
+    color: #fff;
+    font-size: 1.8em;
+    cursor: pointer;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    text-align: right;
+    padding: 20px;
+  }
+  nav ul.open {
+    display: flex;
+  }
+  .social-icons {
+    display: none !important;
+  }
+}
+@media (min-width: 769px) {
+  .social-panel {
+    display: none !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  nav ul {
+    background-color: #000;
+    padding: 20px;
+    border: none;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    width: auto;
+    box-shadow: none;
+    z-index: 999;
+  }
+
+  nav ul.open {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav ul:not(.open) {
+    display: none;
+  }
+}
+</style>
+</link></head>
+<body>
+<div class="corner-logo">
+<img alt="Herki logó" src="HELLOIMHERKI.png"/>
+</div>
+<!-- Social Icons -->
 <div class="hamburger" onclick="toggleMenu()">
-  <i class="fas fa-bars"></i>
+<i class="fas fa-bars"></i>
 </div>
-
 <div class="social-icons">
-  <a href="https://instagram.com/helloimherki" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-  <a href="https://behance.net/helloimherki" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
-  <a href="https://www.threads.net/@helloimherki" target="_blank" title="Threads"><i class="fab fa-threads"></i></a>
-  <a href="https://tiktok.com/@helloimherki" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+<a href="https://instagram.com/helloimherki" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://behance.net/helloimherki" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
+<a href="https://www.threads.net/@helloimherki" target="_blank" title="Threads"><i class="fab fa-threads"></i></a>
+<a href="https://tiktok.com/@helloimherki" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
 </div>
-
+<div class="top-bar">
+<div class="corner-logo">
+<img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/>
+</div>
+<div class="hamburger" onclick="toggleMenu()">
+<i class="fas fa-bars"></i>
+</div>
+</div>
 <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Főoldal</a></li>
-        <li><a href="about.html">Rólam</a></li>
-        <li><a href="portfolio.html">Portfólió</a></li>
-        <li><a class="active" href="services.html">Szolgáltatások</a></li>
-        <li><a href="prices.html">Árak</a></li>
-        <li><a href="contact.html">Kapcsolat</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <h1>Szolgáltatások</h1>
+<nav>
+<ul>
+<li><a href="index.html">Főoldal</a></li>
+<li><a href="about.html">Rólam</a></li>
+<li><a href="portfolio.html">Portfólió</a></li>
+<li><a class="active" href="services.html">Szolgáltatások</a></li>
+<li><a href="prices.html">Árak</a></li>
+<li><a href="contact.html">Kapcsolat</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<h1>Szolgáltatások</h1>
 <h2 style="color: #ff0000; text-align: center; margin-bottom: 20px;">
   Szolgáltatásaim külön-külön is megrendelhetők, és ezekre egyedi árajánlatot biztosítok.
 </h2>
-    <div class="grid">
-      <div class="service"><h2>Arculattervezés</h2><p>Kis és nagyarculat</p></div>
-      <div class="service"><h2>Csomagolás tervezés</h2><p>Termékcsomagolás, címke tervezés</p></div>
-      <div class="service"><h2>Nyomdai anyagok</h2><p>Névjegykártya, kiadványszerkesztés, szóróanyag, brosúra</p></div>
-      <div class="service"><h2>Logó tervezés</h2><p>Logókészítés, wordmark, symbol, kombinált logó, embléma, monogram, absztrakt ikon</p></div>
-      <div class="service"><h2>Animáció készítés</h2><p>Logóanimáció</p></div>
-      <div class="service"><h2>Dokumentum</h2><p>PDF, prezentáció, munkalap, háttérkép, napló, workshop anyag, infografika</p></div>
-      <div class="service"><h2>Események</h2><p>Meghívó, ültetőkártya, promóciós anyag, programfüzet</p></div>
-      <div class="service"><h2>Tervezés</h2><p>Címke, matrica, projektterv, edzésterv, táplálkozási napló</p></div>
-      <div class="service"><h2>Social Media</h2><p>Story, poszt, borítókép, banner, thumbnail, profilkép</p></div>
-      <div class="service"><h2>Webdesign</h2><p>Reszponzív UI/UX tervezés egyedi stílusban</p></div>
-      <div class="service"><h2>ÜZLETI MODEL</h2><p>Logó, névjegykártya, ajándékutalvány,szórólap, brosúra, projektterv,üzleti jelentés és összefoglaló,marketing anyag, termékkatalógus,árajánlat, árjegyzék, menü/étlap, hírlevél,plakát, szóróanyag</p></div>
-    </div>
-  </main>
+<div class="grid">
+<div class="service"><h2>Arculattervezés</h2><p>Kis és nagyarculat</p></div>
+<div class="service"><h2>Csomagolás tervezés</h2><p>Termékcsomagolás, címke tervezés</p></div>
+<div class="service"><h2>Nyomdai anyagok</h2><p>Névjegykártya, kiadványszerkesztés, szóróanyag, brosúra</p></div>
+<div class="service"><h2>Logó tervezés</h2><p>Logókészítés, wordmark, symbol, kombinált logó, embléma, monogram, absztrakt ikon</p></div>
+<div class="service"><h2>Animáció készítés</h2><p>Logóanimáció</p></div>
+<div class="service"><h2>Dokumentum</h2><p>PDF, prezentáció, munkalap, háttérkép, napló, workshop anyag, infografika</p></div>
+<div class="service"><h2>Események</h2><p>Meghívó, ültetőkártya, promóciós anyag, programfüzet</p></div>
+<div class="service"><h2>Tervezés</h2><p>Címke, matrica, projektterv, edzésterv, táplálkozási napló</p></div>
+<div class="service"><h2>Social Media</h2><p>Story, poszt, borítókép, banner, thumbnail, profilkép</p></div>
+<div class="service"><h2>Webdesign</h2><p>Reszponzív UI/UX tervezés egyedi stílusban</p></div>
+<div class="service"><h2>ÜZLETI MODEL</h2><p>Logó, névjegykártya, ajándékutalvány,szórólap, brosúra, projektterv,üzleti jelentés és összefoglaló,marketing anyag, termékkatalógus,árajánlat, árjegyzék, menü/étlap, hírlevél,plakát, szóróanyag</p></div>
+</div>
+</main>
 <div style="text-align: center; margin: 40px 0;">
-  <a href="services.html" style="color: #ffffff; text-decoration: none;">
+<a href="services.html" style="color: #ffffff; text-decoration: none;">
     Az egyedi árajánlatokért lépj velem kapcsolatba.
     <span style="color: #ff0000;"> Klikk →</span>
-  </a>
+</a>
 </div>
-
-  <footer>
-    <p>© 2025 Hello I'm Herki</p>
-  </footer>
-
+<footer>
+<p>© 2025 Hello I'm Herki</p>
+</footer>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     function toggleMenu() {
@@ -194,6 +294,11 @@
       }
     }
 
+    const hamburger = document.querySelector(".hamburger");
+    if (hamburger) {
+      hamburger.addEventListener("click", toggleMenu);
+    }
+
     const header = document.querySelector("header");
     let lastScroll = window.scrollY;
 
@@ -201,25 +306,16 @@
       const currentScroll = window.scrollY;
       if (currentScroll > lastScroll && currentScroll > 80) {
         header.classList.add("hide");
+        const logo = document.querySelector(".corner-logo");
+        if (logo) logo.style.display = "none";
       } else {
         header.classList.remove("hide");
+        const logo = document.querySelector(".corner-logo");
+        if (logo) logo.style.display = "block";
       }
       lastScroll = currentScroll;
     });
-
-    // Hamburger gombra eseményfigyelő
-    const hamburger = document.querySelector(".hamburger");
-    if (hamburger) {
-      hamburger.addEventListener("click", toggleMenu);
-    }
   });
 </script>
-
 </body>
 </html>
-
-
-
-
-
-
