@@ -1,27 +1,26 @@
 <!DOCTYPE html>
-
 <html lang="hu">
 <header>
-<nav>
-<ul>
-<li><a href="index.html">Főoldal</a></li>
-<li><a href="about.html">Rólam</a></li>
-<li><a href="portfolio.html">Portfólió</a></li>
-<li><a href="services.html">Szolgáltatások</a></li>
-<li><a href="prices.html">Árak</a></li>
-<li><a class="active" href="contact.html">Kapcsolat</a></li>
-</ul>
-</nav>
-</header>E html&gt;
+    <nav>
+      <ul>
+        <li><a href="index.html">Főoldal</a></li>
+        <li><a href="about.html">Rólam</a></li>
+        <li><a href="portfolio.html">Portfólió</a></li>
+        <li><a href="services.html">Szolgáltatások</a></li>
+        <li><a href="prices.html">Árak</a></li>
+        <li><a class="active" href="contact.html">Kapcsolat</a></li>
+      </ul>
+    </nav>
+  </header>E html>
 <html lang="hu">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Kapcsolat – Hello I'm Herki</title>
-<link href="icon.ico" rel="icon" type="image/x-icon"/>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-<style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kapcsolat – Hello I'm Herki</title>
+  <link rel="icon" href="icon.ico" type="image/x-icon"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
 html { overflow-x: hidden; }
     body {
   overflow-x: hidden;
@@ -290,92 +289,167 @@ footer {
 }
 
 .corner-logo.hide { transform: translateY(-100%); transition: transform 0.4s ease; }
+
+/* Hamburger csak mobilon */
+.hamburger {
+  display: none;
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 100;
+    color: #fff;
+    font-size: 1.8em;
+    cursor: pointer;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    text-align: right;
+    padding: 20px;
+  }
+  nav ul.open {
+    display: flex;
+  }
+  .social-icons {
+    display: none !important;
+  }
+}
+@media (min-width: 769px) {
+  .social-panel {
+    display: none !important;
+  }
+}
+
 </style>
 </head>
 <body>
+
 <div class="hamburger" onclick="toggleMenu()">
-<i class="fas fa-bars"></i>
+  <i class="fas fa-bars"></i>
 </div>
 
+  <div class="corner-logo">
+    <img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/>
+  </div>
+  <div class="top-bar">
+  <div class="corner-logo">
+    <img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+</div>
 
-<div class="corner-logo">
-<img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/>
-</div>
-<div class="top-bar">
-<div class="corner-logo">
-<img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/>
-</div>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Főoldal</a></li>
+        <li><a href="about.html">Rólam</a></li>
+        <li><a href="portfolio.html">Portfólió</a></li>
+        <li><a href="services.html">Szolgáltatások</a></li>
+        <li><a href="prices.html">Árak</a></li>
+        <li><a class="active" href="contact.html">Kapcsolat</a></li>
+      </ul>
+    </nav>
+  </header>
 
-</div>
-<header>
-<nav>
-<ul>
-<li><a href="index.html">Főoldal</a></li>
-<li><a href="about.html">Rólam</a></li>
-<li><a href="portfolio.html">Portfólió</a></li>
-<li><a href="services.html">Szolgáltatások</a></li>
-<li><a href="prices.html">Árak</a></li>
-<li><a class="active" href="contact.html">Kapcsolat</a></li>
-</ul>
-</nav>
-</header>
-<main>
-<h1>Kapcsolat</h1>
-<div class="contact-flex">
-<div class="contact-text">
-<div class="contact-boxes">
-<div class="info-box">
-<div class="info-data">
-<a href="mailto:hello@helloimherki.com" style="color:#fff; text-decoration:none;">hello@helloimherki.com</a>
-</div>
-<div class="info-label">EMAIL</div>
-</div>
-<div class="divider"></div>
-<div class="info-box">
-<div class="info-data">1131 BUDAPEST, MAGYARORSZÁG</div>
-<div class="info-label">CÍM</div>
-</div>
-<div class="divider"></div>
-<div class="info-box">
-<div class="info-data">+36 20 239 5307</div>
-<div class="info-label">TELEFON</div>
-</div>
-</div>
-<div class="contact-links">
-<p><a href="https://instagram.com/helloimherki" target="_blank"><i class="fab fa-instagram"></i>Instagram</a></p>
-<p><a href="https://behance.net/helloimherki" target="_blank"><i class="fab fa-behance"></i>Behance</a></p>
-<p><a href="https://www.threads.net/@helloimherki" target="_blank"><i class="fab fa-threads"></i>Threads</a></p>
-<p><a href="https://www.tiktok.com/@helloimherki" target="_blank"><i class="fab fa-tiktok"></i>TikTok</a></p>
-</div>
-<div>
-<a class="whatsapp-link" href="https://wa.me/36202395307" target="_blank">
-<i class="fab fa-whatsapp"></i> ÍRJ WHATSAPPON
+  <main>
+  <h1>Kapcsolat</h1>
+
+  <div class="contact-flex">
+    <div class="contact-text">
+      <div class="contact-boxes">
+        <div class="info-box">
+          <div class="info-data">
+            <a href="mailto:hello@helloimherki.com" style="color:#fff; text-decoration:none;">hello@helloimherki.com</a>
+          </div>
+          <div class="info-label">EMAIL</div>
+        </div>
+        <div class="divider"></div>
+        <div class="info-box">
+          <div class="info-data">1131 BUDAPEST, MAGYARORSZÁG</div>
+          <div class="info-label">CÍM</div>
+        </div>
+        <div class="divider"></div>
+        <div class="info-box">
+          <div class="info-data">+36 20 239 5307</div>
+          <div class="info-label">TELEFON</div>
+        </div>
+      </div>
+
+      <div class="contact-links">
+        <p><a href="https://instagram.com/helloimherki" target="_blank"><i class="fab fa-instagram"></i>Instagram</a></p>
+        <p><a href="https://behance.net/helloimherki" target="_blank"><i class="fab fa-behance"></i>Behance</a></p>
+        <p><a href="https://www.threads.net/@helloimherki" target="_blank"><i class="fab fa-threads"></i>Threads</a></p>
+        <p><a href="https://www.tiktok.com/@helloimherki" target="_blank"><i class="fab fa-tiktok"></i>TikTok</a></p>
+      </div>
+
+      <div>
+        <a href="https://wa.me/36202395307" target="_blank" class="whatsapp-link">
+          <i class="fab fa-whatsapp"></i> ÍRJ WHATSAPPON
         </a>
-</div>
-</div>
-</div></main>
-<div class="contact-banner">
-<footer>
-<p>© 2025 Hello I'm Herki</p>
-</footer>
+      </div>
+    </div>
+  </main>
+
+ <div class="contact-banner">
+  <footer>
+    <p>© 2025 Hello I'm Herki</p>
+  </footer>
 </div>
 
 
 <script>
-  function toggleMenu() {
-    const menu = document.querySelector("nav ul");
-    if (menu) {
-      menu.classList.toggle("open");
-    }
-  }
-
   document.addEventListener("DOMContentLoaded", function () {
+    function toggleMenu() {
+      const menu = document.querySelector("nav ul");
+      if (menu) {
+        menu.classList.toggle("open");
+      }
+    }
+
     const hamburger = document.querySelector(".hamburger");
     if (hamburger) {
       hamburger.addEventListener("click", toggleMenu);
     }
+
+    const header = document.querySelector("header");
+    let lastScroll = window.scrollY;
+
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > lastScroll && currentScroll > 80) {
+        header.classList.add("hide");
+        const logo = document.querySelector(".corner-logo");
+        if (logo) logo.style.display = "none";
+      } else {
+        header.classList.remove("hide");
+        const logo = document.querySelector(".corner-logo");
+        if (logo) logo.style.display = "block";
+      }
+      lastScroll = currentScroll;
+    });
   });
 </script>
+
+
 </body>
 </html>
-</html>
+
+
+
+
+
+
+
+
+
