@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Árak – Hello I'm Herki</title>
+  <link rel="icon" href="icon.ico" type="image/x-icon"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5em;
+    }
+    .social-icons {
+      position: fixed;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 20;
+    }
+    .social-icons a {
+      color: #ff0000;
+      font-size: 1.2em;
+      transition: transform 0.2s;
+    }
+    .social-icons a:hover {
+      transform: scale(1.2);
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 20px 40px;
+      background: #000;
+      z-index: 10;
+      transition: transform 0.4s ease;
+    }
+    header.hide {
+      transform: translateY(-100%);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+      justify-content: flex-end;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1em;
+      transition: transform 0.2s ease-in-out;
+    }
+    nav a:hover {
+      transform: scale(1.1);
+    }
+    .corner-logo {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 100px;
+      z-index: 11;
+    }
+    .corner-logo img {
+      width: 100%;
+      filter: invert(1);
+    }
+    main {
+      padding-top: 140px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 60px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .pricing-item h2 {
+      font-size: 1.4em;
+      margin-bottom: 10px;
+    }
+    .pricing-item ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+      color: #ccc;
+      font-size: 0.9em;
+    }
+    .pricing-item ul li {
+      margin-bottom: 5px;
+    }
+    .price {
+      font-weight: bold;
+      color: #ff0000;
+    }
+    .section {
+      margin-bottom: 80px;
+      text-align: center;
+    }
+    .section h3 {
+      font-size: 1.4em;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .section p {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      font-size: 1em;
+      color: #ccc;
+    }
+    .branding-table {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      text-align: center;
+    }
+    .branding-table h4 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    .branding-table ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 15px;
+      color: #ccc;
+      font-size: 0.9em;
+    }
+    .branding-table ul li {
+      margin-bottom: 5px;
+    }
+    .branding-table .price {
+      font-weight: bold;
+      color: #ff0000;
+      font-size: 1.1em;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+      padding: 40px 20px;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-end;
+      }
+      .corner-logo {
+        width: 70px;
+        top: 10px;
+        left: 10px;
+      }
+      h1 { font-size: 2em; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="corner-logo">
+    <img src="HELLOIMHERKI.png" alt="Hello I'm Herki logó"/>
+  </div>
+
+  <!-- Social Icons -->
+  <div class="social-icons">
+    <a href="https://www.instagram.com/helloimherki" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.behance.net/helloimherki" target="_blank"><i class="fab fa-behance"></i></a>
+    <a href="https://www.threads.net/@helloimherki" target="_blank"><i class="fab fa-threads"></i></a>
+    <a href="https://www.tiktok.com/@helloimherki" target="_blank"><i class="fab fa-tiktok"></i></a>
+  </div>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Főoldal</a></li>
+        <li><a href="about.html">Rólam</a></li>
+        <li><a href="portfolio.html">Portfólió</a></li>
+        <li><a href="services.html">Szolgáltatások</a></li>
+        <li><a class="active" href="prices.html">Árak</a></li>
+        <li><a href="contact.html">Kapcsolat</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Árak</h1>
+<p style="text-align: center;">
+</p>
+    <div class="pricing-grid">
+      <div class="pricing-item">
+        <h2>Webdesign</h2>
+        <ul>
+          <li>60 perces megbeszélés</li>
+          <li>Kreatív koncepció</li>
+          <li>1 főoldal</li>
+          <li>1-2 aloldal</li>
+          <li>A csomag tartalmaza:</li>
+          <li>Mobilbarát verzió</li>
+        </ul>
+        <div class="price">300.000 Ft-tól</div>
+      </div>
+      <div class="pricing-item">
+        <h2>Logótervezés</h2>
+        <ul>
+          <li>60 perces megbeszélés</li>
+          <li>2 alternatíva + 3 koncepció</li>
+          <li>Módosítás 3 alkalommal</li>
+          <li>Formátum: JPEG, PDF, PNG, SVG</li>
+        </ul>
+        <div class="price">150.000 Ft-tól</div>
+      </div>
+      <div class="pricing-item">
+        <h2>Arculattervezés</h2>
+        <ul>
+          <li>60 perces megbeszélés</li>
+          <li>Brandbook alapjai: logó, színek, tipográfia</li>
+          <li>Két logó alternatíva</li>
+          <li>2 koncepció munka a két alternatívával</li>
+          <li>Formátum: JPEG, PDF, PNG, SVG</li>
+        </ul>
+        <div class="price">200.000 Ft-tól</div>
+      </div>
+    </div>
+
+    <div class="section">
+<a href="services.html" style="color: #ff0000; text-decoration: none;">
+  Az egyedi árajánlat kalkulációja, a csomagárakhoz választott szolgáltatás határozza meg. Klikk →
+</a>
+
+        <hr style="border: none; border-top: 1px solid #ffffff; width: 90%; margin: 30px auto;">
+    </div>
+
+    <div class="section">
+      <h3>Branding csomagok</h3>
+      <div class="branding-table">
+        <div>
+          <h4>Alap Branding</h4>
+          <ul>
+            <li>Logó</li>
+            <li>Moodboard</li>
+            <li>Arculati elemek</li>
+            <li>Brandbook alapjai</li>
+            <li>Online meeting 2×30 perc</li>
+            <li>2 választható szolgáltatás</li>
+          </ul>
+          <div class="price">250.000 Ft-tól</div>
+        </div>
+        <div>
+          <h4>Normál Branding</h4>
+          <ul>
+            <li>Logó</li>
+            <li>Moodboard</li>
+            <li>Arculati elemek</li>
+            <li>Brandbook normál</li>
+            <li>Online meeting 2×30 perc</li>
+            <li>5 választható szolgáltatás</li>
+          </ul>
+          <div class="price">350.000 Ft-tól</div>
+        </div>
+        <div>
+          <h4>Max Branding</h4>
+          <ul>
+            <li>Logó</li>
+            <li>Moodboard</li>
+            <li>Arculati elemek</li>
+            <li>Brandbook full</li>
+            <li>Online meeting 4×30 perc</li>
+            <li>10 választható szolgáltatás</li>
+          </ul>
+          <div class="price">450.000 Ft-tól</div>
+        </div>
+      </div>
+    </div>
+<div class="section">
+  <h2>Mi az a Brandbook?</h2>
+  <p><span style="color: #ff0000;">Logó használata:</span> különböző verziói, méretezése, elhelyezése és tiltott felhasználási módjai.</p>
+  <p><span style="color: #ff0000;">Színpaletta:</span> a márka színeinek meghatározása, azok pontos kódjai (RGB, CMYK, HEX stb.), és használati irányelvek.</p>
+  <p><span style="color: #ff0000;">Tipográfia:</span> A márkához tartozó betűtípusok, azok méretei, használati irányelvei.</p>
+  <p><span style="color: #ff0000;">Grafikai elemek:</span> Egyéb grafikai elemek, minták, illusztrációk és azok használata.</p>
+  <p><span style="color: #ff0000;">Hangnem és stílus:</span> A márka verbális kommunikációjának irányelvei, példák a megfelelő hangnemre és stílusra.</p>
+  <p><span style="color: #ff0000;">Arculati kézikönyv:</span> Az egységes megjelenéshez kapcsolódó összes irányelv összefoglalása.</p>
+ <p><span style="color: #ff0000;">Célközönség:</span> A márka célcsoportjának meghatározása és a velük való kommunikáció irányelvei.</p>
+
+<hr style="border: none; border-top: 1px solid #ffffff; width: 90%; margin: 30px auto;">
+
+<p><span style="color: #ff0000;">ALAP:</span> logó használata, színpaletta, tipográfia</p>
+
+  <p><span style="color: #ff0000;">NORMÁL:</span> logó használata, színpaletta, tipográfia, grafikai elemek</p>
+  <p><span style="color: #ff0000;">FULL:</span> logó használata, színpaletta, tipográfia, grafikai elemek, hangnem és stílus, arculati kézikönyv, célközönség</p>
+<h3>
+  
+ <p style="text-align: center; margin-bottom: 0;">
+  <a href="services.html" style="color: #ffffff; text-decoration: none;">
+    A csomag ajánlatokon felül, szolgáltatásaim külön-külön is elérhetők, melyekre készítek egyedi árajánlatot.
+  </a>
+</p>
+<p style="text-align: center; margin-top: 10px;">
+  <a href="services.html" style="color: #ff0000; text-decoration: none;">Klikk →</a>
+</p>
+
+</h3>
+
+
+      <p>
+      </p>
+</div>
+
+    <p style="text-align: center; color: #888; font-size: 0.8em;">
+      Az árak tájékoztató jellegűek. Egyedi árajánlatért, lépj velem <a href="contact.html" style="color:#ff0000;">kapcsolatba</a>.<br>
+      A feltüntetett árak nettó árak, az ÁFA-t nem tartalmazzák.
+    </p>
+  </main>
+
+   <footer>
+    <p>© 2025 Hello I'm Herki</p>
+  </footer>
+
+  <script>
+    let lastScroll = window.scrollY;
+    const header = document.querySelector('header');
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > lastScroll && currentScroll > 80) {
+        header.classList.add('hide');
+      } else {
+        header.classList.remove('hide');
+      }
+      lastScroll = currentScroll;
+    });
+  </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Szolgáltatások – Hello I'm Herki</title>
+  <link rel="icon" href="icon.ico" type="image/x-icon"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5em;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 20px 40px;
+      background: #000;
+      z-index: 10;
+      transition: transform 0.4s ease;
+    }
+    header.hide {
+      transform: translateY(-100%);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+      justify-content: flex-end;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1em;
+      transition: transform 0.2s ease-in-out;
+    }
+    nav a:hover {
+      transform: scale(1.1);
+    }
+    .corner-logo {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 100px;
+      z-index: 11;
+    }
+    .corner-logo img {
+      width: 100%;
+      filter: invert(1);
+    }
+    main {
+      padding-top: 140px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 60px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 60px;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px 20px;
+      text-align: center;
+    }
+    .service {
+      padding: 20px;
+    }
+    .service h2 {
+      font-size: 1.2em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .service p {
+      font-size: 0.9em;
+      color: #ccc;
+      line-height: 1.4em;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+      padding: 40px 20px;
+    }
+    .social-icons {
+      position: fixed;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 99;
+    }
+    .social-icons a {
+      color: #ff0000;
+      font-size: 1.2em;
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-end;
+      }
+      .corner-logo {
+        width: 70px;
+        top: 10px;
+        left: 10px;
+      }
+      h1 { font-size: 2em; }
+      .social-icons { right: 5px; font-size: 1em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="corner-logo">
+    <img src="HELLOIMHERKI.png" alt="Herki logó"/>
+  </div>
+
+  <!-- Social Icons -->
+  <div class="social-icons">
+    <a href="https://instagram.com/helloimherki" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://behance.net/helloimherki" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
+    <a href="https://www.threads.net/@helloimherki" target="_blank" title="Threads"><i class="fab fa-threads"></i></a>
+    <a href="https://tiktok.com/@helloimherki" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+  </div>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Főoldal</a></li>
+        <li><a href="about.html">Rólam</a></li>
+        <li><a href="portfolio.html">Portfólió</a></li>
+        <li><a class="active" href="services.html">Szolgáltatások</a></li>
+        <li><a href="prices.html">Árak</a></li>
+        <li><a href="contact.html">Kapcsolat</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Szolgáltatások</h1>
+<h2 style="color: #ff0000; text-align: center; margin-bottom: 20px;">
+  Szolgáltatásaim külön-külön is megrendelhetők, és ezekre egyedi árajánlatot biztosítok.
+</h2>
+    <div class="grid">
+      <div class="service"><h2>Arculattervezés</h2><p>Kis és nagyarculat</p></div>
+      <div class="service"><h2>Csomagolás tervezés</h2><p>Termékcsomagolás, címke tervezés</p></div>
+      <div class="service"><h2>Nyomdai anyagok</h2><p>Névjegykártya, kiadványszerkesztés, szóróanyag, brosúra</p></div>
+      <div class="service"><h2>Logó tervezés</h2><p>Logókészítés, wordmark, symbol, kombinált logó, embléma, monogram, absztrakt ikon</p></div>
+      <div class="service"><h2>Animáció készítés</h2><p>Logóanimáció</p></div>
+      <div class="service"><h2>Dokumentum</h2><p>PDF, prezentáció, munkalap, háttérkép, napló, workshop anyag, infografika</p></div>
+      <div class="service"><h2>Események</h2><p>Meghívó, ültetőkártya, promóciós anyag, programfüzet</p></div>
+      <div class="service"><h2>Tervezés</h2><p>Címke, matrica, projektterv, edzésterv, táplálkozási napló</p></div>
+      <div class="service"><h2>Social Media</h2><p>Story, poszt, borítókép, banner, thumbnail, profilkép</p></div>
+      <div class="service"><h2>Webdesign</h2><p>Reszponzív UI/UX tervezés egyedi stílusban</p></div>
+      <div class="service"><h2>ÜZLETI MODEL</h2><p>Logó, névjegykártya, ajándékutalvány,szórólap, brosúra, projektterv,üzleti jelentés és összefoglaló,marketing anyag, termékkatalógus,árajánlat, árjegyzék, menü/étlap, hírlevél,plakát, szóróanyag</p></div>
+    </div>
+  </main>
+<div style="text-align: center; margin: 40px 0;">
+  <a href="services.html" style="color: #ffffff; text-decoration: none;">
+    Az egyedi árajánlatokért lépj velem kapcsolatba.
+    <span style="color: #ff0000;"> Klikk →</span>
+  </a>
+</div>
+
+  <footer>
+    <p>© 2025 Hello I'm Herki</p>
+  </footer>
+
+  <script>
+    let lastScroll = window.scrollY;
+    const header = document.querySelector('header');
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > lastScroll && currentScroll > 80) {
+        header.classList.add('hide');
+      } else {
+        header.classList.remove('hide');
+      }
+      lastScroll = currentScroll;
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+

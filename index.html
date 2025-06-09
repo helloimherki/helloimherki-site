@@ -1,184 +1,279 @@
 <!DOCTYPE html>
-
 <html lang="hu">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Hello I'm Herki</title>
-<link href="icon.ico" rel="icon" type="image/x-icon"/>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&amp;display=swap" rel="stylesheet"/>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Hello I'm Herki</title>
+  <link href="icon.ico" rel="icon" type="image/x-icon"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 <style>
-    body {
-      margin: 0;
-      background-color: #000;
-      color: #fff;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.5em;
+  body {
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.5em;
+  }
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 40px;
+    background: #000;
+    z-index: 10;
+    transition: transform 0.4s ease;
+  }
+  header.hide {
+    transform: translateY(-100%);
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: transform 0.2s ease-in-out;
+  }
+  nav a:hover {
+    transform: scale(1.1);
+  }
+  .corner-logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 100px;
+    z-index: 11;
+  }
+  .corner-logo img {
+    width: 100%;
+    filter: invert(1);
+  }
+  main {
+    padding-top: 140px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .hero h1 {
+    font-size: 5em;
+    margin-bottom: 0.3em;
+    text-transform: uppercase;
+    line-height: 0.6;
+  }
+  .line1, .line2 {
+    display: block;
+  }
+  .exclamation {
+    color: #ff0000;
+    animation: pop 1.5s infinite ease-in-out;
+  }
+  @keyframes pop {
+    0%, 100% {
+      transform: scale(1);
     }
-    header {
-      position: fixed;
-      top: 0;
-      right: 0;
-      padding: 20px 40px;
-      z-index: 10;
+    50% {
+      transform: scale(1.2);
     }
+  }
+  .hero p {
+    font-size: 1.2em;
+    color: #ccc;
+  }
+  .hero img {
+    margin-top: 40px;
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  .preview {
+    margin-top: 100px;
+  }
+  .preview h2,
+  .cta h2,
+  .tools h2,
+  .bio h2 {
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+  }
+  .preview-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .preview-grid img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    background-color: #222;
+  }
+  .preview a {
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 1em;
+    color: #ff0000 !important;
+    text-decoration: none;
+  }
+  footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #555;
+    padding: 40px 20px;
+  }
+  .cta, .tools, .bio {
+    margin-top: 100px;
+    text-align: center;
+  }
+  .cta a {
+    color: #ff0000 !important;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .cta p {
+    margin-top: 10px;
+    font-size: 1.1em;
+  }
+  .tools p, .bio p {
+    color: #ccc;
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .social-icons {
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 99;
+  }
+  .social-icons a {
+    color: #ff0000;
+    font-size: 1.2em;
+    text-decoration: none;
+  }
+  @media (max-width: 768px) {
     nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-      margin: 0;
-      padding: 0;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1em;
-      transition: transform 0.2s ease-in-out;
-    }
-    nav a:hover {
-      transform: scale(1.1);
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-end;
     }
     .corner-logo {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      width: 100px;
-      z-index: 10;
-    }
-    .corner-logo img {
-      width: 100%;
-      filter: invert(1);
-    }
-    main {
-      padding-top: 120px;
-      text-align: center;
-      max-width: 1200px;
-      margin: 0 auto;
+      width: 70px;
+      top: 10px;
+      left: 10px;
     }
     .hero h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.3em;
+      font-size: 2em;
     }
     .hero p {
-      font-size: 1.2em;
-      color: #ccc;
-    }
-    .hero img {
-      margin-top: 40px;
-      max-width: 100%;
-      border-radius: 10px;
-    }
-    .preview {
-      margin-top: 100px;
-    }
-    .preview h2 {
-      font-size: 1.8em;
-      margin-bottom: 0.5em;
-    }
-    .preview-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 30px;
+      font-size: 1em;
     }
     .preview-grid img {
-      width: 200px;
-      height: auto;
-      border-radius: 10px;
-      object-fit: cover;
-      background-color: #222;
+      width: 100%;
+      max-width: 300px;
     }
-    .preview a {
-      display: inline-block;
-      margin-top: 30px;
+    .social-icons {
+      right: 5px;
       font-size: 1em;
-      color: #fff;
-      text-decoration: underline;
     }
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #555;
-      padding: 40px 20px;
-    }
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-end;
-      }
-      .hero h1 { font-size: 2em; }
-      .hero p { font-size: 1em; }
-      .preview-grid img {
-        width: 100%;
-        max-width: 300px;
-      }
-    }
-  
-    .cta, .tools, .bio {
-      margin-top: 100px;
-      text-align: center;
-    }
-    .cta a {
-      color: #fff;
-      text-decoration: underline;
-      font-weight: bold;
-    }
-    
-    .preview a {
-      color: #ff0000 !important;
-    }
-    .cta a {
-      color: #ff0000 !important;
-    }
-    </style>
+  }
+</style>
+
 </head>
 <body>
-<div class="corner-logo">
-<img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/>
-</div>
-<header>
-<nav>
-<ul>
-<li><a class="active" href="index.html">Főoldal</a></li>
-<li><a href="about.html">Rólam</a></li>
-<li><a href="portfolio.html">Portfólió</a></li>
-<li><a href="contact.html">Kapcsolat</a></li>
-</ul>
-</nav>
-</header>
-<main>
-<section class="hero">
-<h1>Hello I'm Herki</h1>
-<p>#branding #logo #webdesign #illustration</p>
-<img alt="Hello I'm Herki logó" src="000.jpg"/>
-</section>
-<section class="preview">
-<h2>Legfrissebb munkáim</h2>
-<div class="preview-grid">
-<img alt="Munka 1" src="munka1.jpg"/>
-<img alt="Munka 2" src="munka2.jpg"/>
-<img alt="Munka 3" src="munka3.jpg"/>
-<img alt="Munka 4" src="munka4.jpg"/>
-</div>
-<a href="portfolio.html">További munkák →</a>
-</section>
-<section class="cta">
-<h2>Készen állsz a közös munkára?</h2>
-<p><a href="contact.html">Lépj velem kapcsolatba →</a></p>
-</section>
-<section class="tools">
-<h2>Amikkel dolgozom</h2>
-<p>Adobe Illustrator, Photoshop, XD</p>
-</section>
-<section class="bio">
-<h2>Kicsit rólam</h2>
-<p>Szenvedélyesen tervezek vizuális világokat. 2 éve foglalkozom arculatokkal, illusztrációval és webdesignnal.</p>
-</section>
-</main>
-<footer>
-<p>© 2025 Hello I'm Herki</p>
-</footer>
+  <div class="corner-logo">
+    <img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/>
+  </div>
+
+  <!-- Social Icons -->
+  <div class="social-icons">
+    <a href="https://instagram.com/helloimherki" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://behance.net/helloimherki" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
+    <a href="https://www.threads.net/@helloimherki" target="_blank" title="Threads"><i class="fab fa-threads"></i></a>
+    <a href="https://tiktok.com/@helloimherki" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+  </div>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a class="active" href="index.html">Főoldal</a></li>
+        <li><a href="about.html">Rólam</a></li>
+        <li><a href="portfolio.html">Portfólió</a></li>
+        <li><a href="services.html">Szolgáltatások</a></li>
+        <li><a href="prices.html">Árak</a></li>
+        <li><a href="contact.html">Kapcsolat</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>
+        <span class="line1">HELLO<span class="exclamation">!</span></span><br>
+        <span class="line2">IM HERKI</span>
+      </h1>
+    </section>
+
+    <section class="preview">
+      <h2>LEGFRISSEBB MUNKÁIM</h2>
+      <div class="preview-grid">
+        <img alt="Munka 1" src="munka1.jpg"/>
+        <img alt="Munka 2" src="munka2.jpg"/>
+        <img alt="Munka 3" src="munka3.jpg"/>
+        <img alt="Munka 4" src="munka4.jpg"/>
+      </div>
+      <a href="portfolio.html">További munkák →</a>
+    </section>
+
+    <section class="cta">
+      <h2>KÉSZEN ÁLLSZ A KÖZÖS MUNKÁRA?</h2>
+      <p><a href="contact.html">Lépj velem kapcsolatba →</a></p>
+    </section>
+
+    <section class="tools">
+      <h2>AMIKKEL DOLGOZOM</h2>
+      <p>Adobe Illustrator, Photoshop, XD</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Hello I'm Herki</p>
+  </footer>
+
+  <script>
+    let lastScroll = window.scrollY;
+    const header = document.querySelector("header");
+
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > lastScroll && currentScroll > 100) {
+        header.classList.add("hide");
+      } else {
+        header.classList.remove("hide");
+      }
+      lastScroll = currentScroll;
+    });
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
