@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello I'm Herki</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="icon.ico" type="image/x-icon"/>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 <style>
@@ -169,62 +169,32 @@
     font-size: 1.2em;
     text-decoration: none;
   }
- @media (max-width: 768px) {
-  header {
-    padding: 10px 20px;
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-end;
+    }
+    .corner-logo {
+      width: 70px;
+      top: 10px;
+      left: 10px;
+    }
+    .hero h1 {
+      font-size: 2em;
+    }
+    .hero p {
+      font-size: 1em;
+    }
+    .preview-grid img {
+      width: 100%;
+      max-width: 300px;
+    }
+    .social-icons {
+      right: 5px;
+      font-size: 1em;
+    }
   }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-end;
-  }
-
-  .corner-logo {
-    width: 60px;
-    top: 10px;
-    left: 10px;
-  }
-
-  .hero h1 {
-    font-size: 2.2em;
-    line-height: 1.2;
-  }
-
-  .hero p {
-    font-size: 1em;
-    padding: 0 15px;
-  }
-
-  .preview-grid img {
-    width: 100%;
-    max-width: 90%;
-    margin: 0 auto;
-  }
-
-  .social-icons {
-    position: static;
-    flex-direction: row;
-    justify-content: center;
-    margin: 30px 0;
-    gap: 15px;
-  }
-
-  .tools p, .bio p {
-    padding: 0 20px;
-    max-width: 100%;
-    font-size: 1em;
-  }
-
-  .cta p {
-    padding: 0 15px;
-  }
-
-  footer {
-    font-size: 0.8em;
-    padding: 30px 10px;
-  }
-}
 </style>
 
 </head>
@@ -234,25 +204,29 @@
   </div>
 
   <!-- Social Icons -->
-  <div class="social-icons">
-    <a href="https://instagram.com/helloimherki" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://behance.net/helloimherki" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
-    <a href="https://www.threads.net/@helloimherki" target="_blank" title="Threads"><i class="fab fa-threads"></i></a>
-    <a href="https://tiktok.com/@helloimherki" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-  </div>
+  <div class="hamburger" onclick="toggleMenu()">
+  <i class="fas fa-bars"></i>
+</div>
 
-  <header>
-    <nav>
-      <ul>
-        <li><a class="active" href="index.html">Főoldal</a></li>
-        <li><a href="about.html">Rólam</a></li>
-        <li><a href="portfolio.html">Portfólió</a></li>
-        <li><a href="services.html">Szolgáltatások</a></li>
-        <li><a href="prices.html">Árak</a></li>
-        <li><a href="contact.html">Kapcsolat</a></li>
-      </ul>
-    </nav>
-  </header>
+<div class="social-icons">
+  <a href="https://instagram.com/helloimherki" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://behance.net/helloimherki" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
+  <a href="https://www.threads.net/@helloimherki" target="_blank" title="Threads"><i class="fab fa-threads"></i></a>
+  <a href="https://tiktok.com/@helloimherki" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+</div>
+
+<header>
+  <nav>
+    <ul>
+      <li><a class="active" href="index.html">Főoldal</a></li>
+      <li><a href="about.html">Rólam</a></li>
+      <li><a href="portfolio.html">Portfólió</a></li>
+      <li><a href="services.html">Szolgáltatások</a></li>
+      <li><a href="prices.html">Árak</a></li>
+      <li><a href="contact.html">Kapcsolat</a></li>
+    </ul>
+  </nav>
+</header>
 
   <main>
     <section class="hero">
@@ -290,7 +264,12 @@
   </footer>
 
   <script>
-    let lastScroll = window.scrollY;
+    function toggleMenu() {
+  const menu = document.querySelector("nav ul");
+  menu.classList.toggle("open");
+}
+
+let lastScroll = window.scrollY;
     const header = document.querySelector("header");
 
     window.addEventListener("scroll", () => {

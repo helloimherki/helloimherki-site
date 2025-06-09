@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kapcsolat – Hello I'm Herki</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="icon.ico" type="image/x-icon"/>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
@@ -270,7 +270,335 @@ footer {
 </div>
 
   <script>
-    let lastScroll = window.scrollY;
+    function toggleMenu() {
+  const menu = document.querySelector("nav ul");
+  menu.classList.toggle("open");
+}
+
+let lastScroll = window.scrollY;
+    const header = document.querySelector('header');
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > lastScroll && currentScroll > 80) {
+        header.classList.add('hide');
+      } else {
+        header.classList.remove('hide');
+      }
+      lastScroll = currentScroll;
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<div class="hamburger" onclick="toggleMenu()">
+  <i class="fas fa-bars"></i>
+</div>
+
+<div class="social-icons">
+  <a href="https://instagram.com/helloimherki" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://behance.net/helloimherki" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
+  <a href="https://www.threads.net/@helloimherki" target="_blank" title="Threads"><i class="fab fa-threads"></i></a>
+  <a href="https://tiktok.com/@helloimherki" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+</div>
+
+<header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Főoldal</a></li>
+        <li><a href="about.html">Rólam</a></li>
+        <li><a href="portfolio.html">Portfólió</a></li>
+        <li><a href="services.html">Szolgáltatások</a></li>
+        <li><a href="prices.html">Árak</a></li>
+        <li><a class="active" href="contact.html">Kapcsolat</a></li>
+      </ul>
+    </nav>
+  </header>E html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kapcsolat – Hello I'm Herki</title>
+  <link rel="icon" href="icon.ico" type="image/x-icon"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5em;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 20px 40px;
+      background: #000;
+      z-index: 10;
+      transition: transform 0.4s ease;
+    }
+    header.hide {
+      transform: translateY(-100%);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+      justify-content: flex-end;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1em;
+      transition: transform 0.2s ease-in-out;
+    }
+    nav a:hover {
+      transform: scale(1.1);
+    }
+    .corner-logo {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 100px;
+      z-index: 11;
+    }
+    .corner-logo img {
+      width: 100%;
+      filter: invert(1);
+    }
+    main {
+      padding-top: 140px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+      padding-bottom: 60px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 1em;
+      text-transform: uppercase;
+    }
+    p {
+      margin-bottom: 1em;
+      line-height: 1.5em;
+      font-size: 1.2em;
+      color: #ccc;
+    }
+    .contact-img {
+      width: 100%;
+      max-width: 600px;
+      margin: 40px auto;
+      display: block;
+      border-radius: 10px;
+    }
+    .contact-boxes {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      align-items: center;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+    .info-box {
+      text-align: center;
+      flex: 1 1 200px;
+    }
+    .info-data {
+      color: #fff;
+      font-size: 1em;
+      margin-bottom: 6px;
+    }
+    .info-label {
+      color: #888;
+      font-size: 0.7em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .divider {
+      width: 1px;
+      height: 50px;
+      background-color: #444;
+    }
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      font-size: 0.9em;
+      margin-top: 40px;
+    }
+    .contact-links a {
+      color: #ff0000;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+    .contact-links i {
+      margin-right: 8px;
+      font-size: 1em;
+    }
+    .whatsapp-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: none;
+      color: #ff0000;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      font-weight: bold;
+      margin-top: 40px;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+      padding: 40px 20px;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-end;
+      }
+      .corner-logo {
+        width: 70px;
+        top: 10px;
+        left: 10px;
+      }
+      h1 { font-size: 2em; }
+      p { font-size: 1em; }
+      .divider {
+        display: none;
+      }
+      .contact-flex {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.contact-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-image {
+  flex: 1;
+  text-align: center;
+  min-width: 300px;
+}
+.contact-banner {
+  background-image: url('images/contact.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 300px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.6); /* áttetsző fekete háttér */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9em;
+}
+    }
+  </style>
+</head>
+<body>
+  <div class="corner-logo">
+    <img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/>
+  </div>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Főoldal</a></li>
+        <li><a href="about.html">Rólam</a></li>
+        <li><a href="portfolio.html">Portfólió</a></li>
+        <li><a href="services.html">Szolgáltatások</a></li>
+        <li><a href="prices.html">Árak</a></li>
+        <li><a class="active" href="contact.html">Kapcsolat</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+  <h1>Kapcsolat</h1>
+
+  <div class="contact-flex">
+    <div class="contact-text">
+      <div class="contact-boxes">
+        <div class="info-box">
+          <div class="info-data">
+            <a href="mailto:hello@helloimherki.com" style="color:#fff; text-decoration:none;">hello@helloimherki.com</a>
+          </div>
+          <div class="info-label">EMAIL</div>
+        </div>
+        <div class="divider"></div>
+        <div class="info-box">
+          <div class="info-data">1131 BUDAPEST, MAGYARORSZÁG</div>
+          <div class="info-label">CÍM</div>
+        </div>
+        <div class="divider"></div>
+        <div class="info-box">
+          <div class="info-data">+36 20 239 5307</div>
+          <div class="info-label">TELEFON</div>
+        </div>
+      </div>
+
+      <div class="contact-links">
+        <p><a href="https://instagram.com/helloimherki" target="_blank"><i class="fab fa-instagram"></i>Instagram</a></p>
+        <p><a href="https://behance.net/helloimherki" target="_blank"><i class="fab fa-behance"></i>Behance</a></p>
+        <p><a href="https://www.threads.net/@helloimherki" target="_blank"><i class="fab fa-threads"></i>Threads</a></p>
+        <p><a href="https://www.tiktok.com/@helloimherki" target="_blank"><i class="fab fa-tiktok"></i>TikTok</a></p>
+      </div>
+
+      <div>
+        <a href="https://wa.me/36202395307" target="_blank" class="whatsapp-link">
+          <i class="fab fa-whatsapp"></i> ÍRJ WHATSAPPON
+        </a>
+      </div>
+    </div>
+  </main>
+
+ <div class="contact-banner">
+  <footer>
+    <p>© 2025 Hello I'm Herki</p>
+  </footer>
+</div>
+
+  <script>
+    function toggleMenu() {
+  const menu = document.querySelector("nav ul");
+  menu.classList.toggle("open");
+}
+
+let lastScroll = window.scrollY;
     const header = document.querySelector('header');
 
     window.addEventListener('scroll', () => {
