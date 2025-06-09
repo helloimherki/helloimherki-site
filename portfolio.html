@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfólió – Hello I'm Herki</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="icon.ico" type="image/x-icon"/>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
   <style>
@@ -142,7 +142,7 @@
   </div>
 
   <!-- Social Icons -->
- <div class="hamburger" onclick="toggleMenu()">
+  <div class="hamburger" onclick="toggleMenu()">
   <i class="fas fa-bars"></i>
 </div>
 
@@ -166,7 +166,6 @@
   </nav>
 </header>
 
-
   <main>
     <h1>Portfólió</h1>
     <p>#branding #logo #webdesign #illustration</p>
@@ -188,26 +187,25 @@
     <p>© 2025 Hello I'm Herki</p>
   </footer>
 
-<script>
-  function toggleMenu() {
-    const menu = document.querySelector("nav ul");
-    menu.classList.toggle("open");
-  }
+  <script>
+    function toggleMenu() {
+  const menu = document.querySelector("nav ul");
+  menu.classList.toggle("open");
+}
 
-  let lastScroll = window.scrollY;
-  const header = document.querySelector("header");
+let lastScroll = window.scrollY;
+    const header = document.querySelector('header');
 
-  window.addEventListener("scroll", () => {
-    const currentScroll = window.scrollY;
-    if (currentScroll > lastScroll && currentScroll > 100) {
-      header.classList.add("hide");
-    } else {
-      header.classList.remove("hide");
-    }
-    lastScroll = currentScroll;
-  });
-</script>
-
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > lastScroll && currentScroll > 80) {
+        header.classList.add('hide');
+      } else {
+        header.classList.remove('hide');
+      }
+      lastScroll = currentScroll;
+    });
+  </script>
 </body>
 </html>
 
