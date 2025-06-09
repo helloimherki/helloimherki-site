@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfólió – Hello I'm Herki</title>
-  <link rel="icon" href="icon.ico" type="image/x-icon"/>
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
   <style>
@@ -187,25 +187,36 @@
     <p>© 2025 Hello I'm Herki</p>
   </footer>
 
-  <script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
     function toggleMenu() {
-  const menu = document.querySelector("nav ul");
-  menu.classList.toggle("open");
-}
+      const menu = document.querySelector("nav ul");
+      if (menu) {
+        menu.classList.toggle("open");
+      }
+    }
 
-let lastScroll = window.scrollY;
-    const header = document.querySelector('header');
+    const header = document.querySelector("header");
+    let lastScroll = window.scrollY;
 
-    window.addEventListener('scroll', () => {
+    window.addEventListener("scroll", () => {
       const currentScroll = window.scrollY;
       if (currentScroll > lastScroll && currentScroll > 80) {
-        header.classList.add('hide');
+        header.classList.add("hide");
       } else {
-        header.classList.remove('hide');
+        header.classList.remove("hide");
       }
       lastScroll = currentScroll;
     });
-  </script>
+
+    // Hamburger gombra eseményfigyelő
+    const hamburger = document.querySelector(".hamburger");
+    if (hamburger) {
+      hamburger.addEventListener("click", toggleMenu);
+    }
+  });
+</script>
+
 </body>
 </html>
 
