@@ -197,40 +197,18 @@
   }
 }
 
-
-@media (max-width: 768px) {
-  nav ul {
-    background-color: #000;
-    padding: 20px;
-    border: none;
-    position: absolute;
-    top: 80px;
-    right: 20px;
-    width: auto;
-    box-shadow: none;
-    z-index: 999;
-  }
-
-  nav ul.open {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  nav ul:not(.open) {
-    display: none;
-  }
-}
 </style>
 </link></head>
 <body>
+<div class="hamburger" onclick="toggleMenu()">
+<i class="fas fa-bars"></i>
+</div>
+
 <div class="corner-logo">
 <img alt="Herki logó" src="HELLOIMHERKI.png"/>
 </div>
 <!-- Social Icons -->
-<div class="hamburger" onclick="toggleMenu()">
-<i class="fas fa-bars"></i>
-</div>
+
 <div class="social-icons">
 <a href="https://instagram.com/helloimherki" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
 <a href="https://behance.net/helloimherki" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
@@ -241,9 +219,7 @@
 <div class="corner-logo">
 <img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/>
 </div>
-<div class="hamburger" onclick="toggleMenu()">
-<i class="fas fa-bars"></i>
-</div>
+
 </div>
 <header>
 <nav>
@@ -277,44 +253,29 @@
 </div>
 </main>
 <div style="text-align: center; margin: 40px 0;">
-<a href="contact.html" style="color: #ffffff; text-decoration: none;">
-  Az egyedi árajánlatokért lépj velem kapcsolatba.
-  <span style="color: #ff0000;"> Klikk →</span>
+<a href="services.html" style="color: #ffffff; text-decoration: none;">
+    Az egyedi árajánlatokért lépj velem kapcsolatba.
+    <span style="color: #ff0000;"> Klikk →</span>
 </a>
 </div>
 <footer>
 <p>© 2025 Hello I'm Herki</p>
 </footer>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    function toggleMenu() {
-      const menu = document.querySelector("nav ul");
-      if (menu) {
-        menu.classList.toggle("open");
-      }
-    }
 
+
+<script>
+  function toggleMenu() {
+    const menu = document.querySelector("nav ul");
+    if (menu) {
+      menu.classList.toggle("open");
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.querySelector(".hamburger");
     if (hamburger) {
       hamburger.addEventListener("click", toggleMenu);
     }
-
-    const header = document.querySelector("header");
-    let lastScroll = window.scrollY;
-
-    window.addEventListener("scroll", () => {
-      const currentScroll = window.scrollY;
-      if (currentScroll > lastScroll && currentScroll > 80) {
-        header.classList.add("hide");
-        const logo = document.querySelector(".corner-logo");
-        if (logo) logo.style.display = "none";
-      } else {
-        header.classList.remove("hide");
-        const logo = document.querySelector(".corner-logo");
-        if (logo) logo.style.display = "block";
-      }
-      lastScroll = currentScroll;
-    });
   });
 </script>
 </body>

@@ -290,36 +290,14 @@ footer {
 }
 
 .corner-logo.hide { transform: translateY(-100%); transition: transform 0.4s ease; }
-
-@media (max-width: 768px) {
-  nav ul {
-    background-color: #000;
-    padding: 20px;
-    border: none;
-    position: absolute;
-    top: 80px;
-    right: 20px;
-    width: auto;
-    box-shadow: none;
-    z-index: 999;
-  }
-
-  nav ul.open {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  nav ul:not(.open) {
-    display: none;
-  }
-}
 </style>
 </head>
 <body>
 <div class="hamburger" onclick="toggleMenu()">
 <i class="fas fa-bars"></i>
 </div>
+
+
 <div class="corner-logo">
 <img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/>
 </div>
@@ -327,9 +305,7 @@ footer {
 <div class="corner-logo">
 <img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/>
 </div>
-<div class="hamburger" onclick="toggleMenu()">
-<i class="fas fa-bars"></i>
-</div>
+
 </div>
 <header>
 <nav>
@@ -383,36 +359,17 @@ footer {
 <p>© 2025 Hello I'm Herki</p>
 </footer>
 </div>
+
+
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    function toggleMenu() {
-      const menu = document.querySelector("nav ul");
-      if (menu) {
-        menu.classList.toggle("open");
-      }
+  function toggleMenu() {
+    const menu = document.querySelector("nav ul");
+    if (menu) {
+      menu.classList.toggle("open");
     }
+  }
 
-    const header = document.querySelector("header");
-    let 
-lastScroll = window.scrollY;
-const logo = document.querySelector('.corner-logo');
-
-
-    window.addEventListener("scroll", () => {
-      const currentScroll = window.scrollY;
-      
-if (currentScroll > lastScroll && currentScroll > 80) {
-  header.classList.add("hide");
-  if (logo) logo.classList.add("hide");
-} else {
-  header.classList.remove("hide");
-  if (logo) logo.classList.remove("hide");
-}
-
-      lastScroll = currentScroll;
-    });
-
-    // Hamburger gombra eseményfigyelő
+  document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.querySelector(".hamburger");
     if (hamburger) {
       hamburger.addEventListener("click", toggleMenu);
