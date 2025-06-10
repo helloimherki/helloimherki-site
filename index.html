@@ -4,12 +4,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Hello I'm Herki</title>
+<title>
+   Hello I'm Herki
+  </title>
 <link href="style.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-<style>
-  body {
+<style>body {
     margin: 0;
     background-color: #000;
     color: #fff;
@@ -351,60 +352,254 @@
     display: none;
   }
 }
+
+/* EGYSÉGESÍTETT MOBIL CSS BLOKK */
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+  }
+  .corner-logo {
+    width: 70px;
+    top: 10px;
+    left: 10px;
+  }
+  main h1 { font-size: 2em; }
+  main p { font-size: 1em; }
+  .social-icons { right: 5px; font-size: 1em; }
+  .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    z-index: 12;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  header {
+    top: 70px; /* header lejjebb tolva a fekete sáv miatt */
+  }
+
+  .corner-logo {
+    position: static;
+    width: 70px;
+  }
+
+  .hamburger {
+    color: #fff;
+    font-size: 1.8em;
+    cursor: pointer;
+  }
+
+  nav ul {
+    background-color: #000;
+    padding: 20px;
+    border: none;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    width: auto;
+    box-shadow: none;
+    z-index: 999;
+  }
+
+  nav ul.open {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav ul:not(.open) {
+    display: none;
+  }
+
+  .social-icons {
+    display: none;
+  }
+}
+
+/* Javított mobil hamburger */
+
+@media (max-width: 768px) {
+  .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #000;
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 999;
+  }
+
+  nav ul.open {
+    display: flex;
+  }
+
+  .hamburger {
+    color: #fff;
+    font-size: 1.8em;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .corner-logo img {
+    width: 70px;
+  }
+
+  .social-icons {
+    display: none;
+  }
+}
 </style>
 </head>
-<body><div class="top-bar"><div class="corner-logo"><img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/></div><div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div></div>
+<body>
+<div class="corner-logo">
+<img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/>
+</div>
+<div class="hamburger" onclick="toggleMenu()">
+<i class="fas fa-bars">
+</i>
+</div>
+<div class="top-bar">
+<div class="corner-logo">
+<img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/>
+</div>
+<div class="hamburger" onclick="toggleMenu()">
+<i class="fas fa-bars">
+</i>
+</div>
+</div>
 <!-- Social Icons -->
 <div class="social-icons">
-<a href="https://instagram.com/helloimherki" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-<a href="https://behance.net/helloimherki" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
-<a href="https://www.threads.net/@helloimherki" target="_blank" title="Threads"><i class="fab fa-threads"></i></a>
-<a href="https://tiktok.com/@helloimherki" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+<a href="https://instagram.com/helloimherki" target="_blank" title="Instagram">
+<i class="fab fa-instagram">
+</i>
+</a>
+<a href="https://behance.net/helloimherki" target="_blank" title="Behance">
+<i class="fab fa-behance">
+</i>
+</a>
+<a href="https://www.threads.net/@helloimherki" target="_blank" title="Threads">
+<i class="fab fa-threads">
+</i>
+</a>
+<a href="https://tiktok.com/@helloimherki" target="_blank" title="TikTok">
+<i class="fab fa-tiktok">
+</i>
+</a>
 </div>
 <header>
 <nav>
 <ul>
-<li><a class="active" href="index.html">Főoldal</a></li>
-<li><a href="about.html">Rólam</a></li>
-<li><a href="portfolio.html">Portfólió</a></li>
-<li><a href="services.html">Szolgáltatások</a></li>
-<li><a href="prices.html">Árak</a></li>
-<li><a href="contact.html">Kapcsolat</a></li>
+<li>
+<a class="active" href="index.html">
+       Főoldal
+      </a>
+</li>
+<li>
+<a href="about.html">
+       Rólam
+      </a>
+</li>
+<li>
+<a href="portfolio.html">
+       Portfólió
+      </a>
+</li>
+<li>
+<a href="services.html">
+       Szolgáltatások
+      </a>
+</li>
+<li>
+<a href="prices.html">
+       Árak
+      </a>
+</li>
+<li>
+<a href="contact.html">
+       Kapcsolat
+      </a>
+</li>
 </ul>
 </nav>
 </header>
 <main>
 <section class="hero">
 <h1>
-<span class="line1">HELLO<span class="exclamation">!</span></span><br/>
-<span class="line2">IM HERKI</span>
+<span class="line1">
+      HELLO
+      <span class="exclamation">
+       !
+      </span>
+</span>
+<br/>
+<span class="line2">
+      IM HERKI
+     </span>
 </h1>
 </section>
 <section class="preview">
-<h2>LEGFRISSEBB MUNKÁIM</h2>
+<h2>
+     LEGFRISSEBB MUNKÁIM
+    </h2>
 <div class="preview-grid">
 <img alt="Munka 1" src="munka1.jpg"/>
 <img alt="Munka 2" src="munka2.jpg"/>
 <img alt="Munka 3" src="munka3.jpg"/>
 <img alt="Munka 4" src="munka4.jpg"/>
 </div>
-<a href="portfolio.html">További munkák →</a>
+<a href="portfolio.html">
+     További munkák →
+    </a>
 </section>
 <section class="cta">
-<h2>KÉSZEN ÁLLSZ A KÖZÖS MUNKÁRA?</h2>
-<p><a href="contact.html">Lépj velem kapcsolatba →</a></p>
+<h2>
+     KÉSZEN ÁLLSZ A KÖZÖS MUNKÁRA?
+    </h2>
+<p>
+<a href="contact.html">
+      Lépj velem kapcsolatba →
+     </a>
+</p>
 </section>
 <section class="tools">
-<h2>AMIKKEL DOLGOZOM</h2>
-<p>Adobe Illustrator, Photoshop, XD</p>
+<h2>
+     AMIKKEL DOLGOZOM
+    </h2>
+<p>
+     Adobe Illustrator, Photoshop, XD
+    </p>
 </section>
 </main>
 <footer>
-<p>© 2025 Hello I'm Herki</p>
+<p>
+    © 2025 Hello I'm Herki
+   </p>
 </footer>
-
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+   document.addEventListener("DOMContentLoaded", function () {
   function toggleMenu() {
     const menu = document.querySelector("nav ul");
     if (menu) {
@@ -417,5 +612,6 @@ document.addEventListener("DOMContentLoaded", function () {
     hamburger.addEventListener("click", toggleMenu);
   }
 });
-</script></body>
+  </script>
+</body>
 </html>
