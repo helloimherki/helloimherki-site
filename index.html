@@ -11,12 +11,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 <style>body {
-    margin: 0;
-    background-color: #000;
-    color: #fff;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.5em;
-  }
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.5em;
+  background-image: url('herkiface.png.png');
+  background-size: 150%;
+  background-position: left center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
   header {
     position: fixed;
     top: 0;
@@ -474,22 +487,18 @@
 </style>
 </head>
 <body>
-<div class="corner-logo">
-<img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/>
-</div>
-<div class="hamburger" onclick="toggleMenu()">
-<i class="fas fa-bars">
-</i>
-</div>
 <div class="top-bar">
 <div class="corner-logo">
 <img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/>
 </div>
 <div class="hamburger" onclick="toggleMenu()">
-<i class="fas fa-bars">
-</i>
+<i class="fas fa-bars"></i>
 </div>
 </div>
+
+
+
+
 <!-- Social Icons -->
 <div class="social-icons">
 <a href="https://instagram.com/helloimherki" target="_blank" title="Instagram">
