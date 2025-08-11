@@ -1,647 +1,160 @@
 <!DOCTYPE html>
-
 <html lang="hu">
-<header>
-<nav>
-<ul>
-<li>
-<a href="index.html">
-      Főoldal
-     </a>
-</li>
-<li>
-<a href="about.html">
-      Rólam
-     </a>
-</li>
-<li>
-<a href="portfolio.html">
-      Portfólió
-     </a>
-</li>
-<li>
-<a href="services.html">
-      Szolgáltatások
-     </a>
-</li>
-<li>
-<a href="prices.html">
-      Árak
-     </a>
-</li>
-<li>
-<a class="active" href="contact.html">
-      Kapcsolat
-     </a>
-</li>
-</ul>
-</nav>
-</header>
- E html&gt;
- <html lang="hu">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>
-    Kapcsolat – Hello I'm Herki
-   </title>
-<link href="icon.ico" rel="icon" type="image/x-icon"/>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-<style>html { overflow-x: hidden; }
-    body {
-  overflow-x: hidden;
-      margin: 0;
-      background-color: #000;
-      color: #fff;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.5em;
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kapcsolat – Hello I'm Herki</title>
+  <link rel="icon" href="icon.ico" type="image/x-icon"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+
+  <style>
+    :root{
+      --bg:#000; --fg:#fff; --accent:#ff0000; --muted:#ccc;
+      --header-h:80px;
     }
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding: 20px 40px;
-      background: #000;
-      z-index: 10;
-      transition: transform 0.4s ease;
+    body{
+      margin:0; background:var(--bg); color:var(--fg);
+      font-family:'Barlow Condensed',sans-serif; font-size:1.5em;
     }
-    header.hide {
-      transform: translateY(-100%);
+
+    /* Fejléc */
+    header{
+      position:fixed; top:0; left:0; right:0;
+      background:#000; z-index:1000;
+      border-bottom:1px solid rgba(255,255,255,.06);
     }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-      margin: 0;
-      padding: 0;
-      justify-content: flex-end;
+    .menu-bar{
+      height:var(--header-h);
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 40px; gap:24px;
     }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1em;
-      transition: transform 0.2s ease-in-out;
+    .menu-logo img{
+      height:48px; filter:invert(1);
     }
-    nav a:hover {
-      transform: scale(1.1);
+    nav ul{
+      list-style:none; margin:0; padding:0;
+      display:flex; gap:30px; align-items:center;
     }
-    .corner-logo {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      width: 100px;
-      z-index: 11;
+    nav a{
+      color:var(--fg); text-decoration:none; font-size:1em;
+      transition:transform .2s ease-in-out, opacity .2s ease-in-out;
     }
-    .corner-logo img {
-      width: 100%;
-      filter: invert(1);
+    nav a:hover{ transform:scale(1.07) }
+    nav a.active{ color:var(--fg) }
+    .hamburger{
+      display:none; font-size:1.6em; color:#fff; cursor:pointer;
+      background:none; border:none;
     }
-    main {
-      padding-top: 140px;
-      max-width: 1000px;
-      margin: 0 auto;
-      text-align: center;
-      padding-bottom: 60px;
+
+    main{
+      padding-top:calc(var(--header-h) + 60px);
+      max-width:1000px; margin:0 auto; text-align:center; padding-bottom:60px;
     }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 1em;
-      text-transform: uppercase;
+    h1{ font-size:2.5em; margin-bottom:1em; text-transform:uppercase }
+    p{ margin-bottom:1em; line-height:1.5em; font-size:1.2em; color:var(--muted) }
+
+    .contact-boxes{
+      display:flex; justify-content:center; gap:40px; align-items:center;
+      margin:40px 0; flex-wrap:wrap;
     }
-    p {
-      margin-bottom: 1em;
-      line-height: 1.5em;
-      font-size: 1.2em;
-      color: #ccc;
+    .info-box{text-align:center; flex:1 1 200px;}
+    .info-data{color:#fff; font-size:1em; margin-bottom:6px;}
+    .info-label{color:#888; font-size:.7em; text-transform:uppercase; letter-spacing:1px;}
+    .divider{width:1px; height:50px; background:#444;}
+    .contact-links{
+      display:flex; flex-wrap:wrap; gap:30px; justify-content:center;
+      font-size:.9em; margin-top:40px;
     }
-    .contact-img {
-      width: 100%;
-      max-width: 600px;
-      margin: 40px auto;
-      display: block;
-      border-radius: 10px;
+    .contact-links a{color:var(--accent); text-decoration:none; display:flex; align-items:center;}
+    .contact-links i{margin-right:8px; font-size:1em;}
+    .whatsapp-link{
+      display:inline-flex; align-items:center; gap:10px;
+      color:var(--accent); text-transform:uppercase;
+      font-size:.9em; font-weight:bold; margin-top:40px; text-decoration:none;
     }
-    .contact-boxes {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      align-items: center;
-      margin: 40px 0;
-      flex-wrap: wrap;
-    }
-    .info-box {
-      text-align: center;
-      flex: 1 1 200px;
-    }
-    .info-data {
-      color: #fff;
-      font-size: 1em;
-      margin-bottom: 6px;
-    }
-    .info-label {
-      color: #888;
-      font-size: 0.7em;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .divider {
-      width: 1px;
-      height: 50px;
-      background-color: #444;
-    }
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
-      font-size: 0.9em;
-      margin-top: 40px;
-    }
-    .contact-links a {
-      color: #ff0000;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-    }
-    .contact-links i {
-      margin-right: 8px;
-      font-size: 1em;
-    }
-    .whatsapp-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: none;
-      color: #ff0000;
-      text-transform: uppercase;
-      font-size: 0.9em;
-      font-weight: bold;
-      margin-top: 40px;
-      text-decoration: none;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #555;
-      padding: 40px 20px;
-    }
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-end;
+    footer{text-align:center; font-size:.9em; color:#555; padding:40px 20px;}
+
+    /* Mobil */
+    @media (max-width:768px){
+      :root{--header-h:64px}
+      .menu-bar{padding:0 16px;}
+      .menu-logo img{height:40px;}
+      .hamburger{display:block;}
+      nav{
+        position:absolute; top:var(--header-h); right:0; left:0;
+        background:#000; display:none;
       }
-      .corner-logo {
-        width: 70px;
-        top: 10px;
-        left: 10px;
+      nav.open{display:block;}
+      nav ul{
+        flex-direction:column; align-items:flex-start;
+        gap:16px; padding:20px;
       }
-      h1 { font-size: 2em; }
-      p { font-size: 1em; }
-      .divider {
-        display: none;
-      }
-      .contact-flex {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-
-.contact-text {
-  flex: 1;
-  min-width: 300px;
-}
-
-.contact-image {
-  flex: 1;
-  text-align: center;
-  min-width: 300px;
-}
-.contact-banner {
-  background-image: url('images/contact.jpg');
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 300px;
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  z-index: 2;
-  background: rgba(0, 0, 0, 0.6); /* áttetsző fekete háttér */
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  font-size: 0.9em;
-}
+      .divider{display:none;}
+      h1{font-size:2em;}
+      p{font-size:1em;}
     }
-  
-.hamburger {
-  display: none;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 20;
-  cursor: pointer;
-}
-.hamburger i {
-  font-size: 1.5em;
-  color: #fff;
-}
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-  nav ul {
-    display: none;
-    background-color: #000;
-    position: absolute;
-    top: 80px;
-    right: 20px;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px #000;
-  }
-  nav ul.open {
-    display: flex;
-  }
-  .top-bar {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .top-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #000;
-    z-index: 12;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-  }
-
-  header {
-    top: 70px; /* header lejjebb tolva a fekete sáv miatt */
-  }
-
-  .corner-logo {
-    position: static;
-    width: 70px;
-  }
-
-  .hamburger {
-    color: #fff;
-    font-size: 1.8em;
-    cursor: pointer;
-  }
-}
-
-}
-
-.corner-logo.hide { transform: translateY(-100%); transition: transform 0.4s ease; }
-
-/* Hamburger csak mobilon */
-.hamburger {
-  display: none;
-}
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-    position: fixed;
-    top: 10px;
-    right: 20px;
-    z-index: 100;
-    color: #fff;
-    font-size: 1.8em;
-    cursor: pointer;
-  }
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background-color: #000;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    text-align: right;
-    padding: 20px;
-  }
-  nav ul.open {
-    display: flex;
-  }
-  .social-icons {
-    display: none !important;
-  }
-}
-@media (min-width: 769px) {
-  .social-panel {
-    display: none !important;
-  }
-}
-
-/* EGYSÉGES MOBIL CSS */
-
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-end;
-  }
-  .corner-logo {
-    width: 70px;
-    top: 10px;
-    left: 10px;
-  }
-  main h1 { font-size: 2em; }
-  main p { font-size: 1em; }
-  .social-icons { right: 5px; font-size: 1em; }
-  .top-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #000;
-    z-index: 12;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-  }
-
-  header {
-    top: 70px; /* header lejjebb tolva a fekete sáv miatt */
-  }
-
-  .corner-logo {
-    position: static;
-    width: 70px;
-  }
-
-  .hamburger {
-    color: #fff;
-    font-size: 1.8em;
-    cursor: pointer;
-  }
-
-  nav ul {
-    background-color: #000;
-    padding: 20px;
-    border: none;
-    position: absolute;
-    top: 80px;
-    right: 20px;
-    width: auto;
-    box-shadow: none;
-    z-index: 999;
-  }
-
-  nav ul.open {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  nav ul:not(.open) {
-    display: none;
-  }
-
-  .social-icons {
-    display: none;
-  }
-}
-
-/* Javított mobil hamburger */
-
-@media (max-width: 768px) {
-  .top-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #000;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-  }
-
-  nav ul {
-    display: none;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background: #000;
-    padding: 20px;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 999;
-  }
-
-  nav ul.open {
-    display: flex;
-  }
-
-  .hamburger {
-    color: #fff;
-    font-size: 1.8em;
-    cursor: pointer;
-    z-index: 1001;
-  }
-
-  .corner-logo img {
-    width: 70px;
-  }
-
-  .social-icons {
-    display: none;
-  }
-}
-</style>
+  </style>
 </head>
 <body>
-<div class="top-bar">
-<div class="corner-logo">
-<img alt="Hello I'm Herki logó" src="HELLOIMHERKI.png"/>
-</div>
-<div class="hamburger" onclick="toggleMenu()">
-<i class="fas fa-bars"></i>
-</div>
-</div>
 
+  <header>
+    <div class="menu-bar">
+      <a class="menu-logo" href="index.html"><img src="HELLOIMHERKI.png" alt="Hello I'm Herki logó"></a>
+      <button class="hamburger" aria-label="Menü"><i class="fas fa-bars"></i></button>
+      <nav>
+        <ul>
+          <li><a href="index.html">Főoldal</a></li>
+          <li><a href="about.html">Rólam</a></li>
+          <li><a href="portfolio.html">Portfólió</a></li>
+          <li><a href="services.html">Szolgáltatások</a></li>
+          <li><a href="prices.html">Árak</a></li>
+          <li><a class="active" href="contact.html">Kapcsolat</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
+  <main>
+    <h1>Kapcsolat</h1>
+    <div class="contact-boxes">
+      <div class="info-box">
+        <div class="info-data"><a href="mailto:hello@helloimherki.com" style="color:#fff; text-decoration:none;">hello@helloimherki.com</a></div>
+        <div class="info-label">EMAIL</div>
+      </div>
+      <div class="divider"></div>
+      <div class="info-box">
+        <div class="info-data">1131 BUDAPEST, MAGYARORSZÁG</div>
+        <div class="info-label">CÍM</div>
+      </div>
+      <div class="divider"></div>
+      <div class="info-box">
+        <div class="info-data">+36 20 239 5307</div>
+        <div class="info-label">TELEFON</div>
+      </div>
+    </div>
 
+    <div class="contact-links">
+      <p><a href="https://instagram.com/helloimherki" target="_blank"><i class="fab fa-instagram"></i>Instagram</a></p>
+      <p><a href="https://behance.net/helloimherki" target="_blank"><i class="fab fa-behance"></i>Behance</a></p>
+      <p><a href="https://www.threads.net/@helloimherki" target="_blank"><i class="fab fa-threads"></i>Threads</a></p>
+      <p><a href="https://www.tiktok.com/@helloimherki" target="_blank"><i class="fab fa-tiktok"></i>TikTok</a></p>
+    </div>
 
-<header>
-<nav>
-<ul>
-<li>
-<a href="index.html">
-        Főoldal
-       </a>
-</li>
-<li>
-<a href="about.html">
-        Rólam
-       </a>
-</li>
-<li>
-<a href="portfolio.html">
-        Portfólió
-       </a>
-</li>
-<li>
-<a href="services.html">
-        Szolgáltatások
-       </a>
-</li>
-<li>
-<a href="prices.html">
-        Árak
-       </a>
-</li>
-<li>
-<a class="active" href="contact.html">
-        Kapcsolat
-       </a>
-</li>
-</ul>
-</nav>
-</header>
-<main>
-<h1>
-     Kapcsolat
-    </h1>
-<div class="contact-flex">
-<div class="contact-text">
-<div class="contact-boxes">
-<div class="info-box">
-<div class="info-data">
-<a href="mailto:hello@helloimherki.com" style="color:#fff; text-decoration:none;">
-          hello@helloimherki.com
-         </a>
-</div>
-<div class="info-label">
-         EMAIL
-        </div>
-</div>
-<div class="divider">
-</div>
-<div class="info-box">
-<div class="info-data">
-         1131 BUDAPEST, MAGYARORSZÁG
-        </div>
-<div class="info-label">
-         CÍM
-        </div>
-</div>
-<div class="divider">
-</div>
-<div class="info-box">
-<div class="info-data">
-         +36 20 239 5307
-        </div>
-<div class="info-label">
-         TELEFON
-        </div>
-</div>
-</div>
-<div class="contact-links">
-<p>
-<a href="https://instagram.com/helloimherki" target="_blank">
-<i class="fab fa-instagram">
-</i>
-         Instagram
-        </a>
-</p>
-<p>
-<a href="https://behance.net/helloimherki" target="_blank">
-<i class="fab fa-behance">
-</i>
-         Behance
-        </a>
-</p>
-<p>
-<a href="https://www.threads.net/@helloimherki" target="_blank">
-<i class="fab fa-threads">
-</i>
-         Threads
-        </a>
-</p>
-<p>
-<a href="https://www.tiktok.com/@helloimherki" target="_blank">
-<i class="fab fa-tiktok">
-</i>
-         TikTok
-        </a>
-</p>
-</div>
-<div>
-<a class="whatsapp-link" href="https://wa.me/36202395307" target="_blank">
-<i class="fab fa-whatsapp">
-</i>
-        ÍRJ WHATSAPPON
-       </a>
-</div>
-</div>
-</div>
-</main>
-<div class="contact-banner">
-<footer>
-<p>
-      © 2025 Hello I'm Herki
-     </p>
-</footer>
-</div>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-    function toggleMenu() {
-      const menu = document.querySelector("nav ul");
-      if (menu) {
-        menu.classList.toggle("open");
-      }
-    }
+    <div>
+      <a class="whatsapp-link" href="https://wa.me/36202395307" target="_blank"><i class="fab fa-whatsapp"></i>ÍRJ WHATSAPPON</a>
+    </div>
+  </main>
 
-    const hamburger = document.querySelector(".hamburger");
-    if (hamburger) {
-      hamburger.addEventListener("click", toggleMenu);
-    }
+  <footer>
+    <p>© 2025 Hello I'm Herki</p>
+  </footer>
 
-    const header = document.querySelector("header");
-    let lastScroll = window.scrollY;
+  <script>
+    const btn=document.querySelector('.hamburger');
+    const nav=document.querySelector('nav');
+    btn.addEventListener('click',()=>nav.classList.toggle('open'));
+  </script>
 
-    window.addEventListener("scroll", () => {
-      const currentScroll = window.scrollY;
-      if (currentScroll > lastScroll && currentScroll > 80) {
-        header.classList.add("hide");
-        const logo = document.querySelector(".corner-logo");
-        if (logo) logo.style.display = "none";
-      } else {
-        header.classList.remove("hide");
-        const logo = document.querySelector(".corner-logo");
-        if (logo) logo.style.display = "block";
-      }
-      lastScroll = currentScroll;
-    });
-  });
-   </script>
 </body>
-</html>
 </html>
