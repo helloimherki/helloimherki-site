@@ -14,8 +14,25 @@
       --header-h:80px;
     }
     body{
-      margin:0; background:var(--bg); color:var(--fg);
-      font-family:'Barlow Condensed',sans-serif; font-size:1.5em;
+      margin:0;
+      background-color: var(--bg);
+      background-image: url('back.png');
+      background-size: cover;
+      background-position: center;
+      color:var(--fg);
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:1.5em;
+      position: relative;
+      z-index: 0;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.95); /* 95% fekete overlay → kép 5%-os láthatóság */
+      pointer-events: none;
+      z-index: -1;
     }
 
     /* Fejléc */
@@ -177,4 +194,5 @@
 
 </body>
 </html>
+
 
