@@ -10,7 +10,6 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 
   <style>
-    /* ===== Alap ===== */
     :root{
       --bg:#000; --fg:#fff; --accent:#ff0000; --muted:#ccc;
       --header-h:80px;
@@ -19,10 +18,6 @@
     body{
       margin:0; background-color:var(--bg); color:var(--fg);
       font-family:'Barlow Condensed',sans-serif; font-size:1.5em;
-      background-image:url('herkiface.png.png');
-      background-size:150%;
-      background-position:left center;
-      background-repeat:no-repeat;
       position:relative; z-index:0;
     }
     body::before{
@@ -30,7 +25,6 @@
       background:rgba(0,0,0,.6); z-index:-1;
     }
 
-    /* ===== Fix fekete menüsor: logó balra, menü jobbra (azonos az about.html-lel) ===== */
     header{
       position:fixed; top:0; left:0; right:0;
       background:#000; z-index:1000;
@@ -46,7 +40,6 @@
       list-style:none; margin:0; padding:0;
       display:flex; align-items:center; gap:30px;
     }
-    /* ← ez a blokk 1:1 az about.html-ből */
     nav a{
       color:var(--fg); text-decoration:none; font-size:1em;
       transition:transform .2s ease-in-out, opacity .2s ease-in-out;
@@ -58,24 +51,23 @@
       display:none; font-size:1.6em; color:#fff; cursor:pointer; background:none; border:0;
     }
 
-    /* ===== Tartalom margó a fix header alatt ===== */
     main{
       padding-top:calc(var(--header-h) + 60px);
       text-align:center; max-width:1200px; margin:0 auto;
     }
 
-    /* ===== Hero ===== */
-    .hero h1{
-      font-size:5em; margin-bottom:.3em;
-      text-transform:uppercase; line-height:.6;
+    /* Hero rész videóval */
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    .line1,.line2{ display:block }
-    .exclamation{ color:var(--accent); animation:pop 1.5s infinite ease-in-out }
-    @keyframes pop{ 0%,100%{transform:scale(1)} 50%{transform:scale(1.2)} }
-    .hero p{ font-size:1.2em; color:var(--muted) }
-    .hero img{ margin-top:40px; max-width:100%; border-radius:10px }
+    .hero video {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
 
-    /* ===== Előnézet ===== */
     .preview{ margin-top:100px }
     .preview h2, .cta h2, .tools h2, .bio h2{
       font-size:1.8em; margin-bottom:.5em; text-transform:uppercase;
@@ -90,13 +82,11 @@
     .preview-grid img:hover{ transform:scale(1.05); z-index:2 }
     .preview a{ display:inline-block; margin-top:30px; font-size:1em; color:var(--accent)!important; text-decoration:none }
 
-    /* ===== CTA / Tools ===== */
     .cta, .tools, .bio{ margin-top:100px; text-align:center }
     .cta a{ color:var(--accent)!important; text-decoration:none; font-weight:bold }
     .cta p{ margin-top:10px; font-size:1.1em }
     .tools p, .bio p{ color:#ccc; font-size:1.1em; max-width:700px; margin:0 auto }
 
-    /* ===== Oldalsó social ikonok (desktop) ===== */
     .social-icons{
       position:fixed; top:50%; right:10px; transform:translateY(-50%);
       display:flex; flex-direction:column; gap:20px; z-index:999;
@@ -105,7 +95,6 @@
 
     footer{ text-align:center; font-size:.9em; color:#555; padding:40px 20px }
 
-    /* ===== Mobil ===== */
     @media (max-width:768px){
       :root{ --header-h:64px }
       .menu-bar{ padding:0 16px }
@@ -122,15 +111,12 @@
       }
 
       .social-icons{ display:none !important }
-      .hero h1{ font-size:2.4em }
-      .hero p{ font-size:1em }
       .preview-grid img{ width:100%; max-width:300px }
     }
   </style>
 </head>
 <body>
 
-  <!-- Fejléc -->
   <header>
     <div class="menu-bar">
       <a class="menu-logo" href="index.html" aria-label="Hello I'm Herki – Főoldal">
@@ -152,7 +138,6 @@
     </div>
   </header>
 
-  <!-- Social Icons (desktop) -->
   <div class="social-icons">
     <a href="https://instagram.com/helloimherki" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
     <a href="https://behance.net/helloimherki" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
@@ -162,10 +147,10 @@
 
   <main>
     <section class="hero">
-      <h1>
-        <span class="line1">HELLO <span class="exclamation">!</span></span><br/>
-        <span class="line2">IM HERKI</span>
-      </h1>
+      <video autoplay muted loop playsinline>
+        <source src="Untitled-4.mp4" type="video/mp4">
+        A böngésződ nem támogatja a videólejátszást.
+      </video>
     </section>
 
     <section class="preview">
@@ -195,7 +180,6 @@
   </footer>
 
   <script>
-    // Hamburger (mobil)
     (function(){
       const btn=document.querySelector('.hamburger');
       const nav=document.getElementById('site-nav');
@@ -203,14 +187,12 @@
       const toggle=()=>{ const open=nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); };
       btn.addEventListener('click',toggle);
 
-      // Linkre kattintva zárjon
       nav.addEventListener('click',e=>{
         if(e.target.tagName==='A' && nav.classList.contains('open')){
           nav.classList.remove('open'); btn.setAttribute('aria-expanded','false');
         }
       });
 
-      // Átméretezéskor állapot rendezés
       window.addEventListener('resize',()=>{
         if(window.innerWidth>768 && nav.classList.contains('open')){
           nav.classList.remove('open');
@@ -221,5 +203,6 @@
   </script>
 </body>
 </html>
+
 
 

@@ -29,9 +29,7 @@
       display:flex; align-items:center; justify-content:space-between;
       padding:0 40px; gap:24px;
     }
-    .menu-logo img{
-      height:48px; filter:invert(1);
-    }
+    .menu-logo img{ height:48px; filter:invert(1); }
     nav ul{
       list-style:none; margin:0; padding:0;
       display:flex; gap:30px; align-items:center;
@@ -83,7 +81,7 @@
       .hamburger{display:block;}
       nav{
         position:absolute; top:var(--header-h); right:0; left:0;
-        background:#000; display:none;
+        background:#000; display:none; border-top:1px solid rgba(255,255,255,.06);
       }
       nav.open{display:block;}
       nav ul{
@@ -101,8 +99,10 @@
   <header>
     <div class="menu-bar">
       <a class="menu-logo" href="index.html"><img src="HELLOIMHERKI.png" alt="Hello I'm Herki logó"></a>
-      <button class="hamburger" aria-label="Menü"><i class="fas fa-bars"></i></button>
-      <nav>
+      <button class="hamburger" aria-label="Menü megnyitása" aria-controls="site-nav" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav id="site-nav" aria-label="Fő navigáció">
         <ul>
           <li><a href="index.html">Főoldal</a></li>
           <li><a href="about.html">Rólam</a></li>
@@ -151,10 +151,30 @@
   </footer>
 
   <script>
-    const btn=document.querySelector('.hamburger');
-    const nav=document.querySelector('nav');
-    btn.addEventListener('click',()=>nav.classList.toggle('open'));
+  (function(){
+    const btn = document.querySelector('.hamburger');
+    const nav = document.getElementById('site-nav') || document.querySelector('header nav') || document.querySelector('nav');
+    if(!btn || !nav) return;
+    const toggle = () => {
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    btn.addEventListener('click', toggle);
+    nav.addEventListener('click', e => {
+      if(e.target.tagName === 'A' && nav.classList.contains('open')){
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+      }
+    });
+    window.addEventListener('resize', () => {
+      if(window.innerWidth > 768){
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+      }
+    });
+  })();
   </script>
 
 </body>
 </html>
+

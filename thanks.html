@@ -36,20 +36,9 @@
     }
 
     .social-links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:30px;
-      justify-content:center;
-      font-size:0.9em;
-      margin-top:20px;
+      display:flex; flex-wrap:wrap; gap:30px; justify-content:center; font-size:0.9em; margin-top:20px;
     }
-    .social-links a{
-      color:var(--accent);
-      text-decoration:none;
-      display:flex;
-      align-items:center;
-      gap:8px;
-    }
+    .social-links a{ color:var(--accent); text-decoration:none; display:flex; align-items:center; gap:8px; }
     .social-links i{ font-size:1em; }
 
     main h1{ font-size:2.5em; margin-bottom:1em; text-transform:uppercase; }
@@ -75,8 +64,10 @@
   <header>
     <div class="menu-bar">
       <a class="menu-logo" href="index.html"><img src="HELLOIMHERKI.png" alt="Hello I'm Herki logó"></a>
-      <button class="hamburger" aria-label="Menü megnyitása"><i class="fas fa-bars"></i></button>
-      <nav>
+      <button class="hamburger" aria-label="Menü megnyitása" aria-controls="site-nav" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav id="site-nav" aria-label="Fő navigáció">
         <ul>
           <li><a href="index.html">Főoldal</a></li>
           <li><a href="about.html">Rólam</a></li>
@@ -111,14 +102,31 @@
   </footer>
 
   <script>
+  (function(){
     const btn = document.querySelector('.hamburger');
-    const nav = document.querySelector('header nav');
-    if(btn && nav){
-      btn.addEventListener('click', ()=> nav.classList.toggle('open'));
-      window.addEventListener('resize', ()=>{ if(window.innerWidth>768){ nav.classList.remove('open'); }});
-    }
+    const nav = document.getElementById('site-nav') || document.querySelector('header nav') || document.querySelector('nav');
+    if(!btn || !nav) return;
+    const toggle = () => {
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    btn.addEventListener('click', toggle);
+    nav.addEventListener('click', e => {
+      if(e.target.tagName === 'A' && nav.classList.contains('open')){
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+      }
+    });
+    window.addEventListener('resize', () => {
+      if(window.innerWidth > 768){
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+      }
+    });
+  })();
   </script>
 </body>
 </html>
+
 
 
