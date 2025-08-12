@@ -14,23 +14,9 @@
     body{
       margin:0;
       background-color: var(--bg);
-      background-image: url('back.png');
-      background-size: cover;
-      background-position: center;
       color:var(--fg);
       font-family:'Barlow Condensed',sans-serif;
       font-size:1.5em;
-      position: relative;
-      z-index: 0;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.95); /* 95% fekete overlay → kép 5%-os láthatóság */
-      pointer-events: none;
-      z-index: -1;
     }
 
     header{ position:fixed; top:0; left:0; right:0; background:#000; z-index:1000; border-bottom:1px solid rgba(255,255,255,.06); }
@@ -45,15 +31,6 @@
       padding:calc(var(--header-h) + 40px) 20px 60px;
       max-width:800px; margin:0 auto;
       text-align:center;
-      overflow-y:auto;
-      max-height:calc(100vh - var(--header-h) - 40px);
-    }
-
-    .thanks-image{
-      display:block;
-      max-width:300px;
-      margin:30px auto 30px;
-      object-fit: cover; /* arányos kitöltés */
     }
 
     .social-links{
@@ -65,18 +42,34 @@
     main h1{ font-size:2.5em; margin-bottom:1em; text-transform:uppercase; }
     main p{ margin-bottom:1em; line-height:1.5em; font-size:1.2em; color:var(--muted); }
 
+    /* --- Videó a footer előtt --- */
+    .bottom-video{
+      max-width:1000px;
+      margin:60px auto 20px;
+    }
+    .bottom-video video{
+      width:100%; height:auto; display:block;
+      border-radius:10px; background:#000;
+      pointer-events:none; /* ne lehessen rákattintani/pauzálni */
+    }
+
     footer{ text-align:center; font-size:.9em; color:#555; padding:40px 20px; }
 
+    /* Mobil */
     @media (max-width:768px){
       :root{ --header-h:64px }
       .menu-bar{ padding:0 16px }
       .menu-logo img{ height:40px }
       .hamburger{ display:block }
+
       nav{ position:absolute; top:var(--header-h); right:0; left:0; background:#000; display:none; border-top:1px solid rgba(255,255,255,.06); }
       nav.open{ display:block }
       nav ul{ flex-direction:column; align-items:flex-start; gap:16px; padding:20px; }
+
+      main{ padding:calc(var(--header-h) + 24px) 16px 40px; }
       main h1{ font-size:2em }
       main p{ font-size:1em }
+      .bottom-video{ margin:40px auto 16px; }
     }
   </style>
 </head>
@@ -86,7 +79,7 @@
     <div class="menu-bar">
       <a class="menu-logo" href="index.html"><img src="HELLOIMHERKI.png" alt="Hello I'm Herki logó"></a>
       <button class="hamburger" aria-label="Menü megnyitása" aria-controls="site-nav" aria-expanded="false">
-        <i class="fas fa-bars"></i>
+        <i class="fa-solid fa-bars"></i>
       </button>
       <nav id="site-nav" aria-label="Fő navigáció">
         <ul>
@@ -106,16 +99,28 @@
     <p>Üzenetedet megkaptam, hamarosan felveszem veled a kapcsolatot.</p>
     <p>Szép napot kívánok!</p>
 
-    <!-- Kép -->
-    <img src="thanks.png" alt="Kép helye" class="thanks-image">
-
-    <!-- Közösségi linkek -->
     <div class="social-links">
       <a href="https://instagram.com/helloimherki" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
       <a href="https://behance.net/helloimherki" target="_blank"><i class="fab fa-behance"></i>Behance</a>
       <a href="https://www.threads.net/@helloimherki" target="_blank"><i class="fab fa-threads"></i>Threads</a>
       <a href="https://www.tiktok.com/@helloimherki" target="_blank"><i class="fab fa-tiktok"></i>TikTok</a>
     </div>
+
+    <!-- Videó a footer előtt – folyamatos lejátszás, vezérlők nélkül -->
+    <section class="bottom-video" aria-label="Kiegészítő videó">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        controlslist="nodownload noplaybackrate noremoteplayback"
+        disablepictureinpicture
+        oncontextmenu="return false;">
+        <source src="Untitled1.mp4" type="video/mp4">
+        A böngésződ nem támogatja az MP4 videó formátumot.
+      </video>
+    </section>
   </main>
 
   <footer>
@@ -123,31 +128,46 @@
   </footer>
 
   <script>
-  (function(){
-    const btn = document.querySelector('.hamburger');
-    const nav = document.getElementById('site-nav') || document.querySelector('header nav') || document.querySelector('nav');
-    if(!btn || !nav) return;
-    const toggle = () => {
-      const open = nav.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    };
-    btn.addEventListener('click', toggle);
-    nav.addEventListener('click', e => {
-      if(e.target.tagName === 'A' && nav.classList.contains('open')){
-        nav.classList.remove('open');
-        btn.setAttribute('aria-expanded','false');
+    (function(){
+      // Hamburger
+      const btn = document.querySelector('.hamburger');
+      const nav = document.getElementById('site-nav') || document.querySelector('header nav') || document.querySelector('nav');
+      if(btn && nav){
+        const toggle = () => {
+          const open = nav.classList.toggle('open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        };
+        btn.addEventListener('click', toggle);
+        nav.addEventListener('click', e => {
+          if(e.target.tagName === 'A' && nav.classList.contains('open')){
+            nav.classList.remove('open');
+            btn.setAttribute('aria-expanded','false');
+          }
+        });
+        window.addEventListener('resize', () => {
+          if(window.innerWidth > 768){
+            nav.classList.remove('open');
+            btn.setAttribute('aria-expanded','false');
+          }
+        });
       }
-    });
-    window.addEventListener('resize', () => {
-      if(window.innerWidth > 768){
-        nav.classList.remove('open');
-        btn.setAttribute('aria-expanded','false');
+
+      // Biztosítsuk, hogy a videó mindig játsszon (ha valami megpróbálná megállítani)
+      const vid = document.querySelector('.bottom-video video');
+      if(vid){
+        const ensurePlay = () => vid.play().catch(()=>{});
+        vid.addEventListener('pause', ensurePlay);
+        document.addEventListener('visibilitychange', ()=>{ if(!document.hidden) ensurePlay(); });
+        // iOS néha lusta indulni: próbáljuk meg kicsit késleltetve is
+        window.addEventListener('load', ()=> setTimeout(ensurePlay, 100));
       }
-    });
-  })();
+    })();
   </script>
 </body>
 </html>
+
+
+
 
 
 
