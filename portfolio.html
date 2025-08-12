@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfólió – Hello I'm Herki</title>
-  <link rel="stylesheet" href="style.css"/>
+<!-- <link href="style.css" rel="stylesheet"/> -->
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 
@@ -48,24 +48,96 @@
 
     footer{ text-align:center; font-size:.9em; color:#555; padding:40px 20px }
 
-    /* ===== Mobil ===== */
-    @media (max-width:768px){
-      :root{ --header-h:64px }
-      .menu-bar{ padding:0 16px }
-      .menu-logo img{ height:40px }
-      .hamburger{ display:block }
+/* ===== Mobil ===== */
+@media (max-width:768px){
+  :root{ --header-h:64px }
+  .menu-bar{ padding:0 16px }
+  .menu-logo img{ height:40px }
+  .hamburger{ display:block }              /* csak mobilon látszik a gomb */
 
-      nav{
-        position:absolute; top:var(--header-h); right:0; left:0;
-        background:#000; display:none; border-top:1px solid rgba(255,255,255,.06);
-      }
-      nav.open{ display:block }
-      nav ul{ flex-direction:column; align-items:flex-start; gap:16px; padding:20px }
+  /* FONTOS: ne általános 'nav', hanem az ID-s – és NEM display-t kapcsolunk */
+  #site-header #site-nav{
+    display:block !important;              /* mindig block, hogy a max-height működjön */
+    position:absolute; top:var(--header-h); left:0; right:0;
+    background:#000; border-top:1px solid rgba(255,255,255,.06);
+    max-height:0; overflow:hidden;         /* zárt állapot */
+    transition:max-height .3s ease;
+    z-index:2000;
+  }
+  #site-header.is-open #site-nav{          /* nyitott állapot */
+    max-height:80vh;
+  }
+  #site-header #site-nav ul{
+    display:flex; flex-direction:column; align-items:flex-start;
+    gap:16px; padding:20px; margin:0; list-style:none;
+  }
 
-      .social-icons{ display:none !important }
-      main h1{ font-size:2em }
-      main p{ font-size:1em }
-    }
+  .social-icons{ display:none !important }
+  main h1{ font-size:2em }
+  main p{ font-size:1em }
+}
+
+/* --- Mobil hamburger: osztályos nyitás/csukás, nincs display-harc --- */
+@media (max-width:768px){
+  /* gomb mobilon látszik */
+  #site-header .hamburger{ display:block; position:relative; z-index:2001; }
+
+  /* zárt állapot: elrejtjük magassággal, nem display-jel */
+  #site-header #site-nav{
+    position:absolute; top:var(--header-h,64px); left:0; right:0;
+    background:#000; border-top:1px solid rgba(255,255,255,.06);
+    max-height:0; overflow:hidden; transition:max-height .3s ease;
+    z-index:2000;
+  }
+  /* nyitott állapot a header osztályától függ */
+  #site-header.is-open #site-nav{ max-height:70vh; }
+
+  /* lista álló oszlopban */
+  #site-header #site-nav ul{
+    display:flex; flex-direction:column; align-items:flex-start;
+    gap:16px; padding:20px; margin:0; list-style:none;
+  }
+}
+
+/* Desktop biztos: hamburger rejtve, menü látszik */
+@media (min-width:769px){
+  #site-header .hamburger{ display:none; }
+  #site-header #site-nav{ position:static; max-height:none; overflow:visible; }
+  #site-header #site-nav ul{ display:flex; gap:30px; }
+}
+/* ===== Mobil ===== */
+@media (max-width:768px){
+  :root{ --header-h:64px }
+  .menu-bar{ padding:0 16px }
+  .menu-logo img{ height:40px }
+  #site-header .hamburger{ display:block; position:relative; z-index:2001 }
+
+  /* mobilon mindig block, a rejtést max-height intézi */
+  #site-header #site-nav{
+    display:block !important;
+    position:absolute; top:var(--header-h); left:0; right:0;
+    background:#000; border-top:1px solid rgba(255,255,255,.06);
+    max-height:0; overflow:hidden; transition:max-height .3s ease;
+    z-index:2000;
+  }
+  #site-header.is-open #site-nav{ max-height:80vh }
+  #site-header #site-nav ul{
+    display:flex; flex-direction:column; align-items:flex-start;
+    gap:16px; padding:20px; margin:0; list-style:none;
+  }
+
+  .social-icons{ display:none !important }
+  main h1{ font-size:2em }
+  main p{ font-size:1em }
+}
+
+/* ===== Desktop ===== */
+@media (min-width:769px){
+  #site-header .hamburger{ display:none }
+  #site-header #site-nav{ position:static; max-height:none; overflow:visible }
+  #site-header #site-nav ul{ display:flex; gap:30px }
+}
+
   </style>
 </head>
 <body>
@@ -79,13 +151,13 @@
   </div>
 
   <!-- Fejléc -->
-  <header>
+<header id="site-header">
     <div class="menu-bar">
       <a class="menu-logo" href="index.html" aria-label="Hello I'm Herki – Főoldal">
         <img src="HELLOIMHERKI.png" alt="Hello I'm Herki logó">
       </a>
       <button class="hamburger" aria-label="Menü megnyitása" aria-controls="site-nav" aria-expanded="false">
-        <i class="fas fa-bars"></i>
+     <i class="fa-solid fa-bars"></i>
       </button>
       <nav id="site-nav" aria-label="Fő navigáció">
         <ul>
@@ -99,7 +171,6 @@
       </nav>
     </div>
   </header>
-
   <!-- Tartalom -->
   <main>
     <h1>Portfólió</h1>
@@ -124,21 +195,43 @@
     <p>© 2025 Hello I'm Herki</p>
   </footer>
 
-  <script>
-    // Mobil hamburger
-    (function(){
-      const btn=document.querySelector('.hamburger');
-      const nav=document.getElementById('site-nav');
-      if(!btn||!nav) return;
-      const toggle=()=>{ const open=nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); };
-      btn.addEventListener('click',toggle);
-      nav.addEventListener('click',e=>{
-        if(e.target.tagName==='A' && nav.classList.contains('open')){
-          nav.classList.remove('open'); btn.setAttribute('aria-expanded','false');
-        }
-      });
-      window.addEventListener('resize',()=>{ if(window.innerWidth>768){ nav.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }});
-    })();
-  </script>
+<script>
+(function(){
+  const header = document.getElementById('site-header');
+  const btn = header?.querySelector('.hamburger');
+  const nav = header?.querySelector('#site-nav');
+  if (!header || !btn || !nav) return;
+
+  // ha korábbi patch beragasztotta a display-t, dobd le
+  nav.style.removeProperty('display');
+
+  const setExpanded = (open) =>
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+
+  function toggle(){
+    const open = header.classList.toggle('is-open');
+    // max-height alapú nyitás/csukás (nem display-t kapcsolunk)
+    nav.style.setProperty('max-height', open ? '80vh' : '0px', 'important');
+    setExpanded(open);
+  }
+
+  btn.addEventListener('click', (e)=>{ e.preventDefault(); toggle(); });
+  nav.addEventListener('click', (e)=>{
+    if (e.target.closest('a')) {
+      header.classList.remove('is-open');
+      nav.style.setProperty('max-height','0px','important');
+      setExpanded(false);
+    }
+  });
+  window.addEventListener('resize', ()=>{
+    if (window.innerWidth > 768) {
+      header.classList.remove('is-open');
+      nav.style.removeProperty('max-height');
+      setExpanded(false);
+    }
+  });
+})();
+</script>
+
 </body>
 </html>

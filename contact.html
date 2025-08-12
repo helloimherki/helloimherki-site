@@ -12,28 +12,28 @@
     :root{
       --bg:#000; --fg:#fff; --accent:#ff0000; --muted:#ccc;
       --header-h:80px;
-    }
-    body{
-      margin:0;
-      background-color: var(--bg);
-      background-image: url('back.png');
-      background-size: cover;
-      background-position: center;
-      color:var(--fg);
-      font-family:'Barlow Condensed',sans-serif;
-      font-size:1.5em;
-      position: relative;
-      z-index: 0;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.95); /* 95% fekete overlay → kép 5%-os láthatóság */
-      pointer-events: none;
-      z-index: -1;
-    }
+      }
+body {
+  margin:0;
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  color:#fff;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1.5em;
+  position: relative;
+  z-index: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.95); /* 95% fekete overlay, kép 5% láthatóság */
+  pointer-events: none;
+  z-index: -1;
+}
 
     /* Fejléc */
     header{
@@ -117,7 +117,7 @@
     <div class="menu-bar">
       <a class="menu-logo" href="index.html"><img src="HELLOIMHERKI.png" alt="Hello I'm Herki logó"></a>
       <button class="hamburger" aria-label="Menü megnyitása" aria-controls="site-nav" aria-expanded="false">
-        <i class="fas fa-bars"></i>
+      <i class="fa-solid fa-bars"></i>
       </button>
       <nav id="site-nav" aria-label="Fő navigáció">
         <ul>
@@ -194,5 +194,3 @@
 
 </body>
 </html>
-
-
