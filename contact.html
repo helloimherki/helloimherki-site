@@ -109,6 +109,40 @@ body::before {
       h1{font-size:2em;}
       p{font-size:1em;}
     }
+    /* Kapcsolat űrlap mezők stílusa */
+form input, 
+form textarea {
+  font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;   /* minden betű nagy */
+  font-size: 1rem;
+  color: #fff;
+  background: #000;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 14px 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+/* Kapcsolat űrlap gomb */
+form button[type="submit"] {
+  font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  padding: 14px 16px;
+  width: 100%;
+  background: #000;
+  border: 1px solid #444;        /* ugyanaz a keret, mint az inputoknak */
+  border-radius: 8px;            /* ugyanaz a lekerekítés */
+  color: var(--accent);          /* piros szöveg */
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+
+form button[type="submit"]:hover {
+  background: var(--accent);     /* hoverre piros háttér */
+  color: #000;                   /* fekete szöveg */
+}
+
   </style>
 </head>
 <body>
@@ -132,36 +166,73 @@ body::before {
     </div>
   </header>
 
-  <main>
-    <h1>Kapcsolat</h1>
-    <div class="contact-boxes">
-      <div class="info-box">
-        <div class="info-data"><a href="mailto:hello@helloimherki.com" style="color:#fff; text-decoration:none;">hello@helloimherki.com</a></div>
-        <div class="info-label">EMAIL</div>
-      </div>
-      <div class="divider"></div>
-      <div class="info-box">
-        <div class="info-data">1131 BUDAPEST, MAGYARORSZÁG</div>
-        <div class="info-label">CÍM</div>
-      </div>
-      <div class="divider"></div>
-      <div class="info-box">
-        <div class="info-data">+36 20 239 5307</div>
-        <div class="info-label">TELEFON</div>
-      </div>
-    </div>
+ <main>
+  <h1>Kapcsolat</h1>
 
-    <div class="contact-links">
-      <p><a href="https://instagram.com/helloimherki" target="_blank"><i class="fab fa-instagram"></i>Instagram</a></p>
-      <p><a href="https://behance.net/helloimherki" target="_blank"><i class="fab fa-behance"></i>Behance</a></p>
-      <p><a href="https://www.threads.net/@helloimherki" target="_blank"><i class="fab fa-threads"></i>Threads</a></p>
-      <p><a href="https://www.tiktok.com/@helloimherki" target="_blank"><i class="fab fa-tiktok"></i>TikTok</a></p>
-    </div>
+  <!-- Netlify form -->
+  <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thanks.html">
+    <input type="hidden" name="form-name" value="contact">
+    <p class="hidden">
+      <label>Ne töltsd ki ezt a mezőt: <input name="bot-field"></label>
+    </p>
 
-    <div>
-      <a class="whatsapp-link" href="https://wa.me/36202395307" target="_blank"><i class="fab fa-whatsapp"></i>ÍRJ WHATSAPPON</a>
+    <div style="display:grid;gap:16px;max-width:720px;margin:40px auto 0;">
+      <input type="text" name="name" required placeholder="Név"
+             style="padding:14px 16px;border:1px solid #444;background:#000;color:#fff;border-radius:8px;">
+      <input type="email" name="email" required placeholder="E-mail"
+             style="padding:14px 16px;border:1px solid #444;background:#000;color:#fff;border-radius:8px;">
+      <textarea name="message" required placeholder="Üzenet" rows="6"
+                style="padding:14px 16px;border:1px solid #444;background:#000;color:#fff;border-radius:8px;resize:vertical;"></textarea>
+
+      <button type="submit">Üzenet küldése</button>
+
+        Üzenet küldése
+      </button>
     </div>
-  </main>
+  </form>
+
+  <!-- Info boxok -->
+  <div class="contact-boxes">
+    <div class="info-box">
+      <div class="info-data"><a href="mailto:hello@helloimherki.com" style="color:#fff; text-decoration:none;">hello@helloimherki.com</a></div>
+      <div class="info-label">EMAIL</div>
+    </div>
+    <div class="divider"></div>
+    <div class="info-box">
+      <div class="info-data">1131 BUDAPEST, MAGYARORSZÁG</div>
+      <div class="info-label">CÍM</div>
+    </div>
+    <div class="divider"></div>
+    <div class="info-box">
+      <div class="info-data">+36 20 239 5307</div>
+      <div class="info-label">TELEFON</div>
+    </div>
+  </div>
+
+  <!-- Social linkek -->
+  <div class="contact-links">
+    <p><a href="https://www.instagram.com/hello.im.herki/" target="_blank" rel="noopener">
+      <i class="fab fa-instagram"></i> Instagram</a></p>
+
+    <p><a href="https://www.behance.net/helloimherki" target="_blank" rel="noopener">
+      <i class="fab fa-behance"></i> Behance</a></p>
+
+    <p><a href="https://www.threads.net/@hello.im.herki" target="_blank" rel="noopener">
+      <!-- Threads fallback, mert FA-ben nincs -->
+      <i class="fas fa-link"></i> Threads</a></p>
+
+    <p><a href="https://www.tiktok.com/@hello.im.herki" target="_blank" rel="noopener">
+      <i class="fab fa-tiktok"></i> TikTok</a></p>
+  </div>
+
+  <!-- WhatsApp -->
+  <div>
+    <a class="whatsapp-link" href="https://wa.me/36202395307" target="_blank">
+      <i class="fab fa-whatsapp"></i> ÍRJ WHATSAPPON
+    </a>
+  </div>
+</main>
+
 
   <footer>
     <p>© 2025 Hello I'm Herki</p>
