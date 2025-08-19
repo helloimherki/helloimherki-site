@@ -151,7 +151,6 @@ form button[type="submit"]:hover {
   height:1px !important;
   overflow:hidden !important;
 }
-
   </style>
 </head>
 <body>
@@ -179,26 +178,28 @@ form button[type="submit"]:hover {
   <h1>Kapcsolat</h1>
 
   <!-- Netlify form -->
-  <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thanks.html">
-    <input type="hidden" name="form-name" value="contact">
-    <p class="hidden">
-      <label>Ne töltsd ki ezt a mezőt: <input name="bot-field"></label>
-    </p>
+<form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thanks.html">
+  <input type="hidden" name="form-name" value="contact">
 
-    <div style="display:grid;gap:16px;max-width:720px;margin:40px auto 0;">
-      <input type="text" name="name" required placeholder="Név"
-             style="padding:14px 16px;border:1px solid #444;background:#000;color:#fff;border-radius:8px;">
-      <input type="email" name="email" required placeholder="E-mail"
-             style="padding:14px 16px;border:1px solid #444;background:#000;color:#fff;border-radius:8px;">
-      <textarea name="message" required placeholder="Üzenet" rows="6"
-                style="padding:14px 16px;border:1px solid #444;background:#000;color:#fff;border-radius:8px;resize:vertical;"></textarea>
+  <!-- Honeypot (bot csapda) -->
+  <p class="hidden" aria-hidden="true">
+    <label>Ne töltsd ki ezt a mezőt: <input name="bot-field" type="text"></label>
+  </p>
 
-      <button type="submit">Üzenet küldése</button>
+  <div style="display:grid;gap:16px;max-width:720px;margin:40px auto 0;">
+    <input type="text" name="name" required placeholder="Név"
+           style="padding:14px 16px;border:1px solid #444;background:#000;color:#fff;border-radius:8px;">
 
-        Üzenet küldése
-      </button>
-    </div>
-  </form>
+    <input type="email" name="email" required placeholder="E-mail"
+           style="padding:14px 16px;border:1px solid #444;background:#000;color:#fff;border-radius:8px;">
+
+    <textarea name="message" required placeholder="Üzenet" rows="6"
+              style="padding:14px 16px;border:1px solid #444;background:#000;color:#fff;border-radius:8px;resize:vertical;"></textarea>
+
+    <button type="submit">Üzenet küldése</button>
+  </div>
+</form>
+
 
   <!-- Info boxok -->
   <div class="contact-boxes">
