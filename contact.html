@@ -3,8 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kapcsolat – Hello I'm Herki</title>
-  <link rel="icon" href="icon.ico" type="image/x-icon">
+    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+  <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+<title>Kapcsolat – Hello I'm Herki | Írj, hívj, WhatsApp</title>
+  
+  <meta name="description" content="Vedd fel velem a kapcsolatot e-mailen, telefonon vagy WhatsAppon. Küldj rövid briefet a projektedről, és küldök személyre szabott ajánlatot.">
+  <link rel="canonical" href="https://helloimherki.com/contact.html">
+  
+  <link rel="icon" href="/favicon.ico">
+  
+  <meta property="og:site_name" content="Hello I'm Herki">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kapcsolat – Hello I'm Herki | Írj, hívj, WhatsApp">
+  <meta property="og:description" content="Vedd fel velem a kapcsolatot e-mailen, telefonon vagy WhatsAppon. Küldj rövid briefet a projektedről, és küldök személyre szabott ajánlatot.">
+  <meta property="og:url" content="https://helloimherki.com/contact.html">
+  <meta property="og:image" content="https://helloimherki.com/og-cover.jpg">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kapcsolat – Hello I'm Herki | Írj, hívj, WhatsApp">
+  <meta name="twitter:description" content="Vedd fel velem a kapcsolatot e-mailen, telefonon vagy WhatsAppon. Küldj rövid briefet a projektedről, és küldök személyre szabott ajánlatot.">
+  <meta name="twitter:image" content="https://helloimherki.com/og-cover.jpg">
+<link rel="icon" href="icon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
@@ -189,30 +208,6 @@ body {
     <p>&copy; 2025 Hello I'm Herki</p>
   </footer>
 
-  <script>
-    (function(){
-      const btn = document.querySelector('.hamburger');
-      const nav = document.getElementById('site-nav');
-      if(btn && nav){
-        const toggle = () => {
-          const open = nav.classList.toggle('open');
-          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        };
-        btn.addEventListener('click', toggle);
-        nav.addEventListener('click', e => {
-          if(e.target.tagName === 'A' && nav.classList.contains('open')){
-            nav.classList.remove('open');
-            btn.setAttribute('aria-expanded','false');
-          }
-        });
-        window.addEventListener('resize', () => {
-          if(window.innerWidth > 768){
-            nav.classList.remove('open');
-            btn.setAttribute('aria-expanded','false');
-          }
-        });
-      }
-    })();
-  </script>
+  
 </body>
 </html>

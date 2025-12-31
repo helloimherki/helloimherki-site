@@ -3,9 +3,28 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Hello I'm Herki</title>
+    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+  <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+<title>Hello I'm Herki – Grafikus | Arculat, logó, webdesign</title>
 
-  <!-- A többi oldallal egységesen most kikommentezve -->
+  
+  <meta name="description" content="Hello I’m Herki – szabadúszó grafikus. Arculattervezés, logó, csomagolás, social media és webdesign. Nézd meg a munkáimat és lépj velem kapcsolatba.">
+  <link rel="canonical" href="https://helloimherki.com/index.html">
+  
+  <link rel="icon" href="/favicon.ico">
+  
+  <meta property="og:site_name" content="Hello I'm Herki">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hello I'm Herki – Grafikus | Arculat, logó, webdesign">
+  <meta property="og:description" content="Hello I’m Herki – szabadúszó grafikus. Arculattervezés, logó, csomagolás, social media és webdesign. Nézd meg a munkáimat és lépj velem kapcsolatba.">
+  <meta property="og:url" content="https://helloimherki.com/index.html">
+  <meta property="og:image" content="https://helloimherki.com/og-cover.jpg">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hello I'm Herki – Grafikus | Arculat, logó, webdesign">
+  <meta name="twitter:description" content="Hello I’m Herki – szabadúszó grafikus. Arculattervezés, logó, csomagolás, social media és webdesign. Nézd meg a munkáimat és lépj velem kapcsolatba.">
+  <meta name="twitter:image" content="https://helloimherki.com/og-cover.jpg">
+<!-- A többi oldallal egységesen most kikommentezve -->
   <!-- <link href="style.css" rel="stylesheet"/> -->
 
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&display=swap" rel="stylesheet"/>
@@ -134,35 +153,7 @@
     <p>© 2025 Hello I'm Herki</p>
   </footer>
 
-  <script>
-    (function(){
-      const btn = document.querySelector('.hamburger');
-      const nav = document.getElementById('site-nav');
-      if(!btn || !nav) return;
-
-      const setExpanded = (open) => btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-
-      btn.addEventListener('click', (e)=>{
-        e.preventDefault();
-        const open = nav.classList.toggle('open');
-        setExpanded(open);
-      });
-
-      nav.addEventListener('click', (e)=>{
-        if(e.target.closest('a') && nav.classList.contains('open')){
-          nav.classList.remove('open');
-          setExpanded(false);
-        }
-      });
-
-      window.addEventListener('resize', ()=>{
-        if(window.innerWidth > 768 && nav.classList.contains('open')){
-          nav.classList.remove('open');
-          setExpanded(false);
-        }
-      });
-    })();
-  </script>
+  
 </body>
 </html>
 

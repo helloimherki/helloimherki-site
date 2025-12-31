@@ -12,13 +12,25 @@
   top:0; left:0; right:0;
   background:#000;
   z-index:1000;
+
   border-bottom:1px solid rgba(255,255,255,0.06);
+
   transition: transform 220ms ease;
   will-change: transform;
+
+  /* UX finomítás: enyhe “üveg” érzet (ha a böngésző támogatja) */
+  backdrop-filter:saturate(140%) blur(8px);
+  -webkit-backdrop-filter:saturate(140%) blur(8px);
 }
+
 #site-header.is-hidden{
   transform: translateY(-110%);
 }
+
+#site-header.is-scrolled{
+  border-bottom:1px solid rgba(255,255,255,0.10);
+}
+
 #site-header .menu-bar{
   height:var(--header-h);
   display:flex;
@@ -27,12 +39,15 @@
   gap:24px;
   padding:0 40px;
 }
+
 #site-header .menu-logo img{
   height:48px;
   width:auto;
   display:block;
   filter:invert(1);
 }
+
+/* ===== Nav links ===== */
 #site-header nav ul{
   list-style:none;
   margin:0;
@@ -41,6 +56,7 @@
   align-items:center;
   gap:30px;
 }
+
 #site-header nav a{
   color:var(--fg);
   text-decoration:none;
@@ -48,9 +64,28 @@
   transition:transform .2s ease-in-out, opacity .2s ease-in-out;
   white-space:nowrap;
   opacity:.95;
+  position:relative; /* underline miatt */
 }
+
 #site-header nav a:hover{ transform:scale(1.07); opacity:1; }
-#site-header nav a.active{ color:var(--fg); }
+
+/* Aktív állapot (JS is felteszi) */
+#site-header nav a.active{
+  opacity:1;
+}
+
+/* Finom piros vonal aktív menüpont alatt */
+#site-header nav a.active::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-10px;
+  height:2px;
+  background:var(--accent);
+  border-radius:2px;
+}
+
 #site-header .hamburger{
   display:none;
   font-size:1.6em;
@@ -60,7 +95,15 @@
   border:0;
 }
 
-/* ===== Desktop social icons ===== */
+/* Billentyűzet fókusz – “pro” UX */
+#site-header nav a:focus-visible,
+#site-header .hamburger:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:4px;
+  border-radius:6px;
+}
+
+/* ===== Desktop social icons (if used) ===== */
 .social-icons{
   position:fixed;
   top:50%;
@@ -71,10 +114,20 @@
   gap:20px;
   z-index:999;
 }
+
 .social-icons a{
   color:var(--accent);
   font-size:1.2em;
   text-decoration:none;
+}
+
+/* ===== Menü overlay (HTML módosítás nélkül) ===== */
+body.menu-open::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+  z-index:900; /* header 1000, nav mobilon 2000 */
 }
 
 /* ===== Mobile navigation: max-height toggled by #site-header.is-open ===== */
@@ -98,6 +151,7 @@
     transition:max-height .28s ease;
     z-index:2000;
   }
+
   #site-header.is-open #site-nav{ max-height:80vh; }
 
   #site-header #site-nav ul{
@@ -110,20 +164,34 @@
     list-style:none;
   }
 
+  /* aktív underline mobilon kicsit feljebb */
+  #site-header nav a.active::after{ bottom:-6px; }
+
   .social-icons{ display:none !important; }
 }
 
 /* ===== Desktop reset (deterministic) ===== */
 @media (min-width:769px){
   #site-header .hamburger{ display:none; }
+
   #site-header #site-nav{
     position:static;
     max-height:none;
     overflow:visible;
   }
+
   #site-header #site-nav ul{
     display:flex;
     gap:30px;
     align-items:center;
   }
 }
+
+/* ===== Reduced motion ===== */
+@media (prefers-reduced-motion: reduce){
+  *{
+    transition:none !important;
+    scroll-behavior:auto !important;
+  }
+}
+
