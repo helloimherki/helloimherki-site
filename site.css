@@ -194,4 +194,113 @@ body.menu-open::after{
     scroll-behavior:auto !important;
   }
 }
+/* ===== HERO CTA ===== */
+.hero-cta{
+  margin-top:40px;
+  text-align:center;
+}
+
+.hero-tags{
+  font-size:1.1em;
+  color:#aaa;
+  margin-bottom:24px;
+  letter-spacing:0.04em;
+}
+
+/* Primary CTA button */
+.btn-primary{
+  display:inline-block;
+  padding:14px 36px;
+  border:2px solid var(--accent);
+  color:var(--accent);
+  text-decoration:none;
+
+  font-size:1em;
+  font-weight:400;           /* <<< EZ A LÉNYEG */
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+
+  transition:background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.btn-primary:hover{
+  background:var(--accent);
+  color:#000;
+  transform:translateY(-2px);
+}
+@media (max-width:768px){
+  .hero-tags{
+    font-size:1em;
+  }
+
+  .btn-primary{
+    width:100%;
+    max-width:320px;
+    padding:16px 0;
+  }
+}
+/* =========================
+   CTA – egységes rendszer
+   ========================= */
+
+/* Szöveges CTA link (mindenhol ugyanaz a karakter) */
+a.cta-link{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:400;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  transition:opacity .2s ease, transform .2s ease;
+}
+
+a.cta-link:hover{
+  opacity:1;
+  transform:translateY(-1px);
+}
+
+/* Ha a szövegben benne hagyod a "→"-t, ez nem gond.
+   Ha később ki akarod venni a HTML-ből, a következő 2 sort aktiváld: */
+/*
+a.cta-link::after{ content:"→"; }
+a.cta-link span.arrow{ display:none; }
+*/
+
+/* Biztosítsuk, hogy az index oldali .cta szekció linkje se legyen vastag */
+main .cta a{
+  font-weight:400;
+}
+
+/* Primary CTA gomb (hero és kiemelt helyek) */
+a.btn-primary{
+  display:inline-block;
+  padding:14px 36px;
+  border:2px solid var(--accent);
+  color:var(--accent);
+  background:transparent;
+  text-decoration:none;
+
+  font-size:1em;
+  font-weight:400;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+
+  transition:background .2s ease, color .2s ease, transform .2s ease, opacity .2s ease;
+}
+
+a.btn-primary:hover{
+  background:var(--accent);
+  color:#000;
+  transform:translateY(-2px);
+}
+
+@media (max-width:768px){
+  a.btn-primary{
+    width:100%;
+    max-width:320px;
+    padding:16px 0;
+  }
+}
 
