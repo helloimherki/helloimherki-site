@@ -1,0 +1,128 @@
+:root{
+  --bg:#000;
+  --fg:#fff;
+  --accent:#ff0000;
+  --muted:#ccc;
+  --header-h:80px;
+}
+
+#site-header{
+  position:fixed;
+  top:0; left:0; right:0;
+  background:#000;
+  z-index:1000;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  transition: transform 220ms ease;
+  will-change: transform;
+}
+
+#site-header.is-hidden{
+  transform: translateY(-110%);
+}
+
+#site-header .menu-bar{
+  height:var(--header-h);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:0 40px;
+}
+
+#site-header .menu-logo img{
+  height:48px;
+  width:auto;
+  display:block;
+  filter:invert(1);
+}
+
+#site-header nav ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  align-items:center;
+  gap:30px;
+}
+
+#site-header nav a{
+  color:var(--fg);
+  text-decoration:none;
+  font-size:1em;
+  transition:transform .2s ease-in-out, opacity .2s ease-in-out;
+  white-space:nowrap;
+  opacity:.95;
+}
+
+#site-header nav a:hover{ transform:scale(1.07); opacity:1; }
+#site-header nav a.active{ color:var(--fg); }
+
+#site-header .hamburger{
+  display:none;
+  font-size:1.6em;
+  color:#fff;
+  cursor:pointer;
+  background:none;
+  border:0;
+}
+
+/* Desktop social icons (if used) */
+.social-icons{
+  position:fixed;
+  top:50%;
+  right:10px;
+  transform:translateY(-50%);
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  z-index:999;
+}
+
+.social-icons a{
+  color:var(--accent);
+  font-size:1.2em;
+  text-decoration:none;
+}
+
+/* Mobile navigation: max-height toggled by #site-header.is-open */
+@media (max-width:768px){
+  :root{ --header-h:64px; }
+
+  #site-header .menu-bar{ padding:0 16px; }
+  #site-header .menu-logo img{ height:40px; }
+  #site-header .hamburger{ display:block; position:relative; z-index:2001; }
+
+  #site-header #site-nav{
+    display:block;
+    position:absolute;
+    top:var(--header-h);
+    left:0;
+    right:0;
+    background:#000;
+    border-top:1px solid rgba(255,255,255,0.06);
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .28s ease;
+    z-index:2000;
+  }
+
+  #site-header.is-open #site-nav{ max-height:80vh; }
+
+  #site-header #site-nav ul{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+    padding:20px;
+  }
+
+  .social-icons{ display:none !important; }
+}
+
+@media (min-width:769px){
+  #site-header #site-nav{
+    position:static;
+    max-height:none;
+    overflow:visible;
+  }
+}

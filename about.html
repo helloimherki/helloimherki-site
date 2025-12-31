@@ -23,7 +23,7 @@
     header{
       position:fixed; inset:0 0 auto 0;
       background:#000; z-index:1000;
-      border-bottom:1px solid rgba(255,255,255,.06);
+      border-bottom:1px solid rgba(255,255,255,0.06);
     }
     .menu-bar{
       height:var(--header-h);
@@ -83,12 +83,8 @@
       .menu-logo img{ height:40px }
       .hamburger{ display:block }
 
-      nav{
-        position:absolute; top:var(--header-h); right:0; left:0;
-        background:#000; display:none;
-        border-top:1px solid rgba(255,255,255,.06);
-      }
-      nav.open{ display:block }
+      
+      
       nav ul{
         flex-direction:column; align-items:flex-start; gap:16px; padding:20px;
       }
@@ -99,11 +95,13 @@
       .about-image{ max-width:100% }
     }
   </style>
+  <link rel="stylesheet" href="site.css"/>
+  <script src="site.js" defer></script>
 </head>
 <body>
 
   <!-- Fejléc -->
-  <header>
+  <header id="site-header">
     <div class="menu-bar">
       <a class="menu-logo" href="index.html" aria-label="Hello I'm Herki – Főoldal">
         <img src="HELLOIMHERKI.png" alt="Hello I'm Herki logó">
@@ -185,21 +183,7 @@
     <p>© 2025 Hello I'm Herki</p>
   </footer>
 
-  <script>
-    (function(){
-      const btn=document.querySelector('.hamburger');
-      const nav=document.getElementById('site-nav');
-      if(!btn||!nav) return;
-      const toggle=()=>{ const open=nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); };
-      btn.addEventListener('click',toggle);
-      nav.addEventListener('click',e=>{
-        if(e.target.tagName==='A' && nav.classList.contains('open')){
-          nav.classList.remove('open'); btn.setAttribute('aria-expanded','false');
-        }
-      });
-      window.addEventListener('resize',()=>{ if(window.innerWidth>768) { nav.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }});
-    })();
-  </script>
+  
 </body>
 </html>
 
