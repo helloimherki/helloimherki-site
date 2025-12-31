@@ -9,8 +9,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 
   <style>
-    :root{ --bg:#000; --fg:#fff; --accent:#ff0000; --muted:#ccc; --header-h:80px; }
-    *{ box-sizing:border-box }
+*{ box-sizing:border-box }
     body{
       margin:0;
       background-color: var(--bg);
@@ -18,14 +17,6 @@
       font-family:'Barlow Condensed',sans-serif;
       font-size:1.5em;
     }
-
-    header{ position:fixed; top:0; left:0; right:0; background:#000; z-index:1000; border-bottom:1px solid rgba(255,255,255,0.06); }
-    .menu-bar{ height:var(--header-h); display:flex; align-items:center; justify-content:space-between; gap:24px; padding:0 40px; }
-    .menu-logo img{ height:48px; width:auto; display:block; filter:invert(1); }
-    nav ul{ list-style:none; margin:0; padding:0; display:flex; align-items:center; gap:30px; }
-    nav a{ color:var(--fg); text-decoration:none; font-size:1em; transition:transform .2s ease-in-out, opacity .2s; opacity:.95; white-space:nowrap; }
-    nav a:hover{ transform:scale(1.07); opacity:1 }
-    .hamburger{ display:none; font-size:1.6em; color:#fff; cursor:pointer; background:none; border:0; }
 
     main{
       padding:calc(var(--header-h) + 40px) 20px 60px;
@@ -57,28 +48,12 @@
 
     /* Mobil */
     @media (max-width:768px){
-      :root{ --header-h:64px }
-      .menu-bar{ padding:0 16px }
-      .menu-logo img{ height:40px }
-      .hamburger{ display:block }
-
-      
-      
-      nav ul{ flex-direction:column; align-items:flex-start; gap:16px; padding:20px; }
-
       main{ padding:calc(var(--header-h) + 24px) 16px 40px; }
       main h1{ font-size:2em }
       main p{ font-size:1em }
       .bottom-video{ margin:40px auto 16px; }
     }
       /* Social ikon színek */
-  .social-icons a {
-    color: var(--accent);
-    font-size: 28px;
-    margin: 0 10px;
-    text-decoration: none;
-  }
-
   .social-icons a:hover {
     color: #cc0000;
   }
@@ -91,7 +66,7 @@
   <header id="site-header">
     <div class="menu-bar">
       <a class="menu-logo" href="index.html"><img src="HELLOIMHERKI.png" alt="Hello I'm Herki logó"></a>
-      <button class="hamburger" aria-label="Menü megnyitása" aria-controls="site-nav" aria-expanded="false">
+      <button class="hamburger" aria-label="Menü megnyitása" aria-controls="site-nav" aria-expanded="false" type="button">
         <i class="fa-solid fa-bars"></i>
       </button>
       <nav id="site-nav" aria-label="Fő navigáció">
@@ -140,7 +115,42 @@
     <p>&copy; 2025 Hello I'm Herki</p>
   </footer>
 
-  
+  <script>
+    (function(){
+      // Hamburger
+      const btn = document.querySelector('.hamburger');
+      const nav = document.getElementById('site-nav') || document.querySelector('header nav') || document.querySelector('nav');
+      if(btn && nav){
+        const toggle = () => {
+          const open = nav.classList.toggle('open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        };
+        btn.addEventListener('click', toggle);
+        nav.addEventListener('click', e => {
+          if(e.target.tagName === 'A' && nav.classList.contains('open')){
+            nav.classList.remove('open');
+            btn.setAttribute('aria-expanded','false');
+          }
+        });
+        window.addEventListener('resize', () => {
+          if(window.innerWidth > 768){
+            nav.classList.remove('open');
+            btn.setAttribute('aria-expanded','false');
+          }
+        });
+      }
+
+      // Biztosítsuk, hogy a videó mindig játsszon (ha valami megpróbálná megállítani)
+      const vid = document.querySelector('.bottom-video video');
+      if(vid){
+        const ensurePlay = () => vid.play().catch(()=>{});
+        vid.addEventListener('pause', ensurePlay);
+        document.addEventListener('visibilitychange', ()=>{ if(!document.hidden) ensurePlay(); });
+        // iOS néha lusta indulni: próbáljuk meg kicsit késleltetve is
+        window.addEventListener('load', ()=> setTimeout(ensurePlay, 100));
+      }
+    })();
+  </script>
 </body>
 </html>
 

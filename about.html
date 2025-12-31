@@ -9,43 +9,13 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 
   <style>
-    :root{
-      --bg:#000; --fg:#fff; --accent:#ff0000; --muted:#ccc;
-      --header-h:80px;
-    }
-    *{box-sizing:border-box}
+*{box-sizing:border-box}
     body{
       margin:0; background:var(--bg); color:var(--fg);
       font-family:'Barlow Condensed',sans-serif; font-size:1.5em;
     }
 
     /* ===== Fix fekete fejléc: logó balra, menü jobbra ===== */
-    header{
-      position:fixed; inset:0 0 auto 0;
-      background:#000; z-index:1000;
-      border-bottom:1px solid rgba(255,255,255,0.06);
-    }
-    .menu-bar{
-      height:var(--header-h);
-      display:flex; align-items:center; justify-content:space-between;
-      gap:24px; padding:0 40px;
-    }
-    .menu-logo img{ height:48px; width:auto; display:block; filter:invert(1) }
-    nav ul{
-      list-style:none; margin:0; padding:0;
-      display:flex; align-items:center; gap:30px;
-    }
-    nav a{
-      color:var(--fg); text-decoration:none; font-size:1em;
-      transition:transform .2s ease-in-out, opacity .2s ease-in-out;
-      white-space:nowrap; opacity:.95;
-    }
-    nav a:hover{ transform:scale(1.07); opacity:1 }
-    nav a.active{ color:var(--fg) }
-    .hamburger{
-      display:none; font-size:1.6em; color:#fff; cursor:pointer; background:none; border:0;
-    }
-
     /* ===== Tartalom az állandó fejléc alatt ===== */
     main{
       padding-top:calc(var(--header-h) + 60px);
@@ -68,28 +38,10 @@
     .story p{ margin-bottom:1em }
 
     /* Desktop social (meghagyva, mint az indexen) */
-    .social-icons{
-      position:fixed; top:50%; right:10px; transform:translateY(-50%);
-      display:flex; flex-direction:column; gap:20px; z-index:999;
-    }
-    .social-icons a{ color:var(--accent); font-size:1.2em; text-decoration:none }
-
     footer{ text-align:center; font-size:.9em; color:#555; padding:40px 20px }
 
     /* ===== Mobil ===== */
     @media (max-width:768px){
-      :root{ --header-h:64px }
-      .menu-bar{ padding:0 16px }
-      .menu-logo img{ height:40px }
-      .hamburger{ display:block }
-
-      
-      
-      nav ul{
-        flex-direction:column; align-items:flex-start; gap:16px; padding:20px;
-      }
-
-      .social-icons{ display:none !important }
       h1{ font-size:2em }
       .about-flex{ flex-direction:column; text-align:center }
       .about-image{ max-width:100% }
@@ -106,7 +58,7 @@
       <a class="menu-logo" href="index.html" aria-label="Hello I'm Herki – Főoldal">
         <img src="HELLOIMHERKI.png" alt="Hello I'm Herki logó">
       </a>
-      <button class="hamburger" aria-label="Menü megnyitása" aria-controls="site-nav" aria-expanded="false">
+      <button class="hamburger" aria-label="Menü megnyitása" aria-controls="site-nav" aria-expanded="false" type="button">
         <i class="fas fa-bars"></i>
       </button>
       <nav id="site-nav" aria-label="Fő navigáció">
@@ -183,7 +135,21 @@
     <p>© 2025 Hello I'm Herki</p>
   </footer>
 
-  
+  <script>
+    (function(){
+      const btn=document.querySelector('.hamburger');
+      const nav=document.getElementById('site-nav');
+      if(!btn||!nav) return;
+      const toggle=()=>{ const open=nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); };
+      btn.addEventListener('click',toggle);
+      nav.addEventListener('click',e=>{
+        if(e.target.tagName==='A' && nav.classList.contains('open')){
+          nav.classList.remove('open'); btn.setAttribute('aria-expanded','false');
+        }
+      });
+      window.addEventListener('resize',()=>{ if(window.innerWidth>768) { nav.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }});
+    })();
+  </script>
 </body>
 </html>
 
