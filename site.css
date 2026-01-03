@@ -340,4 +340,330 @@ form input[type="submit"]:hover{
     padding:16px 0;
   }
 }
+/* =========================
+   ABOUT PAGE (about.html)
+   ========================= */
+
+.page{
+  padding-top:calc(var(--header-h) + 60px);
+  max-width:1100px;
+  margin:0 auto;
+  padding-left:20px;
+  padding-right:20px;
+  padding-bottom:80px;
+}
+
+.page-about body,
+body.page-about{
+  background:var(--bg);
+  color:var(--fg);
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1.5em;
+}
+
+.about-hero{
+  display:grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap:48px;
+  align-items:center;
+  margin-top:20px;
+}
+
+.about-hero h1{
+  margin:0 0 18px;
+  font-size:2.6em;
+  text-transform:uppercase;
+  text-align:left;
+}
+
+.about-lead{
+  margin:0 0 16px;
+  color:var(--muted);
+  font-size:1.05em;
+  line-height:1.55em;
+}
+
+.about-accent{
+  color:var(--accent);
+}
+
+.about-hero__media img{
+  width:100%;
+  border-radius:14px;
+  display:block;
+}
+
+.about-cta{
+  margin-top:24px;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.about-section{
+  margin-top:70px;
+}
+
+.about-section h2{
+  margin:0 0 18px;
+  font-size:1.6em;
+  text-transform:uppercase;
+}
+
+.about-section p{
+  color:var(--muted);
+  line-height:1.6em;
+  margin:0;
+}
+
+.about-cards{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:18px;
+  margin-top:20px;
+}
+
+.about-card{
+  border:1px solid rgba(255,255,255,0.10);
+  border-radius:14px;
+  padding:18px 18px 16px;
+  background:rgba(255,255,255,0.02);
+}
+
+.about-card h3{
+  margin:0 0 10px;
+  font-size:1.1em;
+  text-transform:uppercase;
+}
+
+.about-card p{
+  margin:0;
+  font-size:0.95em;
+}
+
+.about-story{
+  display:grid;
+  grid-template-columns: 220px 1fr;
+  gap:26px;
+  align-items:start;
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding-top:34px;
+}
+
+.about-story__media img{
+  width:200px;
+  height:200px;
+  border-radius:999px;
+  object-fit:cover;
+  display:block;
+}
+
+.about-story__text h2{
+  margin-bottom:14px;
+}
+
+.about-story__line{
+  margin:0 0 10px;
+  color:var(--muted);
+  letter-spacing:0.02em;
+  text-transform:none; /* olvashatóság */
+}
+
+.about-final{
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding-top:40px;
+}
+
+.about-final p{
+  max-width:720px;
+  margin:0 auto 22px;
+}
+
+/* Mobile */
+@media (max-width:768px){
+  .about-hero{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+
+  .about-hero h1{
+    text-align:center;
+  }
+
+  .about-cta{
+    justify-content:center;
+  }
+
+  .about-cards{
+    grid-template-columns:1fr;
+  }
+
+  .about-story{
+    grid-template-columns:1fr;
+  }
+
+  .about-story__media{
+    display:flex;
+    justify-content:center;
+  }
+}
+/* =========================
+   ABOUT PAGE – FIXED
+   ========================= */
+
+.page{
+  padding-top:calc(var(--header-h) + 40px);
+  max-width:1100px;
+  margin:0 auto;
+  padding-left:20px;
+  padding-right:20px;
+  padding-bottom:80px;
+}
+
+/* HERO */
+.about-hero{
+  display:grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap:48px;
+  align-items:center;
+  margin-top:0;
+}
+
+.about-hero h1{
+  margin:0 0 18px;
+  font-size:2.6em;
+  text-transform:uppercase;
+  text-align:left;
+}
+
+/* Szöveg */
+.about-copy p{
+  margin:0 0 14px;
+  color:var(--muted);
+  line-height:1.6em;
+  font-size:1.05em;
+}
+
+.about-copy strong{
+  color:var(--fg);
+}
+
+/* HERO KÉP – 50% láthatóság */
+.about-hero__media img{
+  width:100%;
+  max-width:480px;
+  display:block;
+  border-radius:14px;
+  opacity:0.05;              /* <- 50% */
+  margin-left:auto;
+}
+
+/* CTA – jobbra zárt */
+.about-cta{
+  margin-top:24px;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+  justify-content:flex-end; /* <- jobbra */
+}
+
+/* SZEKCIÓK */
+.about-section{
+  margin-top:70px;
+}
+
+.about-section h2{
+  margin:0 0 18px;
+  font-size:1.6em;
+  text-transform:uppercase;
+}
+
+.about-section p{
+  color:var(--muted);
+  line-height:1.6em;
+  margin:0;
+}
+
+/* STORY RÉSZ – KÉP NE VÁGÓDJON */
+.about-story{
+  display:grid;
+  grid-template-columns: 240px 1fr;
+  gap:26px;
+  align-items:start;
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding-top:34px;
+}
+
+.about-story__media img{
+  width:220px;
+  height:220px;
+  object-fit:contain;     /* <- nem vág */
+  border-radius:14px;
+  background:#000;
+  display:block;
+}
+
+/* ZÁRÓ CTA */
+.about-final{
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding-top:40px;
+}
+
+.about-final p{
+  max-width:720px;
+  margin:0 auto 22px;
+}
+
+/* ===== MOBIL ===== */
+@media (max-width:768px){
+
+  .about-hero{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+
+  .about-hero h1{
+    text-align:center;
+  }
+
+  .about-cta{
+    justify-content:center; /* mobilon közép */
+  }
+
+  .about-story{
+    grid-template-columns:1fr;
+  }
+
+  .about-story__media{
+    display:flex;
+    justify-content:center;
+  }
+}
+/* =========================
+   GLOBAL FOOTER – EGYSÉGES
+   ========================= */
+
+footer{
+  text-align:center;
+  font-size:0.9em;
+  color:#555;
+  padding:40px 20px;
+}
+
+footer p{
+  margin:0;
+}
+/* =========================
+   CONTACT FORM – SZÖGLETES MEZŐK
+   ========================= */
+
+form input,
+form textarea,
+form button[type="submit"]{
+  border-radius:0 !important;
+}
 

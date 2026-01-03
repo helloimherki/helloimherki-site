@@ -3,87 +3,51 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
-  <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
-<title>Rólam – Hello I'm Herki | Bálint Tibor Herki</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <title>Rólam – Hello I'm Herki | Bálint Tibor Herki</title>
   <meta name="description" content="Bálint Tibor Herki – szabadúszó grafikus. Ismerd meg a történetem és a szemléletem, és nézd meg, hogyan dolgozunk együtt a márkád vizuális megjelenésén.">
   <link rel="canonical" href="https://helloimherki.com/about.html">
-  
+
   <link rel="icon" href="/favicon.ico">
-  
+
   <meta property="og:site_name" content="Hello I'm Herki">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Rólam – Hello I'm Herki | Bálint Tibor Herki">
   <meta property="og:description" content="Bálint Tibor Herki – szabadúszó grafikus. Ismerd meg a történetem és a szemléletem, és nézd meg, hogyan dolgozunk együtt a márkád vizuális megjelenésén.">
   <meta property="og:url" content="https://helloimherki.com/about.html">
   <meta property="og:image" content="https://helloimherki.com/og-cover.jpg">
-  
+
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rólam – Hello I'm Herki | Bálint Tibor Herki">
   <meta name="twitter:description" content="Bálint Tibor Herki – szabadúszó grafikus. Ismerd meg a történetem és a szemléletem, és nézd meg, hogyan dolgozunk együtt a márkád vizuális megjelenésén.">
   <meta name="twitter:image" content="https://helloimherki.com/og-cover.jpg">
-<!-- <link href="style.css" rel="stylesheet"/> -->
+
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 
-  <style>
-*{box-sizing:border-box}
-    body{
-      margin:0; background:var(--bg); color:var(--fg);
-      font-family:'Barlow Condensed',sans-serif; font-size:1.5em;
-    }
-
-    /* ===== Fix fekete fejléc: logó balra, menü jobbra ===== */
-    /* ===== Tartalom az állandó fejléc alatt ===== */
-    main{
-      padding-top:calc(var(--header-h) + 60px);
-      max-width:1000px; margin:0 auto; padding-bottom:60px;
-    }
-
-    h1{
-      font-size:2.5em; margin-bottom:40px; text-transform:uppercase; text-align:center;
-    }
-    .about-flex{
-      display:flex; flex-wrap:wrap; gap:40px; align-items:center; justify-content:center;
-    }
-    .about-text{ flex:1 1 400px; color:#ccc; font-size:1.1em }
-    .about-text strong{ color:#fff }
-    .about-image{ flex:1 1 500px; max-width:500px }
-    .about-image img{ width:100%; border-radius:10px }
-    .highlight{ color:var(--accent) }
-
-    .story{ max-width:800px; margin:60px auto 30px; font-size:.7em; color:#ccc; line-height:1.1em; text-align:center }
-    .story p{ margin-bottom:1em }
-
-    /* Desktop social (meghagyva, mint az indexen) */
-    footer{ text-align:center; font-size:.9em; color:#555; padding:40px 20px }
-
-    /* ===== Mobil ===== */
-    @media (max-width:768px){
-      h1{ font-size:2em }
-      .about-flex{ flex-direction:column; text-align:center }
-      .about-image{ max-width:100% }
-    }
-  </style>
   <link rel="stylesheet" href="site.css"/>
   <script src="site.js" defer></script>
 </head>
-<body>
 
-  <!-- Fejléc -->
+<body class="page-about">
+
   <header id="site-header">
     <div class="menu-bar">
       <a class="menu-logo" href="index.html" aria-label="Hello I'm Herki – Főoldal">
         <img src="HELLOIMHERKI.png" alt="Hello I'm Herki logó">
       </a>
+
       <button class="hamburger" aria-label="Menü megnyitása" aria-controls="site-nav" aria-expanded="false" type="button">
-        <i class="fas fa-bars"></i>
+        <i class="fa-solid fa-bars"></i>
       </button>
+
       <nav id="site-nav" aria-label="Fő navigáció">
         <ul>
           <li><a href="index.html">Főoldal</a></li>
-          <li><a class="active" href="about.html">Rólam</a></li>
+          <li><a href="about.html">Rólam</a></li>
           <li><a href="portfolio.html">Portfólió</a></li>
           <li><a href="services.html">Szolgáltatások</a></li>
           <li><a href="prices.html">Árak</a></li>
@@ -95,66 +59,85 @@
 
   <!-- Social ikonok (desktop) -->
   <div class="social-icons">
-    <a href="https://instagram.com/hello.im.herki/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://behance.net/herkibalint" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
-    <a href="https://www.threads.net/hello.im.herki/" target="_blank" title="Threads"><i class="fab fa-threads"></i></a>
-    <a href="https://tiktok.com/@hello.im.herki/" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+    <a href="https://instagram.com/hello.im.herki/" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://behance.net/herkibalint" target="_blank" rel="noopener" title="Behance"><i class="fab fa-behance"></i></a>
+    <a href="https://www.threads.net/hello.im.herki/" target="_blank" rel="noopener" title="Threads"><i class="fab fa-threads"></i></a>
+    <a href="https://tiktok.com/@hello.im.herki/" target="_blank" rel="noopener" title="TikTok"><i class="fab fa-tiktok"></i></a>
   </div>
 
-  <main>
-    <h1>Rólam</h1>
+  <main class="page">
+    <section class="about-hero">
+      <div class="about-hero__text">
+        <h1>Rólam</h1>
 
-    <div class="about-flex">
-      <div class="about-text">
-        <p><strong>Bálint Tibor Herki.</strong><br/>
-          Szabadúszó grafikus a három <span class="highlight">X</span>-en is túl.<br/><br/>
-          Hobbi, életérzés, szenvedély számomra a tervezés,<br/>
-          nem szükséges a szó a leírt mondatok sokasága.<br/><br/>
-          Az elismert munka eredménye számít, nos az a
-          <span class="highlight">HERKI</span>.
+        <p class="about-lead">
+          <strong>Bálint Tibor Herki.</strong><br>
+          Szabadúszó grafikus a három X-en is túl.
         </p>
-        <p><strong>Klikk a portfólió gombra és dolgozzunk közösen a TE álmodért.</strong></p>
-        <p><a href="portfolio.html" style="color:#ff0000; text-decoration:none;">PORTFÓLIÓ →</a></p>
-      </div>
-      <div class="about-image">
-        <img src="herki.png" alt="Herki portré">
-      </div>
-    </div>
 
-    <hr style="border:none;border-top:1px solid #fff;width:90%;margin:60px auto;"/>
+        <p class="about-lead">
+        Hobbi, életérzés, szenvedély számomra a tervezés,
+nem szükséges a szó a leírt mondatok sokasága.
+Az elismert munka eredménye számít, nos az a
+          <span class="about-accent">HERKI.</span>
+        </p>
 
-    <section style="text-align:center;max-width:800px;margin:80px auto 40px;font-size:1em;color:#ccc;line-height:1.6em;">
-      <h2 style="color:#fff;margin-bottom:20px;">HOGY MIÉRT ENGEM VÁLASSZ GRAFIKUSKÉNT?</h2>
-      <p>
-        Minden projektet az egyedi igényeidhez igazítok, hogy a márkád igazán a TIÉD legyen.<br/>
-        Nemcsak mutatós, hanem praktikus és könnyen használható terveket készítek.<br/>
-        Figyelek a részletekre, tartom a határidőket, így biztos lehetsz benne,<br/>
-        hogy a végeredmény tökéletes lesz.
-      </p>
+        <div class="about-cta">
+          <a class="btn-primary" href="portfolio.html">Portfólió megnyitása</a>
+        </div>
+      </div>
+
+      <div class="about-hero__media">
+        <img src="herki.png" alt="Herki portré" loading="lazy">
+      </div>
     </section>
 
-    <hr style="border:none;border-top:1px solid #fff;width:90%;margin:60px auto;"/>
+    <section class="about-section">
+      <h2>Miért engem válassz grafikusként?</h2>
 
-    <div style="display:flex;align-items:center;justify-content:space-between;gap:60px;flex-wrap:wrap;max-width:1000px;margin:0 auto;padding:40px 20px;">
-      <div style="flex:0 0 auto;">
-        <img src="herki0.png" alt="Herki portré" style="width:200px;height:200px;border-radius:50%;object-fit:cover;"/>
+      <div class="about-cards">
+        <div class="about-card">
+          <h3>Egyedi, rád szabott</h3>
+          <p>Minden projektet a céljaidhoz és a közönségedhez igazítok, hogy a márkád valóban a tiéd legyen.</p>
+        </div>
+        <div class="about-card">
+          <h3>Esztétika + használhatóság</h3>
+          <p>Nem csak „szép”, hanem működő design: átlátható, praktikus, könnyen használható megoldások.</p>
+        </div>
+        <div class="about-card">
+          <h3>Részletek és határidők</h3>
+          <p>Precizitás, következetesség, tiszta kommunikáció. A végeredmény és a folyamat is kontrollált.</p>
+        </div>
       </div>
-      <div class="story" style="flex:1 1 500px; text-align:left;">
-        <p>KORÁBBAN FEKETE-FEHÉREN LÁTTAM A VILÁGOT, ÉS MINDEN EGYSZERŰNEK, EGYHANGÚNAK TŰNT.</p>
-        <p>AZ ÉLETEM AZONBAN TELJESEN MEGVÁLTOZOTT, AMIKOR MEGISMERTEM A WEBDESIGN VILÁGÁT.</p>
-        <p>A SZÍNEK, FORMÁK ÉS KREATÍV LEHETŐSÉGEK FELFEDEZÉSE ÚJ PERSPEKTÍVÁT ADOTT.</p>
-        <p>AZÓTA A SZÍNEK FONTOSSÁGA ÉS AZ ESZTÉTIKA IRÁNTI SZENVEDÉLYEM VEZÉREL,</p>
-        <p>HOGY EGYEDI ÉS INSPIRÁLÓ VIZUÁLIS ÉLMÉNYEKET HOZZAK LÉTRE.</p>
-        <p>A WEBDESIGN AZ ÉLETEM RÉSZE LETT, ÉS ÁLTALA EGY SOKKAL SZÍNESEBB ÉS IZGALMASABB VILÁGOT LÁTTAM MEG.</p>
+    </section>
+
+    <section class="about-section about-story">
+      <div class="about-story__media">
+        <img src="herki0.png" alt="Herki portré" loading="lazy">
       </div>
-    </div>
+
+      <div class="about-story__text">
+        <h2>A szemléletem</h2>
+        <p class="about-story__line">KORÁBBAN FEKETE-FEHÉREN LÁTTAM A VILÁGOT, ÉS MINDEN EGYSZERŰNEK, EGYHANGÚNAK TŰNT.</p>
+        <p class="about-story__line">AZ ÉLETEM AZONBAN TELJESEN MEGVÁLTOZOTT, AMIKOR MEGISMERTEM A WEBDESIGN VILÁGÁT.</p>
+        <p class="about-story__line">A SZÍNEK, FORMÁK ÉS KREATÍV LEHETŐSÉGEK FELFEDEZÉSE ÚJ PERSPEKTÍVÁT ADOTT.</p>
+        <p class="about-story__line">AZÓTA A SZÍNEK FONTOSSÁGA ÉS AZ ESZTÉTIKA IRÁNTI SZENVEDÉLYEM VEZÉREL,</p>
+        <p class="about-story__line">HOGY EGYEDI ÉS INSPIRÁLÓ VIZUÁLIS ÉLMÉNYEKET HOZZAK LÉTRE.</p>
+        <p class="about-story__line">A WEBDESIGN AZ ÉLETEM RÉSZE LETT, ÉS ÁLTALA EGY SOKKAL SZÍNESEBB ÉS IZGALMASABB VILÁGOT LÁTTAM MEG.</p>
+      </div>
+    </section>
+
+    <section class="about-section about-final">
+      <h2>Készen állsz?</h2>
+      <p>Ha van egy projekted, küldj egy rövid briefet, és mondom a következő lépést.</p>
+      <div class="about-cta">
+        <a class="btn-primary" href="contact.html">Lépj velem kapcsolatba</a>
+      </div>
+    </section>
   </main>
 
   <footer>
     <p>© 2025 Hello I'm Herki</p>
   </footer>
-
-  
 </body>
 </html>
-
