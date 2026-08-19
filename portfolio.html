@@ -6,41 +6,74 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href='\"https://fonts.googleapis.com\"' rel='\"preconnect\"'/>
 <link crossorigin="" href='\"https://fonts.gstatic.com\"' rel='\"preconnect\"'/>
-<title>Portfólió – Hello I'm Herki | Referenciák és munkák</title>
-<meta content="Válogatás a munkáimból: branding, logó, webdesign, illusztráció és vizuális anyagok. Inspirálódj a referenciákból, és kérj ajánlatot." name="description"/>
+<title>Portfólió – Hello I'm Herki | Branding, packaging és webdesign</title>
+<meta content="Válogatott munkák branding, arculat, packaging, print és digitális design területéről. Nézd meg a Hello I'm Herki portfólióját." name="description"/>
 <link href="https://helloimherki.com/portfolio.html" rel="canonical"/>
 <link href="/favicon.ico" rel="icon"/>
 <meta content="Hello I'm Herki" property="og:site_name"/>
 <meta content="website" property="og:type"/>
-<meta content="Portfólió – Hello I'm Herki | Referenciák és munkák" property="og:title"/>
-<meta content="Válogatás a munkáimból: branding, logó, webdesign, illusztráció és vizuális anyagok. Inspirálódj a referenciákból, és kérj ajánlatot." property="og:description"/>
+<meta content="Portfólió – Hello I'm Herki | Branding, packaging és webdesign" property="og:title"/>
+<meta content="Válogatott munkák branding, arculat, packaging, print és digitális design területéről." property="og:description"/>
 <meta content="https://helloimherki.com/portfolio.html" property="og:url"/>
 <meta content="https://helloimherki.com/og-cover.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Portfólió – Hello I'm Herki | Referenciák és munkák" name="twitter:title"/>
-<meta content="Válogatás a munkáimból: branding, logó, webdesign, illusztráció és vizuális anyagok. Inspirálódj a referenciákból, és kérj ajánlatot." name="twitter:description"/>
+<meta content="Portfólió – Hello I'm Herki | Branding, packaging és webdesign" name="twitter:title"/>
+<meta content="Válogatott munkák branding, arculat, packaging, print és digitális design területéről." name="twitter:description"/>
 <meta content="https://helloimherki.com/og-cover.jpg" name="twitter:image"/>
 <!-- <link href="style.css" rel="stylesheet"/> -->
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&amp;display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 <style>
-*{ box-sizing:border-box }
-body{ margin:0; background:var(--bg); color:var(--fg); font-family:'Barlow Condensed',sans-serif; font-size:1.5em; }
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1.5em;
+}
 
-/* ===== Tartalom a fix fejléc alatt ===== */
-main{ padding:calc(var(--header-h) + 60px) 20px 60px; max-width:1200px; margin:0 auto; text-align:center; }
-main h1{ font-size:2.5em; margin-bottom:1em; text-transform:uppercase; }
-main p{ margin-bottom:1em; line-height:1.5em; font-size:1.2em; color:var(--muted); }
+main{
+  padding:calc(var(--header-h) + 60px) 20px 60px;
+  max-width:1200px;
+  margin:0 auto;
+  text-align:center;
+}
 
-/* ===== Portfólió rács ===== */
+main h1{
+  font-size:2.5em;
+  margin-bottom:18px;
+  text-transform:uppercase;
+}
+
+.portfolio-intro{
+  max-width:820px;
+  margin:0 auto 55px;
+}
+
+.portfolio-intro .lead{
+  color:var(--accent);
+  text-transform:uppercase;
+  font-size:1.12em;
+  margin:0 0 12px;
+}
+
+.portfolio-intro p{
+  color:var(--muted);
+  line-height:1.5em;
+  font-size:1em;
+  margin:0;
+}
+
 .image-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
   max-width:1200px;
-  margin:60px auto;
+  margin:0 auto;
   padding:0;
 }
+
 .image-grid img{
   width:100%;
   height:auto;
@@ -49,20 +82,55 @@ main p{ margin-bottom:1em; line-height:1.5em; font-size:1.2em; color:var(--muted
   background-color:#222;
   transition:transform .3s ease;
 }
-.image-grid img:hover{ transform:scale(1.05); z-index:2; }
 
-footer{ text-align:center; font-size:.9em; color:#555; padding:40px 20px; }
-
-/* ===== Mobil ===== */
-@media (max-width:768px){
-  main{ padding:calc(var(--header-h) + 40px) 16px 40px; }
-  main h1{ font-size:2em; }
-  main p{ font-size:1em; }
+.image-grid img:hover{
+  transform:scale(1.04);
+  z-index:2;
 }
-  </style>
-<link href="site.css" rel="stylesheet">
+
+.portfolio-cta{
+  max-width:760px;
+  margin:85px auto 20px;
+  padding:42px 24px;
+  border-top:1px solid #222;
+  border-bottom:1px solid #222;
+}
+
+.portfolio-cta h2{
+  text-transform:uppercase;
+  font-size:1.5em;
+  margin:0 0 10px;
+}
+
+.portfolio-cta p{
+  color:#bbb;
+  line-height:1.5;
+  font-size:.95em;
+  margin:0 auto 18px;
+}
+
+.portfolio-cta a{
+  color:var(--accent)!important;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+footer{
+  text-align:center;
+  font-size:.9em;
+  color:#555;
+  padding:40px 20px;
+}
+
+@media(max-width:768px){
+  main{padding:calc(var(--header-h) + 40px) 16px 40px}
+  main h1{font-size:2em}
+  .portfolio-intro p{font-size:.95em}
+}
+</style>
+<link href="site.css" rel="stylesheet"/>
 <script defer="" src="site.js"></script>
-</link></link></link><link href="https://helloimherki.com/portfolio.html" rel="canonical"/><link href="https://helloimherki.com/portfolio.html" hreflang="hu" rel="alternate"/><link href="https://helloimherki.com/EN/portfolio.html" hreflang="en" rel="alternate"/><link href="https://helloimherki.com/index.html" hreflang="x-default" rel="alternate"/></head>
+<link href="https://helloimherki.com/portfolio.html" rel="canonical"/><link href="https://helloimherki.com/portfolio.html" hreflang="hu" rel="alternate"/><link href="https://helloimherki.com/EN/portfolio.html" hreflang="en" rel="alternate"/><link href="https://helloimherki.com/index.html" hreflang="x-default" rel="alternate"/></head>
 <body>
 <!-- Social Icons (desktop) -->
 <div class="social-icons">
@@ -88,22 +156,28 @@ footer{ text-align:center; font-size:.9em; color:#555; padding:40px 20px; }
 <!-- Tartalom -->
 <main>
 <h1>Portfólió</h1>
-<p>#branding #logo #webdesign #illustration</p>
-<p>Ismerd meg eddigi munkáimat.</p>
+<section class="portfolio-intro">
+<p class="lead">Válogatott munkák.</p>
+<p>Branding, arculat, packaging, print és digitális design területéről.</p>
+</section>
 <div class="image-grid">
-<img alt="Portfólió kép 1" src="portfolio1.jpg">
-<img alt="Portfólió kép 2" src="portfolio2.jpg"/>
-<img alt="Portfólió kép 3" src="portfolio3.jpg"/>
-<img alt="Portfólió kép 4" src="portfolio4.jpg"/>
-<img alt="Portfólió kép 5" src="portfolio5.jpg"/>
-<img alt="Portfólió kép 6" src="portfolio6.jpg"/>
-<img alt="Portfólió kép 7" src="portfolio7.jpg"/>
-<img alt="Portfólió kép 8" src="portfolio8.jpg"/>
-</img></div>
-<p style="color:#ff0000;">Referenciák hamarosan feltöltésre kerülnek.</p>
+<img alt="Hello I'm Herki – portfólió munka 1" src="portfolio1.jpg"/>
+<img alt="Hello I'm Herki – portfólió munka 2" src="portfolio2.jpg"/>
+<img alt="Hello I'm Herki – portfólió munka 3" src="portfolio3.jpg"/>
+<img alt="Hello I'm Herki – portfólió munka 4" src="portfolio4.jpg"/>
+<img alt="Hello I'm Herki – portfólió munka 5" src="portfolio5.jpg"/>
+<img alt="Hello I'm Herki – portfólió munka 6" src="portfolio6.jpg"/>
+<img alt="Hello I'm Herki – portfólió munka 7" src="portfolio7.jpg"/>
+<img alt="Hello I'm Herki – portfólió munka 8" src="portfolio8.jpg"/>
+</div>
+<section class="portfolio-cta">
+<h2>Van egy projekted?</h2>
+<p>Ha hasonló vizuális megoldást keresel a saját márkádhoz, beszéljünk róla.</p>
+<a class="cta-link" href="contact.html">Kérj ajánlatot →</a>
+</section>
 </main>
 <footer>
-<p>© 2025 Hello I'm Herki</p>
+<p>© 2026 Hello I'm Herki</p>
 </footer>
 </body>
 </html>
