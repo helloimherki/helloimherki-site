@@ -62,6 +62,69 @@
   justify-content: center;
   align-items: center;
 }
+
+
+/* About page – centered single-column layout without images */
+.page-about main,
+.page-about .about-hero,
+.page-about .about-hero__text,
+.page-about .about-section,
+.page-about .about-story,
+.page-about .about-story__text,
+.page-about .about-final {
+  text-align: center !important;
+}
+
+.page-about .about-hero,
+.page-about .about-story {
+  display: block !important;
+}
+
+.page-about .about-hero__text,
+.page-about .about-story__text {
+  width: 100% !important;
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.page-about .about-cards,
+.page-about .about-card {
+  text-align: center !important;
+}
+
+
+/* About CTA – consistent with the rest of the site */
+.page-about .about-cta{
+  width:100% !important;
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  text-align:center !important;
+  margin:24px auto 0 !important;
+}
+.page-about .about-cta .cta-link{
+  display:inline-block !important;
+  margin:0 auto !important;
+  padding:0 !important;
+  border:0 !important;
+  background:transparent !important;
+  color:var(--accent) !important;
+  text-decoration:none !important;
+  font-weight:bold !important;
+  text-align:center !important;
+}
+</style>
+
+<style>
+/* Rólam főcím középre igazítása */
+.page-about .about-hero__text h1,
+.page-about h1 {
+  width: 100% !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
 </style>
 
 </head>
@@ -100,11 +163,8 @@
         a logótól és csomagolástól egészen a digitális felületekig.
       </p>
 <div class="about-cta">
-<a class="btn-primary" href="portfolio.html">Portfólió megnyitása</a>
+<a class="cta-link" href="portfolio.html">Portfólió megnyitása →</a>
 </div>
-</div>
-<div class="about-hero__media">
-<img alt="Bálint Tibor Herki – Hello I'm Herki" loading="lazy" src="herki.png"/>
 </div>
 </section>
 <section class="about-section">
@@ -125,9 +185,6 @@
 </div>
 </section>
 <section class="about-section about-story">
-<div class="about-story__media">
-<img alt="Herki – Hello I'm Herki" loading="lazy" src="herki0.png"/>
-</div>
 <div class="about-story__text">
 <h2>A szemléletem</h2>
 <p class="about-story__line">KORÁBBAN FEKETE-FEHÉREN LÁTTAM A VILÁGOT. A DESIGN MUTATTA MEG, MENNYIT JELENTHET EGY JÓL MEGVÁLASZTOTT SZÍN, FORMA VAGY RÉSZLET.</p>
@@ -141,7 +198,7 @@
 <h2>Építsünk valamit, amit megjegyeznek.</h2>
 <p>Ha van egy projekted vagy egy márka, amelynek erősebb vizuális megjelenésre van szüksége, mesélj róla.</p>
 <div class="about-cta">
-<a class="btn-primary" href="contact.html">Lépj velem kapcsolatba</a>
+<a class="cta-link" href="contact.html">Lépj velem kapcsolatba →</a>
 </div>
 </section>
 </main>
