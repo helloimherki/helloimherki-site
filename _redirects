@@ -1,0 +1,20 @@
+# Hello I'm Herki – canonical URL redirects
+# Extensionless public URLs -> canonical .html URLs
+
+/index          /index.html          301
+/about          /about.html          301
+/portfolio      /portfolio.html      301
+/services       /services.html       301
+/prices         /prices.html         301
+/contact        /contact.html        301
+/thanks         /thanks.html         301
+
+/EN             /EN/index.html       301
+/EN/            /EN/index.html       301
+/EN/index        /EN/index.html       301
+/EN/about        /EN/about.html       301
+/EN/portfolio    /EN/portfolio.html   301
+/EN/services     /EN/services.html    301
+/EN/prices       /EN/prices.html      301
+/EN/contact      /EN/contact.html     301
+/EN/thanks       /EN/thanks.html      301
