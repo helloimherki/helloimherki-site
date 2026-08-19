@@ -6,60 +6,184 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href='\"https://fonts.googleapis.com\"' rel='\"preconnect\"'/>
 <link crossorigin="" href='\"https://fonts.gstatic.com\"' rel='\"preconnect\"'/>
-<title>Services – Hello I'm Herki | Branding, Logo, Web Design</title>
-<meta content="Services: brand identity, logo design, web design and illustration. Clear process, consistent visuals and practical deliverables." name="description"/>
-<link href="https://helloimherki.com/services.html" rel="canonical"/>
+<title>Services – Hello I'm Herki | Branding, Packaging &amp; Web Design</title>
+<meta content="Branding, visual identity, packaging, print, digital design and responsive web design for businesses." name="description"/>
+<link href="https://helloimherki.com/EN/services.html" rel="canonical"/>
 <link href="/favicon.ico" rel="icon"/>
 <meta content="Hello I'm Herki" property="og:site_name"/>
 <meta content="website" property="og:type"/>
-<meta content="Services – Hello I'm Herki | Branding, Logo, Web Design" property="og:title"/>
-<meta content="Services: brand identity, logo design, web design and illustration. Clear process, consistent visuals and practical deliverables." property="og:description"/>
+<meta content="Services – Hello I'm Herki | Branding, Packaging &amp; Web Design" property="og:title"/>
+<meta content="Branding, visual identity, packaging, print, digital design and responsive web design for businesses." property="og:description"/>
 <meta content="https://helloimherki.com/EN/services.html" property="og:url"/>
 <meta content="https://helloimherki.com/og-cover.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Services – Hello I'm Herki | Branding, Logo, Web Design" name="twitter:title"/>
-<meta content="Services: brand identity, logo design, web design and illustration. Clear process, consistent visuals and practical deliverables." name="twitter:description"/>
+<meta content="Services – Hello I'm Herki | Branding, Packaging &amp; Web Design" name="twitter:title"/>
+<meta content="Branding, visual identity, packaging, print, digital design and responsive web design for businesses." name="twitter:description"/>
 <meta content="https://helloimherki.com/og-cover.jpg" name="twitter:image"/>
 <!-- <link href="style.css" rel="stylesheet"/> -->
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&amp;display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 <style>
 *{ box-sizing:border-box }
-    body{
-      margin:0; background:var(--bg); color:var(--fg);
-      font-family:'Barlow Condensed',sans-serif; font-size:1.5em;
-    }
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:'Barlow Condensed',sans-serif; font-size:1.5em;
+}
 
-    /* ===== Fix fekete fejléc: logó balra, menü jobbra ===== */
-    /* ===== Tartalom az állandó fejléc alatt ===== */
-    main{
-      padding-top:calc(var(--header-h) + 60px);
-      max-width:1200px; margin:0 auto; padding-bottom:60px;
-    }
-    h1{
-      text-align:center; font-size:2.5em; margin-bottom:60px; text-transform:uppercase;
-    }
+main{
+  padding-top:calc(var(--header-h) + 60px);
+  max-width:1200px; margin:0 auto; padding-bottom:60px;
+}
 
-    .grid{
-      display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-      gap:40px 20px; text-align:center;
-    }
-    .service{ padding:20px }
-    .service h2{ font-size:1.2em; text-transform:uppercase; margin-bottom:10px }
-    .service p{ font-size:.9em; color:#ccc; line-height:1.4em }
+h1{
+  text-align:center; font-size:2.5em; margin-bottom:20px;
+  text-transform:uppercase;
+}
 
-    /* Desktop social (meghagyva, mint az indexen) */
-    footer{ text-align:center; font-size:.9em; color:#555; padding:40px 20px }
+.services-intro{
+  max-width:850px; margin:0 auto 70px; text-align:center;
+}
 
-    /* ===== Mobil ===== */
-    @media (max-width:768px){
-      h1{ font-size:2em }
-      main{ padding-left:16px; padding-right:16px }
-    }
-  </style>
-<link href="/site.css" rel="stylesheet">
-<script defer="" src="/site.js"></script>
-</head>
+.services-intro .lead{
+  color:var(--accent); font-size:1.15em; text-transform:uppercase;
+  letter-spacing:.03em; margin:0 0 14px;
+}
+
+.services-intro p{
+  color:#ccc; line-height:1.55; margin:0 auto;
+}
+
+.service-pillars{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:22px;
+  margin-top:20px;
+}
+
+.service-card{
+  border:1px solid #222;
+  padding:30px 26px;
+  min-height:420px;
+  display:flex;
+  flex-direction:column;
+  background:rgba(255,255,255,.01);
+}
+
+.service-number{
+  color:var(--accent);
+  font-size:.8em;
+  letter-spacing:.08em;
+  margin-bottom:14px;
+}
+
+.service-card h2{
+  font-size:1.35em;
+  text-transform:uppercase;
+  margin:0 0 8px;
+}
+
+.service-subtitle{
+  color:#fff;
+  font-size:1em;
+  margin:0 0 18px;
+}
+
+.service-description{
+  color:#bbb;
+  line-height:1.5;
+  font-size:.88em;
+  margin:0 0 22px;
+}
+
+.service-list{
+  list-style:none;
+  padding:0;
+  margin:auto 0 0;
+  border-top:1px solid #222;
+  padding-top:18px;
+}
+
+.service-list li{
+  color:#d2d2d2;
+  font-size:.82em;
+  line-height:1.45;
+  margin:7px 0;
+}
+
+.extra-services{
+  margin-top:80px;
+  text-align:center;
+  border-top:1px solid #222;
+  border-bottom:1px solid #222;
+  padding:46px 24px;
+}
+
+.extra-services h2{
+  text-transform:uppercase;
+  font-size:1.35em;
+  margin:0 0 12px;
+}
+
+.extra-services p{
+  color:#bbb;
+  max-width:850px;
+  margin:0 auto 16px;
+  line-height:1.5;
+}
+
+.extra-services .extra-list{
+  color:#ddd;
+  max-width:900px;
+  margin:0 auto;
+}
+
+.services-cta{
+  text-align:center;
+  margin:80px auto 30px;
+  max-width:780px;
+}
+
+.services-cta h2{
+  text-transform:uppercase;
+  font-size:1.55em;
+  margin-bottom:12px;
+}
+
+.services-cta p{
+  color:#bbb;
+  line-height:1.5;
+  margin:0 auto 22px;
+}
+
+.services-cta a{
+  color:var(--accent)!important;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+footer{
+  text-align:center; font-size:.9em; color:#555; padding:40px 20px;
+}
+
+@media (max-width:900px){
+  .service-pillars{
+    grid-template-columns:1fr;
+  }
+  .service-card{
+    min-height:auto;
+  }
+}
+
+@media (max-width:768px){
+  h1{ font-size:2em }
+  main{ padding-left:16px; padding-right:16px }
+  .services-intro{ margin-bottom:45px }
+  .service-card{ padding:26px 22px }
+}
+</style>
+<link href="site.css" rel="stylesheet"/>
+<script defer="" src="site.js"></script>
+<link href="https://helloimherki.com/services.html" rel="canonical"/><link href="https://helloimherki.com/services.html" hreflang="hu" rel="alternate"/><link href="https://helloimherki.com/EN/services.html" hreflang="en" rel="alternate"/><link href="https://helloimherki.com/services.html" hreflang="x-default" rel="alternate"/></head>
 <body>
 <!-- Social Icons (desktopon látszik) -->
 <div class="social-icons">
@@ -71,44 +195,59 @@
 <!-- Fejléc -->
 <header id="site-header">
 <div class="menu-bar">
-<a aria-label="Hello I'm Herki – Főoldal" class="menu-logo" href="/EN/index.html">
-<img alt="Hello I'm Herki logó" src="/HELLOIMHERKI.png"/>
+<a aria-label="Hello I'm Herki – Home" class="menu-logo" href="/EN/index.html">
+<img alt="Hello I'm Herki logo" src="/HELLOIMHERKI.png"/>
 </a>
-<button aria-controls="site-nav" aria-expanded="false" aria-label="Menü megnyitása" class="hamburger" type="button">
+<button aria-controls="site-nav" aria-expanded="false" aria-label="Open menu" class="hamburger" type="button">
 <i class="fas fa-bars"></i>
 </button>
-<nav aria-label="Fő navigáció" id="site-nav">
-<ul><li><a href="/EN/index.html">Home</a></li><li><a href="/EN/about.html">About</a></li><li><a href="/EN/portfolio.html">Portfolio</a></li><li><a class="active" href="/EN/services.html">Services</a></li><li><a href="/EN/prices.html">Pricing</a></li><li><a href="/EN/contact.html">Contact</a></li><li><a aria-label="Váltás magyarra" class="lang-switch" href="/services.html">HU</a></li></ul>
+<nav aria-label="Main navigation" id="site-nav">
+<ul><li><a href="/EN/index.html">Home</a></li><li><a href="/EN/about.html">About</a></li><li><a href="/EN/portfolio.html">Portfolio</a></li><li><a class="active" href="/EN/services.html">Services</a></li><li><a href="/EN/prices.html">Pricing</a></li><li><a href="/EN/contact.html">Contact</a></li><li><a aria-label="Switch to Hungarian" class="lang-switch" href="/services.html">HU</a></li></ul>
 </nav>
 </div>
 </header>
 <main>
 <h1>Services</h1>
-<h2 style="color:#ff0000; text-align:center; margin-bottom:20px;">
-      Szolgáltatásaim külön-külön is megrendelhetők, és ezekre egyedi árajánlatot biztosítok.
-    </h2>
-<div class="grid">
-<div class="service"><h2>Arculattervezés</h2><p>Kis és nagyarculat</p></div>
-<div class="service"><h2>Csomagolás tervezés</h2><p>Termékcsomagolás, címke tervezés</p></div>
-<div class="service"><h2>Nyomdai anyagok</h2><p>Névjegykártya, kiadványszerkesztés, szóróanyag, brosúra</p></div>
-<div class="service"><h2>Logó tervezés</h2><p>Logókészítés, wordmark, symbol, kombinált logó, embléma, monogram, absztrakt ikon</p></div>
-<div class="service"><h2>Animáció készítés</h2><p>Logóanimáció</p></div>
-<div class="service"><h2>Dokumentum</h2><p>PDF, prezentáció, munkalap, háttérkép, napló, workshop anyag, infografika</p></div>
-<div class="service"><h2>Események</h2><p>Meghívó, ültetőkártya, promóciós anyag, programfüzet</p></div>
-<div class="service"><h2>Tervezés</h2><p>Címke, matrica, projektterv, edzésterv, táplálkozási napló</p></div>
-<div class="service"><h2>Social Media</h2><p>Story, poszt, borítókép, banner, thumbnail, profilkép</p></div>
-<div class="service"><h2>Webdesign</h2><p>Reszponzív UI/UX tervezés egyedi stílusban</p></div>
-<div class="service"><h2>ÜZLETI MODELL</h2><p>Logó, névjegykártya, ajándékutalvány, szórólap, brosúra, projektterv, üzleti jelentés és összefoglaló, marketing anyag, termékkatalógus, árajánlat, árjegyzék, menü/étlap, hírlevél, plakát, szóróanyag</p></div>
-</div>
+<section class="services-intro">
+<p class="lead">Good design isn't a single graphic. It's a consistent visual system.</p>
+<p>Branding, packaging, print and digital design — as standalone projects or as one connected visual system.</p>
+</section>
+<section class="service-pillars">
+<article class="service-card">
+<div class="service-number">01</div>
+<h2>Branding &amp; Identity</h2>
+<p class="service-subtitle">Building the visual foundations of brands.</p>
+<p class="service-description">From launching a new brand to rethinking an existing identity, I create cohesive visual systems that make your brand recognisable and consistent.</p>
+<ul class="service-list"><li>Logo design</li><li>Visual identity</li><li>Small and full identity systems</li><li>Typography and colour systems</li><li>Brand guidelines</li><li>Brand applications</li></ul>
+</article>
+<article class="service-card">
+<div class="service-number">02</div>
+<h2>Packaging &amp; Print</h2>
+<p class="service-subtitle">When the brand becomes tangible.</p>
+<p class="service-description">I carry the visual identity into physical touchpoints. From packaging to print communication, every piece is designed to feel like the same brand.</p>
+<ul class="service-list"><li>Packaging design</li><li>Labels</li><li>Business cards</li><li>Brochures and catalogues</li><li>Posters and flyers</li><li>Publications and event materials</li></ul>
+</article>
+<article class="service-card">
+<div class="service-number">03</div>
+<h2>Digital &amp; Web</h2>
+<p class="service-subtitle">Consistent across digital touchpoints.</p>
+<p class="service-description">I extend the brand system into digital environments — from websites to social content, consistently across mobile and desktop.</p>
+<ul class="service-list"><li>Responsive web design</li><li>Landing pages</li><li>UI/UX design</li><li>Social media design</li><li>Campaign graphics, banners and thumbnails</li><li>Digital assets and logo animation</li></ul>
+</article>
+</section>
+<section class="extra-services">
+<h2>Custom graphic design</h2>
+<p>Beyond the core service areas, I also take on custom graphic design work when it fits the project's visual system.</p>
+<p class="extra-list">Presentations · Infographics · PDFs · Workshop materials · Invitations · Programmes · Gift vouchers · Menus · Price lists · custom graphic assets</p>
+</section>
+<section class="services-cta">
+<h2>Have a project? Let's work together.</h2>
+<p>Tell me a little about the project and we'll look at how I can bring it to life visually.</p>
+<a class="cta-link" href="/EN/contact.html">Request a quote →</a>
+</section>
 </main>
-<div style="text-align:center; margin:40px 0;">
-<a href="/EN/contact.html" style="color:#ffffff; text-decoration:none;">
-    Az egyedi árajánlatokért lépj velem kapcsolatba.
-    <span style="color:#ff0000;"> Klikk →</span>
-</a>
-</div>
 <footer>
-<p>© 2025 Hello I'm Herki</p>
+<p>© 2026 Hello I'm Herki</p>
 </footer>
 </body>
 </html>
